@@ -64,3 +64,43 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl enable rig-controller.service
 sudo systemctl start rig-controller.service
+
+# install gnu radio (we won't be using the UI but it ships with it anyway)
+apt install -y gnuradio
+
+# install limesuite
+https://wiki.myriadrf.org/Lime_Suite#Building_from_source
+sudo apt install -y git g++ cmake libsqlite3-dev 
+sudo apt install -y libsoapysdr-dev libi2c-dev libusb-1.0-0-dev
+
+cd ~
+git clone https://github.com/myriadrf/LimeSuite.git
+cd LimeSuite
+git checkout stable
+mkdir builddir && cd builddir
+cmake ../
+make -j4
+sudo make install
+sudo ldconfig
+cd ~/LimeSuite/udev-rules
+sudo ./install.sh
+
+# this should work now:
+pi@pi-transceiver:~ $ LimeUtil --find
+  * [LimeSDR Mini, media=USB 3.0, module=FT601, addr=24607:1027, serial=1D5882F9FB64B6]
+
+# lime tools
+cd ~
+git clone https://github.com/myriadrf/lime-tools.git
+cd lime-tools
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+# then receive + capture:
+LimeStream -r recorded.wav -s 2500000 -f 145000000 -v
+
+# then re-transmit it repeatedly
+LimeStream -t recorded.wav -s 2500000 -f 145000000 -v -R -g 0.5
