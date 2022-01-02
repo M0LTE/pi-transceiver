@@ -1,10 +1,39 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    Layout = ""; // not on this page
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rig-controller</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/rig_controller.styles.css" asp-append-version="true" />
+
+    <style type="text/css">
+        body {
+          overflow: hidden; /* prevent scrollbars */
+          background-color: black;
+          color: white;
+          margin:0px;
+          padding:0px;
+          border:1px solid red;
+          width:800px;
+          height:480px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span style="font-size:36pt; font-weight:bold;">rig here</span>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
