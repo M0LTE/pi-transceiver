@@ -12,11 +12,12 @@ namespace rig_controller.Hubs
             this.logger = logger;
         }
 
-        public Task SetFrequencyDigit(int digitNumber, int newValue)
+        public async Task SetFrequencyDigit(int digitNumber, int newValue)
         {
             logger.LogInformation($"UI set digit {digitNumber} to {newValue}");
 
-            return Task.CompletedTask;
+            // just to prove a point
+            await Clients.All.SendAsync(nameof(SetSMeter), newValue);
         }
 
         internal async Task SetSMeter(int value)
