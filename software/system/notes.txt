@@ -21,7 +21,7 @@ xset s off     # disable screen saver
 xset s noblank # don't blank the video device
 matchbox-window-manager -use_titlebar no &
 unclutter &    # hide X mouse cursor unless mouse activated
-chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://reelyactive.github.io/diy/pi-kiosk/
+chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 http://localhost:5155
 
 chmod 755 ~/kiosk
 
@@ -32,3 +32,35 @@ sudo raspi-config:
 system -> boot/auto login -> console autologin
 display -> underscan -> no
 reboot
+
+# install .NET 6
+wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
+chmod +x dotnet-install.sh
+./dotnet-install.sh
+logout
+
+# pull and run the software
+sudo apt install -y git
+git clone https://github.com/M0LTE/pi-transceiver.git
+cd pi-transceiver/software/rig-controller/rig-controller
+~/.dotnet/dotnet run
+
+
+# auto start the software
+
+# /etc/systemd/system/rig-controller.service
+[Unit]
+Description=rig-controller
+
+[Service]
+WorkingDirectory=/home/pi/pi-transceiver/software/rig-controller/rig-controller
+ExecStart=/home/pi/.dotnet/dotnet run
+Restart=always
+Environment="DOTNET_CLI_HOME=/home/pi"
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable rig-controller.service
+sudo systemctl start rig-controller.service
