@@ -1,10 +1,12 @@
 using rig_controller.Hubs;
+using rig_controller.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
+builder.Services.AddHostedService<SMeterUpdaterService>();
 
 var app = builder.Build();
 
