@@ -1,0 +1,34 @@
+Install Raspberry Pi OS Lite (Buster)
+Set up wi-fi / plug in ethernet
+
+Via SSH: 
+
+sudo apt update
+sudo apt upgrade
+
+sudo apt install -y --no-install-recommends xserver-xorg
+sudo apt install --no-install-recommends xinit
+sudo apt install -y --no-install-recommends x11-xserver-utils
+
+sudo apt install -y chromium-browser
+sudo apt install -y matchbox-window-manager xautomation unclutter
+
+# create ~/kiosk
+
+#!/bin/sh
+xset -dpms     # disable DPMS (Energy Star) features.
+xset s off     # disable screen saver
+xset s noblank # don't blank the video device
+matchbox-window-manager -use_titlebar no &
+unclutter &    # hide X mouse cursor unless mouse activated
+chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://reelyactive.github.io/diy/pi-kiosk/
+
+chmod 755 ~/kiosk
+
+# append to ~/.bashrc
+xinit /home/pi/kiosk -- vt$(fgconsole)
+
+sudo raspi-config:
+system -> boot/auto login -> console autologin
+display -> underscan -> no
+reboot
