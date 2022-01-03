@@ -21,6 +21,7 @@ xset s off     # disable screen saver
 xset s noblank # don't blank the video device
 matchbox-window-manager -use_titlebar no &
 unclutter -idle 0.1 -jitter 1000 & # hide X mouse cursor 
+sleep 10
 chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 http://localhost:5155
 
 chmod 755 ~/kiosk
