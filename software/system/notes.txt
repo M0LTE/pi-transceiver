@@ -26,7 +26,7 @@ chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 http://l
 chmod 755 ~/kiosk
 
 # append to ~/.bashrc
-xinit /home/pi/kiosk -- vt$(fgconsole)
+xinit -nocursor /home/pi/kiosk -- vt$(fgconsole)
 
 sudo raspi-config:
 system -> boot/auto login -> console autologin
