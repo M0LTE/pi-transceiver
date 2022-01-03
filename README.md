@@ -5,6 +5,6 @@ An attempt to build a complete ham radio transceiver around a Raspberry Pi
 
 See [the wiki](https://github.com/M0LTE/pi-transceiver/wiki) for a more detailed project description / scratchlist of ideas / plans.
 
-Also see [the open issues](https://github.com/M0LTE/pi-transceiver/issues) for stuff which needs working on!
+Also see [the open issues](https://github.com/M0LTE/pi-transceiver/issues) for stuff which needs working on. I've marked a few as Good First Issues.
 
 [Discussions](https://github.com/M0LTE/pi-transceiver/discussions) is also a good place to ask questions / make comments / suggestions without raising an issue.
