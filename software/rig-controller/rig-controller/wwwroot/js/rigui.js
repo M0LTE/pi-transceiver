@@ -26,6 +26,10 @@ connection.on("AddLogLine", function (msg) {
     var list = document.getElementById("log");
     list.insertBefore(li, list.firstChild);
     li.textContent = msg;
+
+    if (list.childElementCount >= 11) {
+        list.lastChild.remove();
+    }
 });
 
 connection.start().then(function () {
