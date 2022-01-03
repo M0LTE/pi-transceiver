@@ -62,7 +62,7 @@ namespace rig_controller.Services
                 }
             }
 
-            throw new Exception("Flex knob not found, is it connected? Has something else opened its serial port already?");
+            //throw new Exception("Flex knob not found, is it connected? Has something else opened its serial port already?");
         }
 
         void RunKnob(SerialPort sp)
