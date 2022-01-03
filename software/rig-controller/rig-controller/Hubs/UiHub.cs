@@ -12,10 +12,8 @@ namespace rig_controller.Hubs
             this.logger = logger;
         }
 
-        public Task SetFrequencyDigit(int digitNumber, int newValue)
+        public Task SetFrequencyDigit(int digitNumber, bool up)
         {
-            logger.LogInformation($"UI set digit {digitNumber} to {newValue}");
-
             return Task.CompletedTask;
         }
     }

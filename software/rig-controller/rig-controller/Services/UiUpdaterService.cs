@@ -3,14 +3,14 @@ using rig_controller.Hubs;
 
 namespace rig_controller.Services
 {
-    public class SMeterUpdaterService : IHostedService
+    public class UiUpdaterService : IHostedService
     {
         private Timer? timer;
         private readonly Random random = new();
         private readonly IHubContext<UiHub> uiHubContext;
-        private readonly ILogger<SMeterUpdaterService> logger;
+        private readonly ILogger<UiUpdaterService> logger;
 
-        public SMeterUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<SMeterUpdaterService> logger)
+        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger)
         {
             this.uiHubContext = uiHubContext;
             this.logger = logger;
