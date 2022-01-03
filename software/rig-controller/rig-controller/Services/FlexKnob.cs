@@ -35,7 +35,7 @@ namespace rig_controller.Services
                     continue;
                 }
 
-                sp.ReadTimeout = 500;
+                sp.ReadTimeout = 100;
 
                 var failures = 0;
                 while (true)
