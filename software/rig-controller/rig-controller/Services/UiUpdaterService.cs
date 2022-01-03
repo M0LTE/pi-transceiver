@@ -3,17 +3,19 @@ using rig_controller.Hubs;
 
 namespace rig_controller.Services
 {
-    public class UiUpdaterService : IHostedService
+    public class UiUpdaterService
     {
         private Timer? timer;
         private readonly Random random = new();
         private readonly IHubContext<UiHub> uiHubContext;
         private readonly ILogger<UiUpdaterService> logger;
+        private readonly RigStateService rigStateService;
 
-        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger)
+        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService)
         {
             this.uiHubContext = uiHubContext;
             this.logger = logger;
+            this.rigStateService = rigStateService;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -27,7 +29,7 @@ namespace rig_controller.Services
         {
             Task.Run(async () => await SetSMeter(random.Next(0, 100)));
 
-            Task.Run(async () => await SetFrequency(random.Next(144000000, 146000000)));
+            //Task.Run(async () => await SetFrequency(rigStateService.RigState.Frequency));
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
@@ -43,7 +45,7 @@ namespace rig_controller.Services
             await uiHubContext.Clients.All.SendAsync(nameof(SetSMeter), value);
         }
 
-        private async Task SetFrequency(long hz)
+        public async Task SetFrequency(long hz)
         {
             if (hz < 0 || hz > 3000000000L)
             {

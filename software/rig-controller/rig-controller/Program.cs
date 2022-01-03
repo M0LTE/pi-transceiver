@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
-builder.Services.AddHostedService<UiUpdaterService>();
+builder.Services.AddTransient<UiUpdaterService>();
+builder.Services.AddSingleton<RigStateService>();
 
 var app = builder.Build();
 
