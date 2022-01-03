@@ -20,7 +20,7 @@
           color: white;
           margin:0px;
           padding:0px;
-          border:1px solid red;
+          /*border:1px solid red;*/
           width:798px;
           height:480px;
         }
@@ -29,40 +29,40 @@
 <body>
     <div class="container">
 
-        <table>
-            <tr>
-                <td><input type="button" id="digit1up" value="↑" /></td>
-                <td><input type="button" id="digit2up" value="↑" /></td>
-                <td><input type="button" id="digit3up" value="↑" /></td>
-                <td><input type="button" id="digit4up" value="↑" /></td>
-                <td></td>
-                <td><input type="button" id="digit5up" value="↑" /></td>
-                <td><input type="button" id="digit6up" value="↑" /></td>
-                <td><input type="button" id="digit7up" value="↑" /></td>
-            </tr>
-            <tr style="font-size:36pt; font-weight:bold;">
-                <td id="digit1">0</td>
-                <td id="digit2">0</td>
-                <td id="digit3">0</td>
-                <td id="digit4">0</td>
-                <td>.</td>
-                <td id="digit5">0</td>
-                <td id="digit6">0</td>
-                <td id="digit7">0</td>
-            </tr>
-            <tr>
-                <td><input type="button" id="digit1down" value="↓" /></td>
-                <td><input type="button" id="digit2down" value="↓" /></td>
-                <td><input type="button" id="digit3down" value="↓" /></td>
-                <td><input type="button" id="digit4down" value="↓" /></td>
-                <td></td>
-                <td><input type="button" id="digit5down" value="↓" /></td>
-                <td><input type="button" id="digit6down" value="↓" /></td>
-                <td><input type="button" id="digit7down" value="↓" /></td>
-            </tr>
-        </table>
-
-        <div id="smeter" style="border:1px solid green;"></div>
+        <div style="position:absolute; top:150px; left:250px;">
+            <table>
+                <tr>
+                    <td><input type="button" id="digit1up" value="↑" /></td>
+                    <td><input type="button" id="digit2up" value="↑" /></td>
+                    <td><input type="button" id="digit3up" value="↑" /></td>
+                    <td><input type="button" id="digit4up" value="↑" /></td>
+                    <td></td>
+                    <td><input type="button" id="digit5up" value="↑" /></td>
+                    <td><input type="button" id="digit6up" value="↑" /></td>
+                    <td><input type="button" id="digit7up" value="↑" /></td>
+                </tr>
+                <tr style="font-size:48pt; font-weight:bold;">
+                    <td id="digit1">0</td>
+                    <td id="digit2">0</td>
+                    <td id="digit3">0</td>
+                    <td id="digit4">0</td>
+                    <td>.</td>
+                    <td id="digit5">0</td>
+                    <td id="digit6">0</td>
+                    <td id="digit7">0</td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="digit1down" value="↓" /></td>
+                    <td><input type="button" id="digit2down" value="↓" /></td>
+                    <td><input type="button" id="digit3down" value="↓" /></td>
+                    <td><input type="button" id="digit4down" value="↓" /></td>
+                    <td></td>
+                    <td><input type="button" id="digit5down" value="↓" /></td>
+                    <td><input type="button" id="digit6down" value="↓" /></td>
+                    <td><input type="button" id="digit7down" value="↓" /></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
