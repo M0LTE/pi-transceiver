@@ -34,5 +34,10 @@ namespace rig_controller.Hubs
                 await uiUpdaterService.SetFrequency();
             }
         }
+
+        public async Task TriggerFrequencyUpdate()
+        {
+            await uiUpdaterService.SetFrequency();
+        }
     }
 }

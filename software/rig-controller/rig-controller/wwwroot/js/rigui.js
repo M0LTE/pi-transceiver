@@ -11,6 +11,7 @@ connection.on("SetSMeter", function (value) {
 });
 
 connection.on("SetFrequency", function (digit1, digit2, digit3, digit4, digit5, digit6, digit7) {
+    console.log("SetFrequency" + digit1 + digit2 + digit3 + digit4 + "." + digit5 + digit6 + digit7)
     document.getElementById("digit1").innerText = digit1;
     document.getElementById("digit2").innerText = digit2;
     document.getElementById("digit3").innerText = digit3;
@@ -20,8 +21,18 @@ connection.on("SetFrequency", function (digit1, digit2, digit3, digit4, digit5, 
     document.getElementById("digit7").innerText = digit7;
 });
 
+connection.on("AddLogLine", function (msg) {
+    var li = document.createElement("li");
+    var list = document.getElementById("log");
+    list.insertBefore(li, list.firstChild);
+    li.textContent = msg;
+});
+
 connection.start().then(function () {
     //document.getElementById("sendButton").disabled = false;
+    connection.invoke("TriggerFrequencyUpdate").catch(function (err) {
+        return console.error(err.toString());
+    });
 }).catch(function (err) {
     return console.error(err.toString());
 });

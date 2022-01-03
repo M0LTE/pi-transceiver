@@ -10,10 +10,9 @@
             this.uiUpdaterService = uiUpdaterService;
         }
 
-        public Task StartAsync(CancellationToken cancellationToken)
+        public async Task StartAsync(CancellationToken cancellationToken)
         {
             timer = new Timer(Tick, null, 0, 500);
-            return Task.CompletedTask;
         }
 
         private void Tick(object? state)
