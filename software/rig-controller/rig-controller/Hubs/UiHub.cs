@@ -7,11 +7,13 @@ namespace rig_controller.Hubs
     {
         private readonly UiUpdaterService uiUpdaterService;
         private readonly RigStateService rigStateService;
+        private readonly ILogger<UiHub> logger;
 
-        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService)
+        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, ILogger<UiHub> logger)
         {
             this.uiUpdaterService = uiUpdaterService;
             this.rigStateService = rigStateService;
+            this.logger = logger;
         }
 
         public async Task SetFrequencyDigit(int digitNumber, bool up)
@@ -19,12 +21,18 @@ namespace rig_controller.Hubs
             var pow = 10 - digitNumber;
 
             var value = Math.Pow(10, pow);
+            var add = ((up ? 1 : -1) * value);
 
-            var newFrequency = (long)(rigStateService.RigState.Frequency + ((up ? 1 : -1) * value));
+            var newFrequency = (long)(rigStateService.RigState.Frequency + add);
 
-            rigStateService.RigState.Frequency = newFrequency;
+            if (newFrequency > 0 && newFrequency < 3000000000L)
+            {
+                logger.LogInformation("Adding " + add);
 
-            await uiUpdaterService.SetFrequency();
+                rigStateService.RigState.Frequency = newFrequency;
+
+                await uiUpdaterService.SetFrequency();
+            }
         }
     }
 }
