@@ -7,6 +7,6 @@
 
     public class RigState
     {
-        public long Frequency { get; set; }
+        public long Frequency { get; set; } = 144300000;
     }
 }

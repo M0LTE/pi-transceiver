@@ -8,6 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
 builder.Services.AddTransient<UiUpdaterService>();
 builder.Services.AddSingleton<RigStateService>();
+builder.Services.AddHostedService<FlexKnobHostedService>();
 
 var app = builder.Build();
 
