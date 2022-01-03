@@ -9,6 +9,7 @@ builder.Services.AddSignalR();
 builder.Services.AddTransient<UiUpdaterService>();
 builder.Services.AddSingleton<RigStateService>();
 builder.Services.AddHostedService<FlexKnobHostedService>();
+builder.Services.AddHostedService<UiUpdaterHostedService>();
 
 var app = builder.Build();
 
