@@ -20,7 +20,7 @@
         {
             Task.Run(async () =>
             {
-                await uiUpdaterService.SetFrequency();
+                //await uiUpdaterService.SetFrequency();
             });
         }
 
