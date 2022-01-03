@@ -7,4 +7,4 @@ See [the wiki](https://github.com/M0LTE/pi-transceiver/wiki).
 
 Also see [the open issues](https://github.com/M0LTE/pi-transceiver/issues) for stuff which needs working on!
 
-[Discussions](https://github.com/M0LTE/pi-transceiver/discussions/15) is also a good place to ask questions / make comments / suggestions without raising an issue.
+[Discussions](https://github.com/M0LTE/pi-transceiver/discussions) is also a good place to ask questions / make comments / suggestions without raising an issue.
