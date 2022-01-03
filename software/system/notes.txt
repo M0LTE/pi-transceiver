@@ -20,13 +20,13 @@ xset -dpms     # disable DPMS (Energy Star) features.
 xset s off     # disable screen saver
 xset s noblank # don't blank the video device
 matchbox-window-manager -use_titlebar no &
-unclutter &    # hide X mouse cursor unless mouse activated
+unclutter -idle 1 -jitter 1000 & # hide X mouse cursor 
 chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 http://localhost:5155
 
 chmod 755 ~/kiosk
 
 # append to ~/.bashrc
-xinit -nocursor /home/pi/kiosk -- vt$(fgconsole)
+xinit /home/pi/kiosk -- vt$(fgconsole)
 
 sudo raspi-config:
 system -> boot/auto login -> console autologin
