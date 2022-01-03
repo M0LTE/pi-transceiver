@@ -27,6 +27,17 @@
 
         .vfobutton {
             width: 100%;
+            height:45px;
+        }
+
+        .vfocolumn {
+            padding-left:15px;
+            padding-right:15px;
+        }
+
+        .digitcolumn {
+            padding-left:10px;
+            padding-right:10px;
         }
 
     </style>
@@ -34,42 +45,42 @@
 <body>
     <div class="container">
 
-        <div style="position:absolute; top:140px; left:220px;">
+        <div style="position:absolute; top:110px; left:150px;">
             <table>
                 <tr>
-                    <td><input class="vfobutton" type="button" id="digit1up" value="↑" /></td>
-                    <td><input class="vfobutton" type="button" id="digit2up" value="↑" /></td>
-                    <td><input class="vfobutton" type="button" id="digit3up" value="↑" /></td>
-                    <td><input class="vfobutton" type="button" id="digit4up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit1up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit2up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit3up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit4up" value="↑" /></td>
                     <td></td>
-                    <td><input class="vfobutton" type="button" id="digit5up" value="↑" /></td>
-                    <td><input class="vfobutton" type="button" id="digit6up" value="↑" /></td>
-                    <td><input class="vfobutton" type="button" id="digit7up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit5up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit6up" value="↑" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit7up" value="↑" /></td>
                 </tr>
                 <tr style="font-size:48pt; font-weight:bold;">
-                    <td id="digit1">0</td>
-                    <td id="digit2">0</td>
-                    <td id="digit3">0</td>
-                    <td id="digit4">0</td>
+                    <td class="vfocolumn" id="digit1">0</td>
+                    <td class="vfocolumn" id="digit2">0</td>
+                    <td class="vfocolumn" id="digit3">0</td>
+                    <td class="vfocolumn" id="digit4">0</td>
                     <td>.</td>
-                    <td id="digit5">0</td>
-                    <td id="digit6">0</td>
-                    <td id="digit7">0</td>
+                    <td class="vfocolumn" id="digit5">0</td>
+                    <td class="vfocolumn" id="digit6">0</td>
+                    <td class="vfocolumn" id="digit7">0</td>
                 </tr>
                 <tr>
-                    <td><input class="vfobutton" type="button" id="digit1down" value="↓" /></td>
-                    <td><input class="vfobutton" type="button" id="digit2down" value="↓" /></td>
-                    <td><input class="vfobutton" type="button" id="digit3down" value="↓" /></td>
-                    <td><input class="vfobutton" type="button" id="digit4down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit1down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit2down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit3down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit4down" value="↓" /></td>
                     <td></td>
-                    <td><input class="vfobutton" type="button" id="digit5down" value="↓" /></td>
-                    <td><input class="vfobutton" type="button" id="digit6down" value="↓" /></td>
-                    <td><input class="vfobutton" type="button" id="digit7down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit5down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit6down" value="↓" /></td>
+                    <td class="digitcolumn"><input class="vfobutton" type="button" id="digit7down" value="↓" /></td>
                 </tr>
             </table>
         </div>
 
-        <div style="position:absolute; top:310px; left:0px; width:100%; height:170px; border: 1px dashed white; font-size:8pt;">
+        <div style="position:absolute; top:310px; left:0px; width:798px; height:170px; border: 1px dashed white; font-size:8pt;">
             <ul id="log" style="list-style-type: none; padding:0; margin:0"></ul>
         </div>
     </div>
