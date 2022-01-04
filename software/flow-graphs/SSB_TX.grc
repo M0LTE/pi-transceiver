@@ -8,7 +8,7 @@ options:
     description: ''
     gen_cmake: 'On'
     gen_linking: dynamic
-    generate_options: qt_gui
+    generate_options: no_gui
     hier_block_src_path: '.:'
     id: SSB_TX
     max_nouts: '0'
@@ -18,7 +18,7 @@ options:
     realtime_scheduling: ''
     run: 'True'
     run_command: '{python} -u {filename}'
-    run_options: prompt
+    run_options: run
     sizing_mode: fixed
     thread_safe_setters: ''
     title: Not titled yet
@@ -75,6 +75,49 @@ blocks:
     coordinate: [153, 184]
     rotation: 0
     state: true
+- name: band_pass_filter_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: '1'
+    high_cutoff_freq: '2800'
+    interp: '1'
+    low_cutoff_freq: '200'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '10'
+    win: firdes.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [366, 236]
+    rotation: 0
+    state: true
+- name: dc_blocker_xx_1
+  id: dc_blocker_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    length: '32'
+    long_form: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: ff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [563, 173]
+    rotation: 0
+    state: true
 - name: hilbert_fc_0
   id: hilbert_fc
   parameters:
@@ -90,7 +133,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [383, 135]
+    coordinate: [634, 294]
     rotation: 0
     state: true
 - name: limesdr_sink_0
@@ -124,12 +167,14 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [601, 139]
+    coordinate: [869, 238]
     rotation: 0
     state: true
 
 connections:
-- [audio_source_0, '0', hilbert_fc_0, '0']
+- [audio_source_0, '0', band_pass_filter_0, '0']
+- [band_pass_filter_0, '0', dc_blocker_xx_1, '0']
+- [dc_blocker_xx_1, '0', hilbert_fc_0, '0']
 - [hilbert_fc_0, '0', limesdr_sink_0, '0']
 
 metadata:
