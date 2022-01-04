@@ -139,3 +139,11 @@ document.getElementById("digit7down").addEventListener("click", function (event)
     event.preventDefault();
 });
 
+var lastX = 0;
+document.getElementById("body").addEventListener("mousemove", function (e) {
+    var direction = e.offsetX - lastX > 0;
+    lastX = e.offsetX;
+    connection.invoke("SetFrequencyDigit", 7, direction).catch(function (err) {
+        return console.error(err.toString());
+    });
+});
