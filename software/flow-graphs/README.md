@@ -4,4 +4,4 @@ basic-ssb-tx.grc is the most basic audio capture -> SSB transmitter I can concei
 
 Default gain is 60 (who knows what units), frequency is set in the LimeSDR block.
 
-Tested on Ubuntu 20.04 + GNU Radio installed by following [these instructions](https://github.com/myriadrf/gr-limesdr#linux)
+Tested on Ubuntu 20.04 + GNU Radio installed by following [these (Installing via PPA) instructions](https://github.com/myriadrf/gr-limesdr#linux)
