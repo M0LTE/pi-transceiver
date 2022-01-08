@@ -39,7 +39,7 @@ class SSB_TX(gr.top_block):
         self.limesdr_sink_0.set_sample_rate(samp_rate)
 
 
-        self.limesdr_sink_0.set_center_freq(144400000, 0)
+        self.limesdr_sink_0.set_center_freq(144200000, 0)
 
         self.limesdr_sink_0.set_bandwidth(5e6, 0)
 
@@ -47,7 +47,7 @@ class SSB_TX(gr.top_block):
         self.limesdr_sink_0.set_digital_filter(samp_rate, 0)
 
 
-        self.limesdr_sink_0.set_gain(60, 0)
+        self.limesdr_sink_0.set_gain(63, 0)
 
 
         self.limesdr_sink_0.set_antenna(255, 0)

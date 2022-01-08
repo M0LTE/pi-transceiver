@@ -23,7 +23,6 @@ if __name__ == '__main__':
 from PyQt5 import Qt
 from gnuradio import analog
 from gnuradio import blocks
-from gnuradio import filter
 from gnuradio import gr
 from gnuradio.filter import firdes
 import sys
@@ -117,7 +116,6 @@ class sine1k_gui(gr.top_block, Qt.QWidget):
 
 
         self.limesdr_sink_0.calibrate(2.5e6, 0)
-        self.dc_blocker_xx_0 = filter.dc_blocker_cc(32, True)
         self.blocks_mute_xx_0 = blocks.mute_cc(bool(mute))
         self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 1500, 1, 0, 0)
 
@@ -126,9 +124,8 @@ class sine1k_gui(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_sig_source_x_0, 0), (self.dc_blocker_xx_0, 0))
+        self.connect((self.analog_sig_source_x_0, 0), (self.blocks_mute_xx_0, 0))
         self.connect((self.blocks_mute_xx_0, 0), (self.limesdr_sink_0, 0))
-        self.connect((self.dc_blocker_xx_0, 0), (self.blocks_mute_xx_0, 0))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "sine1k_gui")

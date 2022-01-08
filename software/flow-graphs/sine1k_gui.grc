@@ -160,25 +160,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [764, 97]
-    rotation: 0
-    state: true
-- name: dc_blocker_xx_0
-  id: dc_blocker_xx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    length: '32'
-    long_form: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: cc
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [471, 121]
+    coordinate: [603, 138]
     rotation: 0
     state: true
 - name: limesdr_sink_0
@@ -217,9 +199,8 @@ blocks:
     state: true
 
 connections:
-- [analog_sig_source_x_0, '0', dc_blocker_xx_0, '0']
+- [analog_sig_source_x_0, '0', blocks_mute_xx_0, '0']
 - [blocks_mute_xx_0, '0', limesdr_sink_0, '0']
-- [dc_blocker_xx_0, '0', blocks_mute_xx_0, '0']
 
 metadata:
   file_format: 1
