@@ -105,3 +105,6 @@ LimeStream -r recorded.wav -s 2500000 -f 145000000 -v
 
 # then re-transmit it repeatedly
 LimeStream -t recorded.wav -s 2500000 -f 145000000 -v -R -g 0.5
+
+# install GNU Radio LimeSDR plugin
+sudo apt install -y gr-limesdr
