@@ -10,6 +10,7 @@ builder.Services.AddTransient<UiUpdaterService>();
 builder.Services.AddSingleton<RigStateService>();
 builder.Services.AddHostedService<FlexKnobHostedService>();
 builder.Services.AddHostedService<UiUpdaterHostedService>();
+builder.Services.AddHostedService<GpioHostedService>();
 
 var app = builder.Build();
 
