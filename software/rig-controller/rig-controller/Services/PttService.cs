@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Options;
-using static rig_controller.Services.TimedLock;
 
 namespace rig_controller.Services
 {
@@ -26,77 +25,41 @@ namespace rig_controller.Services
         {
             await uiUpdaterService.AddLogLine("TX requested");
 
-            using (await Lock())
+            if (rigStateService.RigState.Transmitting == true)
             {
-                if (rigStateService.RigState.Transmitting == true)
-                {
-                    return;
-                }
-
-                // Rx to Tx:  Ant relay to Tx, delay 20ms (Trelay=15 ms max), PA bias on, unmute flowgraph
-
-                await gpioService.SetGpio(rigOptions.RXTX_CHANGEOVER_RELAY_PIN, true);
-                await Task.Delay(rigOptions.RXTX_RELAY_DELAY);
-                await gpioService.SetGpio(rigOptions.PA_RELAY_PIN, true);
-                await flowgraphControlService.UnmuteAudioSource();
-
-                rigStateService.RigState.Transmitting = true;
-                await uiUpdaterService.AddLogLine("TX set");
+                return;
             }
+
+            // Rx to Tx:  Ant relay to Tx, delay 20ms (Trelay=15 ms max), PA bias on, unmute flowgraph
+
+            await gpioService.SetGpio(rigOptions.RXTX_CHANGEOVER_RELAY_PIN, true);
+            await Task.Delay(rigOptions.RXTX_RELAY_DELAY);
+            await gpioService.SetGpio(rigOptions.PA_RELAY_PIN, true);
+            await flowgraphControlService.UnmuteAudioSource();
+
+            rigStateService.RigState.Transmitting = true;
+            await uiUpdaterService.AddLogLine("TX set");
         }
 
         public async Task Unkey()
         {
             await uiUpdaterService.AddLogLine("RX requested");
 
-            using (await Lock())
+            if (rigStateService.RigState.Transmitting == false)
             {
-                if (rigStateService.RigState.Transmitting == false)
-                {
-                    return;
-                }
-
-                // Tx to Rx:  Mute flowgraph. PA bias off, delay 20ms + time it takes to mute flowgraph max. Ant relay to Rx 
-
-                await flowgraphControlService.MuteAudioSource();
-                await gpioService.SetGpio(rigOptions.PA_RELAY_PIN, false);
-                await Task.Delay(rigOptions.PA_RELAY_DELAY);
-                await Task.Delay(rigOptions.FLOWGRAPH_DELAY);
-                await gpioService.SetGpio(rigOptions.RXTX_CHANGEOVER_RELAY_PIN, false);
-
-                rigStateService.RigState.Transmitting = false;
-                await uiUpdaterService.AddLogLine("RX set");
+                return;
             }
-        }
 
-        private static Task<LockReleaser> Lock() => new TimedLock().Lock(TimeSpan.FromSeconds(2));
-    }
+            // Tx to Rx:  Mute flowgraph. PA bias off, delay 20ms + time it takes to mute flowgraph max. Ant relay to Rx 
 
-    public class TimedLock
-    {
-        private static readonly SemaphoreSlim toLock = new(1, 1);
+            await flowgraphControlService.MuteAudioSource();
+            await gpioService.SetGpio(rigOptions.PA_RELAY_PIN, false);
+            await Task.Delay(rigOptions.PA_RELAY_DELAY);
+            await Task.Delay(rigOptions.FLOWGRAPH_DELAY);
+            await gpioService.SetGpio(rigOptions.RXTX_CHANGEOVER_RELAY_PIN, false);
 
-        public async Task<LockReleaser> Lock(TimeSpan timeout)
-        {
-            if (await toLock.WaitAsync(timeout))
-            {
-                return new LockReleaser(toLock);
-            }
-            throw new TimeoutException();
-        }
-
-        public struct LockReleaser : IDisposable
-        {
-            private readonly SemaphoreSlim toRelease;
-
-            public LockReleaser(SemaphoreSlim toRelease)
-            {
-                this.toRelease = toRelease;
-            }
-            public void Dispose()
-            {
-                toRelease.Release();
-            }
+            rigStateService.RigState.Transmitting = false;
+            await uiUpdaterService.AddLogLine("RX set");
         }
     }
 }
