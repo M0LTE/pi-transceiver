@@ -74,12 +74,7 @@ namespace rig_controller.Services
 
     public class TimedLock
     {
-        private readonly SemaphoreSlim toLock;
-
-        public TimedLock()
-        {
-            toLock = new SemaphoreSlim(1, 1);
-        }
+        private static readonly SemaphoreSlim toLock = new(1, 1);
 
         public async Task<LockReleaser> Lock(TimeSpan timeout)
         {
