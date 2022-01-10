@@ -22,11 +22,11 @@ namespace rig_controller.Services
 
         private RigOptions rigOptions => rigOptionsMonitor.CurrentValue;
 
-        private static object pttGuard = new object();
-
         internal async Task Key()
         {
-            using (Lock(pttGuard))
+            await uiUpdaterService.AddLogLine("TX requested");
+
+            using (await Lock())
             {
                 if (rigStateService.RigState.Transmitting == true)
                 {
@@ -47,7 +47,9 @@ namespace rig_controller.Services
 
         public async Task Unkey()
         {
-            using (Lock(pttGuard))
+            await uiUpdaterService.AddLogLine("RX requested");
+
+            using (await Lock())
             {
                 if (rigStateService.RigState.Transmitting == false)
                 {
@@ -67,21 +69,21 @@ namespace rig_controller.Services
             }
         }
 
-        private static LockReleaser Lock(object lockObject) => new TimedLock(lockObject).Lock(TimeSpan.FromSeconds(2));
+        private static Task<LockReleaser> Lock() => new TimedLock().Lock(TimeSpan.FromSeconds(2));
     }
 
     public class TimedLock
     {
-        private readonly object toLock;
+        private readonly SemaphoreSlim toLock;
 
-        public TimedLock(object toLock)
+        public TimedLock()
         {
-            this.toLock = toLock;
+            toLock = new SemaphoreSlim(1, 1);
         }
 
-        public LockReleaser Lock(TimeSpan timeout)
+        public async Task<LockReleaser> Lock(TimeSpan timeout)
         {
-            if (Monitor.TryEnter(toLock, timeout))
+            if (await toLock.WaitAsync(timeout))
             {
                 return new LockReleaser(toLock);
             }
@@ -90,15 +92,15 @@ namespace rig_controller.Services
 
         public struct LockReleaser : IDisposable
         {
-            private readonly object toRelease;
+            private readonly SemaphoreSlim toRelease;
 
-            public LockReleaser(object toRelease)
+            public LockReleaser(SemaphoreSlim toRelease)
             {
                 this.toRelease = toRelease;
             }
             public void Dispose()
             {
-                Monitor.Exit(toRelease);
+                toRelease.Release();
             }
         }
     }

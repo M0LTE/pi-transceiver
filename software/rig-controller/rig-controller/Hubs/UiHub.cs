@@ -44,6 +44,8 @@ namespace rig_controller.Hubs
 
         public async Task ToggleTx()
         {
+            logger.LogInformation("UI told server to toggle TX/RX");
+
             if (rigStateService.RigState.Transmitting)
             {
                 await pttService.Unkey();
