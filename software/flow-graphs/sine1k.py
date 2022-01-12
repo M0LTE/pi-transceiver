@@ -20,8 +20,13 @@ import limesdr
 
 class sine1k(gr.top_block):
 
-    def __init__(self):
+    def __init__(self, gain=0):
         gr.top_block.__init__(self, "Not titled yet")
+
+        ##################################################
+        # Parameters
+        ##################################################
+        self.gain = gain
 
         ##################################################
         # Variables
@@ -31,7 +36,7 @@ class sine1k(gr.top_block):
         ##################################################
         # Blocks
         ##################################################
-        self.limesdr_sink_0 = limesdr.sink('1D5882F9FB64B6', 0, '', '')
+        self.limesdr_sink_0 = limesdr.sink('', 0, '', '')
 
 
         self.limesdr_sink_0.set_sample_rate(samp_rate)
@@ -45,7 +50,7 @@ class sine1k(gr.top_block):
         self.limesdr_sink_0.set_digital_filter(samp_rate, 0)
 
 
-        self.limesdr_sink_0.set_gain(60, 0)
+        self.limesdr_sink_0.set_gain(gain, 0)
 
 
         self.limesdr_sink_0.set_antenna(255, 0)
@@ -61,6 +66,13 @@ class sine1k(gr.top_block):
         ##################################################
         self.connect((self.analog_sig_source_x_0, 0), (self.limesdr_sink_0, 0))
 
+    def get_gain(self):
+        return self.gain
+
+    def set_gain(self, gain):
+        self.gain = gain
+        self.limesdr_sink_0.set_gain(self.gain, 0)
+
     def get_samp_rate(self):
         return self.samp_rate
 
@@ -71,9 +83,18 @@ class sine1k(gr.top_block):
         self.limesdr_sink_0.set_digital_filter(self.samp_rate, 1)
 
 
+def argument_parser():
+    parser = ArgumentParser()
+    parser.add_argument(
+        "-g", "--gain", dest="gain", type=eng_float, default="0.0",
+        help="Set gain [default=%(default)r]")
+    return parser
+
 
 def main(top_block_cls=sine1k, options=None):
-    tb = top_block_cls()
+    if options is None:
+        options = argument_parser().parse_args()
+    tb = top_block_cls(gain=options.gain)
 
     def sig_handler(sig=None, frame=None):
         tb.stop()
