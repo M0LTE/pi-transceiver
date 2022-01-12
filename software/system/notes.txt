@@ -40,6 +40,9 @@ chmod +x dotnet-install.sh
 ./dotnet-install.sh
 logout
 
+# or!
+wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet6pi/master/install.sh | sudo bash
+
 # pull and run the software
 sudo apt install -y git
 git clone https://github.com/M0LTE/pi-transceiver.git
@@ -108,3 +111,8 @@ LimeStream -t recorded.wav -s 2500000 -f 145000000 -v -R -g 0.5
 
 # install GNU Radio LimeSDR plugin
 sudo apt install -y gr-limesdr
+
+# gpio
+sudo apt install -y pigpio
+sudo systemctl enable pigpiod
+sudo systemctl start pigpiod
