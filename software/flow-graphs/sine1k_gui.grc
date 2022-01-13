@@ -8,9 +8,9 @@ options:
     description: ''
     gen_cmake: 'On'
     gen_linking: dynamic
-    generate_options: no_gui
+    generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: SSB_TX
+    id: sine1k_gui
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -32,18 +32,86 @@ options:
     state: enabled
 
 blocks:
-- name: lime_serial
-  id: variable
+- name: freq
+  id: variable_qtgui_range
   parameters:
-    comment: Find the value for your LimeSDR using LimeUtil --find
-    value: '"1D5882F9FB64B6"'
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '144000000'
+    step: '1000'
+    stop: '144500000'
+    value: '144100000'
+    widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 11]
+    coordinate: [605, 444]
     rotation: 0
     state: true
+- name: gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '73'
+    value: '14'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 453]
+    rotation: 0
+    state: true
+- name: mute
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': 'False'
+    gui_hint: ''
+    label: mute
+    'true': 'True'
+    type: int
+    value: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [863, 472]
+    rotation: 0
+    state: true
+- name: nco
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-1000'
+    step: '1'
+    stop: '1000'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1042, 474]
+    rotation: 0
+    state: enabled
 - name: samp_rate
   id: variable
   parameters:
@@ -53,87 +121,46 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [280, 19]
     rotation: 0
     state: enabled
-- name: audio_source_0
-  id: audio_source
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
+    amp: '1'
     comment: ''
-    device_name: ''
+    freq: '1500'
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_outputs: '1'
-    ok_to_block: 'True'
+    offset: '0'
+    phase: '0'
     samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [153, 184]
+    coordinate: [161, 260]
     rotation: 0
-    state: true
-- name: band_pass_filter_0
-  id: band_pass_filter
-  parameters:
-    affinity: ''
-    alias: ''
-    beta: '6.76'
-    comment: ''
-    decim: '1'
-    gain: '1'
-    high_cutoff_freq: '2800'
-    interp: '1'
-    low_cutoff_freq: '200'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    samp_rate: samp_rate
-    type: fir_filter_fff
-    width: '10'
-    win: firdes.WIN_HAMMING
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [366, 236]
-    rotation: 0
-    state: true
-- name: dc_blocker_xx_1
-  id: dc_blocker_xx
+    state: enabled
+- name: blocks_mute_xx_0
+  id: blocks_mute_xx
   parameters:
     affinity: ''
     alias: ''
     comment: ''
-    length: '32'
-    long_form: 'True'
     maxoutbuf: '0'
     minoutbuf: '0'
-    type: ff
+    mute: mute
+    type: complex
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [603, 186]
-    rotation: 0
-    state: true
-- name: hilbert_fc_0
-  id: hilbert_fc
-  parameters:
-    affinity: ''
-    alias: ''
-    beta: '6.76'
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_taps: '65'
-    win: firdes.WIN_HAMMING
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [786, 272]
+    coordinate: [603, 138]
     rotation: 0
     state: true
 - name: limesdr_sink_0
@@ -152,30 +179,28 @@ blocks:
     digital_bandw_ch0: samp_rate
     digital_bandw_ch1: samp_rate
     filename: ''
-    gain_dB_ch0: '63'
-    gain_dB_ch1: '1'
+    gain_dB_ch0: gain
+    gain_dB_ch1: '10'
     length_tag_name: ''
-    nco_freq_ch0: '0'
+    nco_freq_ch0: nco
     nco_freq_ch1: '0'
     oversample: '0'
     pa_path_ch0: '255'
     pa_path_ch1: '255'
-    rf_freq: '144200000'
+    rf_freq: freq
     samp_rate: samp_rate
-    serial: lime_serial
+    serial: 1D5882F9FB64B6
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1035, 188]
+    coordinate: [940, 242]
     rotation: 0
     state: true
 
 connections:
-- [audio_source_0, '0', band_pass_filter_0, '0']
-- [band_pass_filter_0, '0', dc_blocker_xx_1, '0']
-- [dc_blocker_xx_1, '0', hilbert_fc_0, '0']
-- [hilbert_fc_0, '0', limesdr_sink_0, '0']
+- [analog_sig_source_x_0, '0', blocks_mute_xx_0, '0']
+- [blocks_mute_xx_0, '0', limesdr_sink_0, '0']
 
 metadata:
   file_format: 1

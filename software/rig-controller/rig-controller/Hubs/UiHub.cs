@@ -7,12 +7,14 @@ namespace rig_controller.Hubs
     {
         private readonly UiUpdaterService uiUpdaterService;
         private readonly RigStateService rigStateService;
+        private readonly PttService pttService;
         private readonly ILogger<UiHub> logger;
 
-        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, ILogger<UiHub> logger)
+        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, PttService pttService, ILogger<UiHub> logger)
         {
             this.uiUpdaterService = uiUpdaterService;
             this.rigStateService = rigStateService;
+            this.pttService = pttService;
             this.logger = logger;
         }
 
@@ -38,6 +40,20 @@ namespace rig_controller.Hubs
         public async Task TriggerFrequencyUpdate()
         {
             await uiUpdaterService.SetFrequency();
+        }
+
+        public async Task ToggleTx()
+        {
+            logger.LogInformation("UI told server to toggle TX/RX");
+
+            if (rigStateService.RigState.Transmitting)
+            {
+                await pttService.Unkey();
+            }
+            else
+            {
+                await pttService.Key();
+            }
         }
     }
 }

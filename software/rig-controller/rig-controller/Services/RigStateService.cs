@@ -8,5 +8,6 @@
     public class RigState
     {
         public long Frequency { get; set; } = 144300000;
+        public bool Transmitting { get; internal set; }
     }
 }

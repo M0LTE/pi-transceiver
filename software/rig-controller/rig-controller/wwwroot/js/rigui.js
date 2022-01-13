@@ -139,3 +139,9 @@ document.getElementById("digit7down").addEventListener("click", function (event)
     event.preventDefault();
 });
 
+document.getElementById("txbutton").addEventListener("click", function (event) {
+    connection.invoke("ToggleTx").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});

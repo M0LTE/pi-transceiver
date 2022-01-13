@@ -17,6 +17,8 @@ import signal
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
+import xmlrpc.server as SimpleXMLRPCServer
+import threading
 import limesdr
 
 class SSB_TX(gr.top_block):
@@ -28,18 +30,24 @@ class SSB_TX(gr.top_block):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 32000
-        self.lime_serial = lime_serial = "1D5882F9FB64B6"
+        self.lime_serial = lime_serial = "1D588FD736569E"
+        self.freq_value = freq_value = 144000000
 
         ##################################################
         # Blocks
         ##################################################
+        self.xmlrpc_server_0 = SimpleXMLRPCServer.SimpleXMLRPCServer(('localhost', 8080), allow_none=True)
+        self.xmlrpc_server_0.register_instance(self)
+        self.xmlrpc_server_0_thread = threading.Thread(target=self.xmlrpc_server_0.serve_forever)
+        self.xmlrpc_server_0_thread.daemon = True
+        self.xmlrpc_server_0_thread.start()
         self.limesdr_sink_0 = limesdr.sink(lime_serial, 0, '', '')
 
 
         self.limesdr_sink_0.set_sample_rate(samp_rate)
 
 
-        self.limesdr_sink_0.set_center_freq(144200000, 0)
+        self.limesdr_sink_0.set_center_freq(freq_value, 0)
 
         self.limesdr_sink_0.set_bandwidth(5e6, 0)
 
@@ -47,7 +55,7 @@ class SSB_TX(gr.top_block):
         self.limesdr_sink_0.set_digital_filter(samp_rate, 0)
 
 
-        self.limesdr_sink_0.set_gain(63, 0)
+        self.limesdr_sink_0.set_gain(60, 0)
 
 
         self.limesdr_sink_0.set_antenna(255, 0)
@@ -92,6 +100,13 @@ class SSB_TX(gr.top_block):
 
     def set_lime_serial(self, lime_serial):
         self.lime_serial = lime_serial
+
+    def get_freq_value(self):
+        return self.freq_value
+
+    def set_freq_value(self, freq_value):
+        self.freq_value = freq_value
+        self.limesdr_sink_0.set_center_freq(self.freq_value, 0)
 
 
 
