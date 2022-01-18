@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+electronics/PSU Board/pi-tranceiver-psu/pi-tranceiver-psu-backups
