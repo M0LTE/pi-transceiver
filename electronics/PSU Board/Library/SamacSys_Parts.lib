@@ -1,0 +1,83 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model NE555DR
+#/6648/2/2.37/8/4/Integrated Circuit
+DEF NE555DR IC 0 30 Y Y 1 F N
+F0 "IC" 1050 600 50 H V L CNN
+F1 "NE555DR" 1050 500 50 H V L CNN
+F2 "SOIC127P600X175-8N" 1050 400 50 H I L CNN
+F3 "http://www.ti.com/lit/ds/symlink/ne555.pdf" 1050 300 50 H I L CNN
+F4 "Single Precision Timer" 1050 200 50 H I L CNN "Description"
+F5 "1.75" 1050 100 50 H I L CNN "Height"
+F6 "Texas Instruments" 1050 0 50 H I L CNN "Manufacturer_Name"
+F7 "NE555DR" 1050 -100 50 H I L CNN "Manufacturer_Part_Number"
+F8 "595-NE555DR" 1050 -200 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.com/Search/Refine.aspx?Keyword=595-NE555DR" 1050 -300 50 H I L CNN "Mouser Price/Stock"
+F10 "1218414" 1050 -400 50 H I L CNN "RS Part Number"
+F11 "http//uk.rs-online.com/web/p/products/1218414" 1050 -500 50 H I L CNN "RS Price/Stock"
+DRAW
+X GND 1 600 -1000 200 U 50 50 0 0 B
+X TRIG 2 0 -400 200 R 50 50 0 0 B
+X OUT 3 1200 -200 200 L 50 50 0 0 B
+X ~RESET 4 0 0 200 R 50 50 0 0 B
+X CONT 5 500 600 200 D 50 50 0 0 B
+X THRES 6 0 -300 200 R 50 50 0 0 B
+X DISCH 7 0 -100 200 R 50 50 0 0 B
+X VCC 8 700 600 200 D 50 50 0 0 B
+P 5 0 1 6 200 400 1000 400 1000 -800 200 -800 200 400 N
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model LM22678QTJ-ADJ_NOPB
+#/1262302/470636/2.49/8/4/Integrated Circuit
+DEF LM22678QTJ-ADJ_NOPB IC 0 30 Y Y 1 F N
+F0 "IC" 1050 300 50 H V L CNN
+F1 "LM22678QTJ-ADJ_NOPB" 1050 200 50 H V L CNN
+F2 "LM22678TJEADJNOPB" 1050 100 50 H I L CNN
+F3 "https://www.ti.com/lit/ds/symlink/lm22678.pdf" 1050 0 50 H I L CNN
+F4 "Switching Voltage Regulators 42V, 5A SIMPLE SWITCHER Step-Down Volta" 1050 -100 50 H I L CNN "Description"
+F5 "2" 1050 -200 50 H I L CNN "Height"
+F6 "926-LM22678QTJADJNPB" 1050 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM22678QTJ-ADJ-NOPB?qs=g9WlUi2XTnZqj5MC9O5MzQ%3D%3D" 1050 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Texas Instruments" 1050 -500 50 H I L CNN "Manufacturer_Name"
+F9 "LM22678QTJ-ADJ/NOPB" 1050 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X SW 1 0 0 200 R 50 50 0 0 P
+X VIN 2 0 -100 200 R 50 50 0 0 P
+X BOOT 3 0 -200 200 R 50 50 0 0 P
+X GND_1 4 0 -300 200 R 50 50 0 0 P
+X NC 5 0 -400 200 R 50 50 0 0 N
+X FB 6 0 -500 200 R 50 50 0 0 P
+X EN 7 0 -600 200 R 50 50 0 0 P
+X GND_2 8 1200 0 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1000 100 1000 -700 200 -700 200 100 N
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model LM2679S-ADJ_NOPB
+#/155485/470636/2.49/8/3/Integrated Circuit
+DEF LM2679S-ADJ_NOPB IC 0 30 Y Y 1 F N
+F0 "IC" 1250 300 50 H V L CNN
+F1 "LM2679S-ADJ_NOPB" 1250 200 50 H V L CNN
+F2 "TO127P1435X464-8N" 1250 100 50 H I L CNN
+F3 "http://www.ti.com/lit/ds/symlink/lm2679.pdf" 1250 0 50 H I L CNN
+F4 "SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit" 1250 -100 50 H I L CNN "Description"
+F5 "4.64" 1250 -200 50 H I L CNN "Height"
+F6 "926-LM2679S-ADJ/NOPB" 1250 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM2679S-ADJ-NOPB?qs=X1J7HmVL2ZGdZbHD%252BPn1rg%3D%3D" 1250 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Texas Instruments" 1250 -500 50 H I L CNN "Manufacturer_Name"
+F9 "LM2679S-ADJ/NOPB" 1250 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X SW_OUT 1 0 0 200 R 50 50 0 0 O
+X IN 2 0 -100 200 R 50 50 0 0 I
+X C_BOOST 3 0 -200 200 R 50 50 0 0 P
+X GND 4 0 -300 200 R 50 50 0 0 W
+X CURRENT_ADJ 5 0 -400 200 R 50 50 0 0 P
+X FB 6 0 -500 200 R 50 50 0 0 P
+X SS 7 0 -600 200 R 50 50 0 0 P
+X TAB 8 1400 0 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1200 100 1200 -700 200 -700 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
