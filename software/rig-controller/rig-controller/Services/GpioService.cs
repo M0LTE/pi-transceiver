@@ -2,23 +2,37 @@
 {
     public class GpioService
     {
-        private readonly ILogger<GpioService> logger;
+        private readonly ILogger<GpioService> _logger;
+        private static bool pigsWontFly;
 
         public GpioService (ILogger<GpioService> logger)
         {
-            this.logger = logger;
+            _logger = logger;
         }
         
         public Task SetGpio(int pin, bool state)
         {
+            if (pigsWontFly)
+            {
+                return Task.CompletedTask;
+            }
+
             if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                logger.LogTrace($"No GPIO on Windows ({pin}:{(state ? 1 : 0)}");
+                _logger.LogTrace($"No GPIO on Windows ({pin}:{(state ? 1 : 0)}");
                 return Task.CompletedTask;
             }
 
             // HACK - replace with https://abyz.me.uk/rpi/pigpio/sif.html#cmdCmd_t
-            System.Diagnostics.Process.Start("pigs", $"w {pin} {(state ? 1 : 0)}");
+            try
+            {
+                System.Diagnostics.Process.Start("pigs", $"w {pin} {(state ? 1 : 0)}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error calling pigs, won't try that any more (all GPIO setting is disabled from now on)");
+                pigsWontFly = true;
+            }
 
             return Task.CompletedTask;
         }
