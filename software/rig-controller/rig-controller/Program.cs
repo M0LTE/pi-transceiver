@@ -14,6 +14,7 @@ builder.Services.AddSingleton<GpioService>();
 builder.Services.AddTransient<PttService>();
 builder.Services.AddTransient<FlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
+builder.Services.AddTransient<IAdcChannelReaderService, ADS1115SysBusAdcChannelReaderService>();
 
 var app = builder.Build();
 
