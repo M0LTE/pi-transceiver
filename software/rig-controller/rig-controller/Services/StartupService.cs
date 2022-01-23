@@ -23,7 +23,7 @@ namespace rig_controller.Services
             await _gpioService.SetGpio(_rigOptions.RXTX_CHANGEOVER_RELAY_PIN, true);
             await _gpioService.SetGpio(_rigOptions.PA_RELAY_PIN, true);
 
-            _timer = new Timer(Tick, null, 0, 1000);
+            _timer = new Timer(Tick, null, 0, 10000);
         }
 
         private async void Tick(object? state)
@@ -41,7 +41,7 @@ namespace rig_controller.Services
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            _timer.Change(Timeout.Infinite, Timeout.Infinite);
+            _timer?.Change(Timeout.Infinite, Timeout.Infinite);
             return Task.CompletedTask;
         }
     }
