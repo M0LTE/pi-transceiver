@@ -32,7 +32,7 @@ namespace rig_controller.Services
             await AddLogLine("Server told UI to set frequency to " + f / 1000000.0);
 
             //test
-            await dacService.SetDAC(0x62, out v);
+            await dacService.SetDAC(0x62, out v,digits[7] * 600);
 
             await AddLogLine("DeviceId " + v);
         }

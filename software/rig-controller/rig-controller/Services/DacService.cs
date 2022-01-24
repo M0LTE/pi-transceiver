@@ -16,7 +16,7 @@ namespace rig_controller.Services
             Pi.Init<Unosquare.WiringPi.BootstrapWiringPi>();
         }
 
-        public Task SetDAC(int device, out int value)
+        public Task SetDAC(int device, out int value, int voltage)
         {
             //double scale = await GetScale(device, channel);
 
@@ -24,11 +24,19 @@ namespace rig_controller.Services
 
             value = myDevice.DeviceId;
 
-            foreach (var i2cdevice in Pi.I2C.Devices)
-            {
-                _logger.LogTrace($"Registered I2C Device: {i2cdevice.DeviceId}");
+            myDevice.Write(Convert.ToByte(0x40));
+            myDevice.Write(Convert.ToByte(voltage / 16));
+            myDevice.Write(Convert.ToByte((voltage % 16) << 4));
+
+            
+
+
+
+            //foreach (var i2cdevice in Pi.I2C.Devices)
+            //{
+            //    _logger.LogTrace($"Registered I2C Device: {i2cdevice.DeviceId}");
                
-            }
+            //}
 
             //if (!int.TryParse((await File.ReadAllTextAsync($"/sys/bus/iio/devices/iio:device{device}/in_voltage{channel}_raw")).Trim(), out int raw))
             //{
