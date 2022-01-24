@@ -9,7 +9,8 @@
 
 #include <Mouse.h>
 #include <Encoder.h>
-#include <USBAPI.h>
+//#include <USBAPI.h>
+#include <SoftWire.h>
 
 #define encoderStepsPerRev 400                   //number of steps per revolution of the encoder. Change this to match your encoder.  
 
@@ -21,6 +22,9 @@
 #define RIGHTBUTTON 5               //Connect buttons between these three pins and ground. 
 #define MIDDLEBUTTON 6
 
+#define SOFTSDAPIN 8               //Connect DA i2c
+#define SOFTSCLPIN 9
+
 #define SERIAL_BAUD     9600 // FlexKnob 9600 by default
 #define IS_FLEX 
 
@@ -31,6 +35,7 @@ int middleButton;
 int leftButtonReleased;
 int rightButtonReleased;
 int middleButtonReleased;
+int incomingByte = 0;
 
 Encoder Enc(RPHA, RPHB);
 
@@ -45,6 +50,7 @@ void setup()
 #if defined(__AVR_ATmega32U4__) //Check if we have hardware for mouse emulation
   mousesupport = true;
   #warning "Mouse support detected";
+  SoftWire sw(SOFTSDAPIN, SOFTSCLPIN);
 #endif
 
 #ifdef IS_FLEX //At the moment Flex emulation controlled by compile flag, later will change to checking digital input for physical switch
@@ -98,6 +104,15 @@ if (flex)
   {
     for (uint8_t i = 0; i < 1; i++) Serial.write("F0304;");
     start = false;
+  }
+
+  if (Serial.available() > 0) {
+    // read the incoming byte:
+    incomingByte = Serial.read();
+
+    // say what you got:
+    Serial.print("I received: ");
+    Serial.println(incomingByte, DEC);
   }
       
 }
