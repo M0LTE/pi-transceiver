@@ -1,0 +1,12 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Rilim,Vishay-Dale,CRCW04024K99FKED,1,0.01,3,Resistance: 4.99 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Rfb1,Vishay-Dale,CRCW04021K00FKED,1,0.01,3,Resistance: 1 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Rfb2,Vishay-Dale,CRCW04023K24FKED,1,0.01,3,Resistance: 3.24 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Cout,Panasonic,16SVP330M,1,0.4,159.9,Cap: 330 µF  Total Derated Cap: 330 µF  VDC: 16 V  ESR: 16 mΩ  Package: 10x12.6  
+D1,SMC Diode Solutions,SBRD10200TR,1,0.12,101.71,Type: Schottky  VRRM: 200 V  Io: 10 A  
+Cb,TDK,CGA4C2C0G1H103J060AA,1,0.06,6.75,Cap: 10 nF  Total Derated Cap: 10 nF  VDC: 50 V  ESR: 0 Ω  Package: 0805  
+L1,Bourns,SRP1270-100M,1,0.72,246.49,L: 10 µH  DCR: 16.8 mΩ  IDC: 10 A  
+Cinx,Kemet,C0805C104M5RACTU,1,0.01,6.75,Cap: 100 nF  Total Derated Cap: 100 nF  VDC: 50 V  ESR: 64 mΩ  Package: 0805  
+U1,Texas Instruments,LM2679SX-ADJ/NOPB,1,2.481,198.82,
+Cin,Panasonic,25SVPF180M,1,0.63,106.09,Cap: 180 µF  Total Derated Cap: 180 µF  VDC: 25 V  ESR: 16 mΩ  Package: 8x11.9  
+Css,TDK,CGA4C2C0G1H103J060AA,1,0.06,6.75,Cap: 10 nF  Total Derated Cap: 10 nF  VDC: 50 V  ESR: 0 Ω  Package: 0805  

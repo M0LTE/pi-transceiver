@@ -28,6 +28,7 @@ namespace rig_controller.Services
 
                 try
                 {
+                    sp.DtrEnable = true;
                     sp.Open();
                 }
                 catch (Exception)

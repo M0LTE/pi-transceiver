@@ -1,0 +1,21 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NE555DR
+D Single Precision Timer
+K
+F http://www.ti.com/lit/ds/symlink/ne555.pdf
+$ENDCMP
+#
+$CMP LM22678QTJ-ADJ_NOPB
+D Switching Voltage Regulators 42V, 5A SIMPLE SWITCHER Step-Down Volta
+K
+F https://www.ti.com/lit/ds/symlink/lm22678.pdf
+$ENDCMP
+#
+$CMP LM2679S-ADJ_NOPB
+D SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit
+K
+F http://www.ti.com/lit/ds/symlink/lm2679.pdf
+$ENDCMP
+#
+#End Doc Library
