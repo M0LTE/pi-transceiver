@@ -1,4 +1,4 @@
-﻿using Unosquare.RaspberryIO;
+﻿//using Unosquare.RaspberryIO;
 using System;
 using System.Runtime.InteropServices;
 
@@ -31,14 +31,14 @@ namespace rig_controller.Services
         {
             _logger = logger;
 
-            Pi.Init<Unosquare.WiringPi.BootstrapWiringPi>();
+            //Pi.Init<Unosquare.WiringPi.BootstrapWiringPi>();
         }
 
         public Task SetDAC(int device, out int value, bool writeEEPROM,UInt16 voltage)
         {
             //double scale = await GetScale(device, channel);
 
-            var myDevice =  Pi.I2C.AddDevice(0x62);
+            //var myDevice =  Pi.I2C.AddDevice(0x62);
 
             int i2cHandle = Open("/dev/i2c-1", OPEN_READ_WRITE);
             // mount the device at address 0x1A for communication
