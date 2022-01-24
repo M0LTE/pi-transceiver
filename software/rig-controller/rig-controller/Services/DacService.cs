@@ -16,7 +16,7 @@ namespace rig_controller.Services
             Pi.Init<Unosquare.WiringPi.BootstrapWiringPi>();
         }
 
-        public Task SetDAC(int device, int value)
+        public Task SetDAC(int device, out int value)
         {
             //double scale = await GetScale(device, channel);
 
