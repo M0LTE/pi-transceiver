@@ -8,17 +8,20 @@ namespace rig_controller.Services
         private readonly IHubContext<UiHub> uiHubContext;
         private readonly ILogger<UiUpdaterService> logger;
         private readonly RigStateService rigStateService;
+        private readonly DacService dacService;
 
-        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService)
+        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService, DacService dacService)
         {
             this.uiHubContext = uiHubContext;
             this.logger = logger;
             this.rigStateService = rigStateService;
+            this.dacService = dacService;
         }
 
         public async Task SetFrequency()
         {
             var f = rigStateService.RigState.Frequency;
+            var v = 0;
 
             string digits = (f / 1000000.0).ToString("0000.000");
 
@@ -27,6 +30,11 @@ namespace rig_controller.Services
             await uiHubContext.Clients.All.SendAsync("SetFrequency", digits[0], digits[1], digits[2], digits[3], digits[5], digits[6], digits[7]);
 
             await AddLogLine("Server told UI to set frequency to " + f / 1000000.0);
+
+            //test
+            await dacService.Write(0x62, v);
+
+            await AddLogLine("DeviceId " + v);
         }
 
         public async Task AddLogLine(string message)

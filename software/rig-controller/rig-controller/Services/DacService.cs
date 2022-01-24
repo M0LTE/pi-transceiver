@@ -13,12 +13,15 @@ namespace rig_controller.Services
         {
             //double scale = await GetScale(device, channel);
 
-            var myDevice = Pi.I2C.AddDevice(0x63);
+            var myDevice = Pi.I2C.AddDevice(0x62);
 
-            foreach (var i2cdevice in Pi.I2C.Devices)
-            {
-                Console.WriteLine($"Registered I2C Device: {i2cdevice.DeviceId}");
-            }
+            value = myDevice.DeviceId;
+
+            //foreach (var i2cdevice in Pi.I2C.Devices)
+            //{
+            //    Console.WriteLine($"Registered I2C Device: {i2cdevice.DeviceId}");
+            //    value = 
+            //}
 
             //if (!int.TryParse((await File.ReadAllTextAsync($"/sys/bus/iio/devices/iio:device{device}/in_voltage{channel}_raw")).Trim(), out int raw))
             //{

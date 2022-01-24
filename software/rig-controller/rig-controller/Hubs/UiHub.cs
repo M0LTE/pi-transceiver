@@ -9,15 +9,15 @@ namespace rig_controller.Hubs
         private readonly RigStateService rigStateService;
         private readonly PttService pttService;
         private readonly ILogger<UiHub> logger;
-        private readonly DacService dacService;
+      
 
-        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, PttService pttService, ILogger<UiHub> logger, DacService dacService)
+        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, PttService pttService, ILogger<UiHub> logger)
         {
             this.uiUpdaterService = uiUpdaterService;
             this.rigStateService = rigStateService;
             this.pttService = pttService;
             this.logger = logger;
-            this.dacService = dacService;
+            
         }
 
         public async Task SetFrequencyDigit(int digitNumber, bool up)
@@ -43,8 +43,7 @@ namespace rig_controller.Hubs
         {
             await uiUpdaterService.SetFrequency();
 
-            //test
-            await dacService.Write(0x63, 100);
+            
         }
 
         public async Task ToggleTx()
