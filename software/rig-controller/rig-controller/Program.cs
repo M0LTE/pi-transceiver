@@ -15,7 +15,9 @@ builder.Services.AddTransient<PttService>();
 builder.Services.AddTransient<FlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
 builder.Services.AddTransient<IAdcChannelReaderService, ADS1115SysBusAdcChannelReaderService>();
-builder.Services.AddTransient<IDacChannelWriterService, DacService>();
+builder.Services.AddSingleton<i2cDacService>();
+
+
 
 
 var app = builder.Build();

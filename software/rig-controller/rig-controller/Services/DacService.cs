@@ -1,27 +1,32 @@
 ﻿using Unosquare.RaspberryIO;
 
+
 namespace rig_controller.Services
 {
-    public interface IDacChannelWriterService
+    
+    public class i2cDacService 
     {
-        Task<AdcWriting> Write(int device, int value);
-    }
-    public class DacService : IDacChannelWriterService
-    {
-       
-        public async Task<AdcWriting> Write(int device, int value)
+
+        private readonly ILogger<i2cDacService> _logger;
+
+        public i2cDacService(ILogger<i2cDacService> logger)
+        {
+            _logger = logger;
+        }
+
+        public Task SetDAC(int device, int value)
         {
             //double scale = await GetScale(device, channel);
 
-            var myDevice = Pi.I2C.AddDevice(0x62);
+            var myDevice =  Pi.I2C.AddDevice(0x62);
 
             value = myDevice.DeviceId;
 
-            //foreach (var i2cdevice in Pi.I2C.Devices)
-            //{
-            //    Console.WriteLine($"Registered I2C Device: {i2cdevice.DeviceId}");
-            //    value = 
-            //}
+            foreach (var i2cdevice in Pi.I2C.Devices)
+            {
+                _logger.LogTrace($"Registered I2C Device: {i2cdevice.DeviceId}");
+               
+            }
 
             //if (!int.TryParse((await File.ReadAllTextAsync($"/sys/bus/iio/devices/iio:device{device}/in_voltage{channel}_raw")).Trim(), out int raw))
             //{
@@ -30,13 +35,9 @@ namespace rig_controller.Services
 
             //var millivolts = (int)(raw * scale);
 
-            return new AdcWriting { Device = device, Value = value };
+            return Task.CompletedTask;
         }
     }
 
-    public record AdcWriting
-    {
-        public int Device { get; set; }
-        public int Value { get; set; }
-    }
+ 
 }

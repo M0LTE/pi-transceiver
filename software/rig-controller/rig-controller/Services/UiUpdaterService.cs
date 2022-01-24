@@ -8,9 +8,9 @@ namespace rig_controller.Services
         private readonly IHubContext<UiHub> uiHubContext;
         private readonly ILogger<UiUpdaterService> logger;
         private readonly RigStateService rigStateService;
-        private readonly DacService dacService;
+        private readonly i2cDacService dacService;
 
-        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService, DacService dacService)
+        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService, i2cDacService dacService)
         {
             this.uiHubContext = uiHubContext;
             this.logger = logger;
@@ -32,7 +32,7 @@ namespace rig_controller.Services
             await AddLogLine("Server told UI to set frequency to " + f / 1000000.0);
 
             //test
-            await dacService.Write(0x62, v);
+            await dacService.SetDAC(0x62, v);
 
             await AddLogLine("DeviceId " + v);
         }
