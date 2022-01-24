@@ -47,7 +47,7 @@ namespace rig_controller.Services
 
             value = deviceReturnCode;
 
-            byte[] data = new byte[2];
+            byte[] data = new byte[3];
 
             data[0] = writeEEPROM ? MCP4726_CMD_WRITEDACEEPROM : MCP4726_CMD_WRITEDAC;
 
