@@ -12,6 +12,8 @@ namespace rig_controller.Services
         public i2cDacService(ILogger<i2cDacService> logger)
         {
             _logger = logger;
+
+            Pi.Init<Unosquare.WiringPi.BootstrapWiringPi>();
         }
 
         public Task SetDAC(int device, int value)
