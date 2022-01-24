@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
-    <PackageReference Include="Unosquare.Raspberry.IO" Version="0.27.1" />
-    <PackageReference Include="Unosquare.WiringPi" Version="0.5.1" />
   </ItemGroup>
 
 </Project>
