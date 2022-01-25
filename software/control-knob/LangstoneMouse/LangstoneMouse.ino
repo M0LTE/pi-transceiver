@@ -1,16 +1,16 @@
 // Rotary Encoder and Button Mouse Emulation for Langstone Transceiver. By Colin Durbridge G4EML
-// for Arduino Pro Micro Board. (5V 16MHz Version) (won't work with all Arduinos. Needs the ATmega32U4 chip for USB Mouse emulation.  
+// for Arduino Pro Micro Board. (5V 16MHz Version) (won't work with all Arduinos. Needs the ATmega32U4 chip for USB Mouse emulation.
 // Needs the Encoder Library by Paul Stoffregen. (Search for Encoder in Library Manager)
 // Rotary encoder (used as tuning knob) is read and scaled to suitable output pulses per revolution then sent as mouse scroll wheel movement every 20 ms.
-// 3 Buttons (used to select tuning rate and dial lock) are read and sent as mouse clicks on the left, middle and right mouse buttons. 
+// 3 Buttons (used to select tuning rate and dial lock) are read and sent as mouse clicks on the left, middle and right mouse buttons.
 //
 // Mod by M0ZSU, if flex flag is set, do not emulate mouse, send Flex like ASCII on the serial port instead.
 // TODO :Implement buttons, add compile flags so it can compile as Flex only with non ATmega32U4 boards as Flex emulation only needs serial port.
 
 #include <Mouse.h>
 #include <Encoder.h>
-//#include <USBAPI.h>
-#include <SoftWire.h>
+// #include <SoftWire.h>
+
 
 #define encoderStepsPerRev 400                   //number of steps per revolution of the encoder. Change this to match your encoder.  
 
@@ -22,11 +22,11 @@
 #define RIGHTBUTTON 5               //Connect buttons between these three pins and ground. 
 #define MIDDLEBUTTON 6
 
-#define SOFTSDAPIN 8               //Connect DA i2c
-#define SOFTSCLPIN 9
+#define FLEXSELECTPIN 7               //Short to ground to select FlexKnob emulation mode
+
 
 #define SERIAL_BAUD     9600 // FlexKnob 9600 by default
-#define IS_FLEX 
+
 
 int encoderDiv;
 int leftButton;
@@ -36,6 +36,7 @@ int leftButtonReleased;
 int rightButtonReleased;
 int middleButtonReleased;
 int incomingByte = 0;
+int flexswitch;
 
 Encoder Enc(RPHA, RPHB);
 
@@ -44,145 +45,169 @@ bool start = true;
 bool mousesupport = false;
 
 
-void setup() 
+void setup()
 {
 
-#if defined(__AVR_ATmega32U4__) //Check if we have hardware for mouse emulation
+#if defined(__AVR_ATmega32U4__) //Check if we have hardware for mouse emulation at compile time
   mousesupport = true;
-  #warning "Mouse support detected";
-  SoftWire sw(SOFTSDAPIN, SOFTSCLPIN);
+#warning "Mouse support detected";
+  //SoftWire sw(SOFTSDAPIN, SOFTSCLPIN);
 #endif
 
-#ifdef IS_FLEX //At the moment Flex emulation controlled by compile flag, later will change to checking digital input for physical switch
-  flex = true;
-#endif
+  pinMode(FLEXSELECTPIN, INPUT_PULLUP); // Physical switch on pin 7 to select mouse emulation (Langstone etc.) or FlexKnob emulation.
+  flexswitch = digitalRead(FLEXSELECTPIN);
 
-  
- encoderDiv=(encoderStepsPerRev*4)/outputStepsPerRev;                     // calculate the requred encoder divisor. (Encoder library outputs 4 steps per input step)
- pinMode(LEFTBUTTON,INPUT_PULLUP);
- pinMode(RIGHTBUTTON,INPUT_PULLUP);
- pinMode(MIDDLEBUTTON,INPUT_PULLUP);
- leftButtonReleased=false;
- rightButtonReleased=false; 
- middleButtonReleased=false; 
+  flex = ((flexswitch == LOW) or (mousesupport == false)); // If there is no mouse hardware we have to run in Flex mode.
 
- if (mousesupport == false) //if there is no mouse hardware force Flex mode
- {
-  flex=true;
- }
 
- if (flex)
+  encoderDiv=(encoderStepsPerRev*4)/outputStepsPerRev;                     // calculate the requred encoder divisor. (Encoder library outputs 4 steps per input step)
+  pinMode(LEFTBUTTON,INPUT_PULLUP);
+  pinMode(RIGHTBUTTON,INPUT_PULLUP);
+  pinMode(MIDDLEBUTTON,INPUT_PULLUP);
+  leftButtonReleased=false;
+  rightButtonReleased=false;
+  middleButtonReleased=false;
+
+  if (mousesupport == false) //if there is no mouse hardware force Flex mode
   {
-    Serial.begin(SERIAL_BAUD);
-  }
- else
- {
-    Mouse.begin();
- }
-
- 
+  flex=true;
 }
 
-void loop() 
-{
-delay(20);     //delay to slow down the rate of USB messages. 50 per second is plenty. 
+  if (flex)
+  {
+  Serial.begin(SERIAL_BAUD);
+}
+  else
+  {
+  Mouse.begin();
+}
 
-if (flex) 
-{
- 
+
+}
+
+  void loop()
+  {
+  delay(20);     //delay to slow down the rate of USB messages. 50 per second is plenty.
+
+  if (flex)
+  {
+
   if (Serial.dtr() == false) // Send ID code once when port becomes active, currently this is done by checking DTR
   {
-    start= true;
-    while (Serial.dtr() == false)
-      {
-        ;
-      }
-      
-  }
+  start= true;
+  while (Serial.dtr() == false)
+  {
+  ;
+}
+
+}
 
   if (start)
   {
-    for (uint8_t i = 0; i < 1; i++) Serial.write("F0304;");
-    start = false;
-  }
-
-  if (Serial.available() > 0) {
-    // read the incoming byte:
-    incomingByte = Serial.read();
-
-    // say what you got:
-    Serial.print("I received: ");
-    Serial.println(incomingByte, DEC);
-  }
-      
+  for (uint8_t i = 0; i < 1; i++) Serial.write("F0304;");
+  start = false;
 }
-   
-long counts = Enc.read()/encoderDiv;    //number of encoder counts since last sent to USB.
 
-if(counts!=0)
+  //  if (Serial.available() > 0) {
+  //    // read the incoming byte:
+  //    incomingByte = Serial.read();
+  //
+  //    // say what you got:
+  //    Serial.print("I received: ");
+  //    Serial.println(incomingByte, DEC);
+  //  }
+
+}
+
+  long counts = Enc.read()/encoderDiv;    //number of encoder counts since last sent to USB.
+
+  if(counts!=0)
   {
-    if (!flex)
-    {
-        Mouse.move(0,0,counts);
-    }
-      else
-      {
-        if (counts> 0)
-        {
-          for (uint8_t i = 0; i < counts; i++) Serial.write("U;");
-        }
-        else if (counts< 0)
-         {
-          for (long i = counts; i < 0; i++) Serial.write("D;");
-        }
-    
-      }
+  if (!flex)
+  {
+  Mouse.move(0,0,counts);
+}
+  else
+  {
+  if (counts> 0)
+  {
+  for (uint8_t i = 0; i < counts; i++) Serial.write("U;");
+}
+  else if (counts< 0)
+  {
+  for (long i = counts; i < 0; i++) Serial.write("D;");
+}
+
+}
   Enc.write(0);                         //reset the encoder counts
-  }
-  
+}
+
   leftButton=digitalRead(LEFTBUTTON);
   rightButton=digitalRead(RIGHTBUTTON);
   middleButton=digitalRead(MIDDLEBUTTON);
 
   if(leftButton==LOW)
-    {
-     if(leftButtonReleased>=3)
-      {
-       Mouse.click(MOUSE_LEFT); 
-       leftButtonReleased=false; 
-      }
-    }
+  {
+  if(leftButtonReleased>=3)
+  {
+  if (!flex)
+  {
+  Mouse.click(MOUSE_LEFT);
+  
+}
   else
-    {
-      if(leftButtonReleased<3) leftButtonReleased=leftButtonReleased+1;
-    }
+  {
+  Serial.write("X1;");
+}
+  leftButtonReleased=false;
+}
+}
+  else
+  {
+  if(leftButtonReleased<3) leftButtonReleased=leftButtonReleased+1;
+}
 
-    
+
   if(rightButton==LOW)
-    {
-     if(rightButtonReleased>=3)
-      {
-       Mouse.click(MOUSE_RIGHT);  
-       rightButtonReleased=false;
-      }
-    }
+  {
+  if(rightButtonReleased>=3)
+  {
+  if (!flex)
+  {
+  Mouse.click(MOUSE_RIGHT);
+}
   else
-    {
-      if(rightButtonReleased<3) rightButtonReleased=rightButtonReleased+1;
-    }
+  {
+  Serial.write("X3;");
+}
+  rightButtonReleased=false;
+}
+}
+  else
+  {
+  if(rightButtonReleased<3) rightButtonReleased=rightButtonReleased+1;
+}
 
 
   if(middleButton==LOW)
-    {
-     if(middleButtonReleased>=3)
-      {
-       Mouse.click(MOUSE_MIDDLE);  
-       middleButtonReleased=false;
-      }
-    }
+  {
+  if(middleButtonReleased>=3)
+  {
+  if (!flex)
+  {
+  Mouse.click(MOUSE_MIDDLE);
+}
   else
-    {
-      if(middleButtonReleased<3) middleButtonReleased=middleButtonReleased+1;
-    }
+  {
+  Serial.write("X2;");
+}
+
+  middleButtonReleased=false;
+}
+}
+  else
+  {
+  if(middleButtonReleased<3) middleButtonReleased=middleButtonReleased+1;
+}
 
 }
