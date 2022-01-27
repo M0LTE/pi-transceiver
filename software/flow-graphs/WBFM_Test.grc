@@ -106,7 +106,7 @@ blocks:
     device_name: ''
     num_inputs: '1'
     ok_to_block: 'True'
-    samp_rate: '44100'
+    samp_rate: '48000'
   states:
     bus_sink: false
     bus_source: false
@@ -199,7 +199,7 @@ blocks:
     alias: ''
     comment: ''
     decim: '200'
-    fbw: '0'
+    fbw: '0.1'
     interp: '48'
     maxoutbuf: '0'
     minoutbuf: '0'

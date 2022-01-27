@@ -7,7 +7,7 @@
 # GNU Radio Python Flow Graph
 # Title: FM receiver
 # Author: Lime Microsystems
-# GNU Radio version: 3.8.1.0
+# GNU Radio version: 3.8.5.0
 
 from gnuradio import analog
 from gnuradio import audio
@@ -21,6 +21,7 @@ from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
 import limesdr
+
 
 class WBFM_Test(gr.top_block):
 
@@ -42,7 +43,7 @@ class WBFM_Test(gr.top_block):
                 interpolation=48,
                 decimation=200,
                 taps=None,
-                fractional_bw=None)
+                fractional_bw=0.1)
         self.low_pass_filter_0_1 = filter.fir_filter_ccf(
             1,
             firdes.low_pass(
@@ -71,12 +72,11 @@ class WBFM_Test(gr.top_block):
 
         self.limesdr_source_0_0.set_antenna(255, 0)
         self.blocks_multiply_const_vxx_0_1 = blocks.multiply_const_ff(volume)
-        self.audio_sink_0_0 = audio.sink(44100, '', True)
+        self.audio_sink_0_0 = audio.sink(48000, '', True)
         self.analog_wfm_rcv_0_1 = analog.wfm_rcv(
         	quad_rate=480e3,
         	audio_decimation=10,
         )
-
 
 
         ##################################################
@@ -87,6 +87,7 @@ class WBFM_Test(gr.top_block):
         self.connect((self.limesdr_source_0_0, 0), (self.low_pass_filter_0_1, 0))
         self.connect((self.low_pass_filter_0_1, 0), (self.rational_resampler_xxx_1_0_1, 0))
         self.connect((self.rational_resampler_xxx_1_0_1, 0), (self.analog_wfm_rcv_0_1, 0))
+
 
     def get_volume(self):
         return self.volume
@@ -119,18 +120,22 @@ class WBFM_Test(gr.top_block):
 
 
 
+
+
 def main(top_block_cls=WBFM_Test, options=None):
     tb = top_block_cls()
 
     def sig_handler(sig=None, frame=None):
         tb.stop()
         tb.wait()
+
         sys.exit(0)
 
     signal.signal(signal.SIGINT, sig_handler)
     signal.signal(signal.SIGTERM, sig_handler)
 
     tb.start()
+
     try:
         input('Press Enter to quit: ')
     except EOFError:
