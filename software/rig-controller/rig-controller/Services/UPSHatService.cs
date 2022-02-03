@@ -95,8 +95,8 @@ namespace rig_controller.Services
         {
             deviceaddress = deviceAddress;
 
-          
-            return Task.CompletedTask
+
+            return Task.CompletedTask;
         }
 
         public Task INA219_Write(byte register, int data)
