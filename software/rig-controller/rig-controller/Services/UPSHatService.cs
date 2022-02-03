@@ -95,7 +95,8 @@ namespace rig_controller.Services
         {
             deviceaddress = deviceAddress;
 
-            return Task.CompletedTask;
+          
+            return Task.CompletedTask
         }
 
         public Task INA219_Write(byte register, int data)
@@ -177,7 +178,7 @@ namespace rig_controller.Services
             }
             shunt_voltage = (float)(val * 0.01);
 
-            //self.write(_REG_CALIBRATION, self._cal_value)
+            await INA219_Write(REG_CALIBRATION, cal_value);
             await INA219_Read(REG_BUSVOLTAGE, out val);
             bus_voltage = (float)((val >> 3) * 0.004);
 
@@ -188,7 +189,7 @@ namespace rig_controller.Services
             }
             current_ma = (float)(val * current_lsb);
 
-            //self.write(_REG_CALIBRATION, self._cal_value)
+            await INA219_Write(REG_CALIBRATION, cal_value);
             await INA219_Read(REG_POWER, out val);
             if (val > 32767)
             {
