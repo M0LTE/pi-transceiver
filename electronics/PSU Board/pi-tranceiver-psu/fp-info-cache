@@ -1,4 +1,4 @@
-19819967552720693
+19826539738036211
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -60304,6 +60304,34 @@ DIL DIP PDIP 2.54mm 7.62mm 300mil
 0
 4
 4
+PSU_Board
+DMT6002LPS13
+PowerDI5060-8 (Type K)_2021-1
+MOSFET (N-Channel)
+0
+11
+11
+PSU_Board
+FuseHolder
+3557-20-1
+Undefined or Miscellaneous
+0
+4
+4
+PSU_Board
+SOP50P490X110-10N
+-Lead Plastic MSOP
+Integrated Circuit
+0
+10
+10
+PSU_Board
+SRP1265C-150M
+SRP1265C-150M
+Inductor
+0
+2
+2
 PSU_Board
 TO127P1435X464-8N
 KTW0007B
