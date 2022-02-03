@@ -17,14 +17,17 @@ namespace rig_controller.Services
             this.logger = logger;
             this.rigStateService = rigStateService;
             this.dacService = dacService;
-            this.upshatService = new UPSHatService(0x42);
+            this.upshatService = upshatService;
         }
 
         public async Task SetFrequency()
         {
             var f = rigStateService.RigState.Frequency;
             var v = 0;
+
             INA219_Reading reading;
+
+            await upshatService.SetAddress(0x42);
 
             string digits = (f / 1000000.0).ToString("0000.000");
 

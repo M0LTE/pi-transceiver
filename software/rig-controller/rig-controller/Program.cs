@@ -16,6 +16,7 @@ builder.Services.AddTransient<FlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
 builder.Services.AddTransient<IAdcChannelReaderService, ADS1115SysBusAdcChannelReaderService>();
 builder.Services.AddSingleton<i2cDacService>();
+builder.Services.AddSingleton<UPSHatService>();
 
 
 

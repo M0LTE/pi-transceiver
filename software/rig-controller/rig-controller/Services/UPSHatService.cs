@@ -56,7 +56,7 @@ namespace rig_controller.Services
         const byte MODE_BVOLT_CONTINUOUS = 0x06;      // bus voltage continuous
         const byte MODE_SANDBVOLT_CONTINUOUS = 0x07;      // shunt and bus voltage continuous
 
-        private byte deviceaddress;
+
 
         private int cal_value = 0;
         private double current_lsb = 0;
@@ -84,10 +84,18 @@ namespace rig_controller.Services
         [DllImport("libc.so.6", EntryPoint = "write", SetLastError = true)]
         private static extern int Write(int handle, byte[] data, int length);
 
+        private byte  deviceaddress;
 
-        public UPSHatService(byte deviceAddress)
+        public UPSHatService()
+        {
+            
+        }
+
+        public Task SetAddress(byte deviceAddress)
         {
             deviceaddress = deviceAddress;
+
+            return Task.CompletedTask;
         }
 
         public Task INA219_Write(byte register, int data)
@@ -142,7 +150,7 @@ namespace rig_controller.Services
             shunt_adc_resolution = ADCRES_12BIT_32S;
             mode = MODE_SANDBVOLT_CONTINUOUS;
 
-            config =bus_voltage_range << 13 | gain << 11 | bus_adc_resolution << 7 | shunt_adc_resolution << 3 | mode;
+            config = bus_voltage_range << 13 | gain << 11 | bus_adc_resolution << 7 | shunt_adc_resolution << 3 | mode;
 
 
             INA219_Write(REG_CONFIG, config);
@@ -163,17 +171,19 @@ namespace rig_controller.Services
 
             await INA219_Write(REG_CALIBRATION, cal_value);
             await INA219_Read(REG_SHUNTVOLTAGE, out val);
-            if (val > 32767) {
-               val -= 65535;
+            if (val > 32767)
+            {
+                val -= 65535;
             }
-            shunt_voltage = (float) (val * 0.01);
+            shunt_voltage = (float)(val * 0.01);
 
             //self.write(_REG_CALIBRATION, self._cal_value)
             await INA219_Read(REG_BUSVOLTAGE, out val);
             bus_voltage = (float)((val >> 3) * 0.004);
 
             await INA219_Read(REG_CURRENT, out val);
-        if (val > 32767) {
+            if (val > 32767)
+            {
                 val -= 65535;
             }
             current_ma = (float)(val * current_lsb);
@@ -190,7 +200,7 @@ namespace rig_controller.Services
 
             on_battery = (current_ma < 0);
 
-            return new INA219_Reading {  Bus_voltage = bus_voltage,Shunt_voltage = shunt_voltage, Current_ma = current_ma,Power_w = power_w, Percent = percent,On_battery = on_battery };
+            return new INA219_Reading { Bus_voltage = bus_voltage, Shunt_voltage = shunt_voltage, Current_ma = current_ma, Power_w = power_w, Percent = percent, On_battery = on_battery };
         }
 
 
