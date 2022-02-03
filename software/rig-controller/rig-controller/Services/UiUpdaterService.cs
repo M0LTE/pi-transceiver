@@ -9,19 +9,22 @@ namespace rig_controller.Services
         private readonly ILogger<UiUpdaterService> logger;
         private readonly RigStateService rigStateService;
         private readonly i2cDacService dacService;
+        private readonly UPSHatService upshatService;
 
-        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService, i2cDacService dacService)
+        public UiUpdaterService(IHubContext<UiHub> uiHubContext, ILogger<UiUpdaterService> logger, RigStateService rigStateService, i2cDacService dacService, UPSHatService upshatService)
         {
             this.uiHubContext = uiHubContext;
             this.logger = logger;
             this.rigStateService = rigStateService;
             this.dacService = dacService;
+            this.upshatService = new UPSHatService(0x42);
         }
 
         public async Task SetFrequency()
         {
             var f = rigStateService.RigState.Frequency;
             var v = 0;
+            INA219_Reading reading;
 
             string digits = (f / 1000000.0).ToString("0000.000");
 
@@ -35,6 +38,12 @@ namespace rig_controller.Services
             await dacService.SetDAC(0x62, out v, false,Convert.ToUInt16( f / 1000000.0));
 
             await AddLogLine("DeviceId " + v);
+
+            reading = await upshatService.Read();
+
+            await AddLogLine("Battery " + reading.Percent );
+
+
         }
 
         public async Task AddLogLine(string message)
