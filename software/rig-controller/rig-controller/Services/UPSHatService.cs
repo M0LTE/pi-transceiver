@@ -104,8 +104,8 @@ namespace rig_controller.Services
             byte[] temp = new byte[3];
 
             temp[0] = register;
-            temp[2] = (byte)(data & 0xFF);
-            temp[1] = (byte)((data & 0xFF00) >> 8);
+            temp[1] = (byte)(data & 0xFF);
+            temp[2] = (byte)((data & 0xFF00) >> 8);
 
             int i2cHandle = Open("/dev/i2c-1", OPEN_READ_WRITE);
             // mount the device at address 'device' for communication
