@@ -45,6 +45,7 @@ namespace rig_controller.Services
             reading = await upshatService.Read();
 
             await AddLogLine("Battery " + reading.Percent );
+            await AddLogLine("Bus V " + reading.Bus_voltage);
 
 
         }
