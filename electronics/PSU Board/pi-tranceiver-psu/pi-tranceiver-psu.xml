@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\GarethBlades\OneDrive - Eseye\Documents\GitHub\pi-transceiver\electronics\PSU Board\pi-tranceiver-psu\pi-tranceiver-psu.kicad_sch</source>
+    <date>21/01/2022 14:59:37</date>
+    <tool>Eeschema (6.0.1)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>pi-tranceiver-psu.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611f2563</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611f32bf</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611f3cc0</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1nF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000612080a7</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>330uF</value>
+      <footprint>CAPAE660X770N</footprint>
+      <datasheet>http://katalog.we-online.de/pbs/datasheet/865080545012.pdf</datasheet>
+      <fields>
+        <field name="Description">Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm</field>
+        <field name="Height">7.7</field>
+        <field name="Manufacturer_Name">Wurth Elektronik</field>
+        <field name="Manufacturer_Part_Number">865080545012</field>
+        <field name="Mouser Part Number">710-865080545012</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts" part="865080545012" description=""/>
+      <property name="Description" value="Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm"/>
+      <property name="Height" value="7.7"/>
+      <property name="Mouser Part Number" value="710-865080545012"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D"/>
+      <property name="Manufacturer_Name" value="Wurth Elektronik"/>
+      <property name="Manufacturer_Part_Number" value="865080545012"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006120d999</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>10nF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>499e6dbe-afef-4741-a182-f5eb5809beb2</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ae8e6a57-da88-4fc2-a435-e3e6aa3bc05e</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>10nF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6a74f39b-fca1-4ec0-9207-5a9ce8f693a3</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>330uF</value>
+      <footprint>CAPAE660X770N</footprint>
+      <datasheet>http://katalog.we-online.de/pbs/datasheet/865080545012.pdf</datasheet>
+      <fields>
+        <field name="Description">Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm</field>
+        <field name="Height">7.7</field>
+        <field name="Manufacturer_Name">Wurth Elektronik</field>
+        <field name="Manufacturer_Part_Number">865080545012</field>
+        <field name="Mouser Part Number">710-865080545012</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts" part="865080545012" description=""/>
+      <property name="Description" value="Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm"/>
+      <property name="Height" value="7.7"/>
+      <property name="Mouser Part Number" value="710-865080545012"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D"/>
+      <property name="Manufacturer_Name" value="Wurth Elektronik"/>
+      <property name="Manufacturer_Part_Number" value="865080545012"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2d25826c-159a-420f-bd15-081a9746af2b</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>100uF</value>
+      <footprint>CAPAE660X770N</footprint>
+      <datasheet>http://katalog.we-online.de/pbs/datasheet/865080545012.pdf</datasheet>
+      <fields>
+        <field name="Description">Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm</field>
+        <field name="Height">7.7</field>
+        <field name="Manufacturer_Name">Wurth Elektronik</field>
+        <field name="Manufacturer_Part_Number">865080545012</field>
+        <field name="Mouser Part Number">710-865080545012</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts" part="865080545012" description=""/>
+      <property name="Description" value="Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm"/>
+      <property name="Height" value="7.7"/>
+      <property name="Mouser Part Number" value="710-865080545012"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D"/>
+      <property name="Manufacturer_Name" value="Wurth Elektronik"/>
+      <property name="Manufacturer_Part_Number" value="865080545012"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8f32af4f-847c-4a57-92a0-c9818043d538</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>100uF</value>
+      <footprint>CAPAE660X770N</footprint>
+      <datasheet>http://katalog.we-online.de/pbs/datasheet/865080545012.pdf</datasheet>
+      <fields>
+        <field name="Description">Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm</field>
+        <field name="Height">7.7</field>
+        <field name="Manufacturer_Name">Wurth Elektronik</field>
+        <field name="Manufacturer_Part_Number">865080545012</field>
+        <field name="Mouser Part Number">710-865080545012</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts" part="865080545012" description=""/>
+      <property name="Description" value="Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm"/>
+      <property name="Height" value="7.7"/>
+      <property name="Mouser Part Number" value="710-865080545012"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D"/>
+      <property name="Manufacturer_Name" value="Wurth Elektronik"/>
+      <property name="Manufacturer_Part_Number" value="865080545012"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bae8ec93-951f-4399-932d-4c08dd039d22</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>15V</value>
+      <footprint>Diode_SMD:D_0805_2012Metric</footprint>
+      <libsource lib="Device" part="D_Zener" description="Zener diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006165a556</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>9.1V</value>
+      <footprint>Diode_SMD:D_0805_2012Metric</footprint>
+      <libsource lib="Device" part="D_Zener" description="Zener diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8a2747cd-9545-4996-b99f-a27623db4e36</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>1N4001</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4001" description="50V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e5c57d66-bbfe-4009-839a-c968db37e6dc</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>D_Schottky</value>
+      <libsource lib="Device" part="D_Schottky" description="Schottky diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>83768ea4-200c-4008-be07-c7dd29281d2b</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>4.3V</value>
+      <footprint>Diode_SMD:D_0805_2012Metric</footprint>
+      <libsource lib="Device" part="D_Zener" description="Zener diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>218fdd35-eac1-475c-80a5-7c1d0c7e3970</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>1N4001</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4001" description="50V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b73175c4-514f-4fcd-888b-07a3b1af842f</tstamps>
+    </comp>
+    <comp ref="D7">
+      <value>1N4001</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4001" description="50V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8bfd8e3b-2a9e-4cf1-85ab-96450b3e9295</tstamps>
+    </comp>
+    <comp ref="D8">
+      <value>1N4001</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4001" description="50V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1632f440-1489-4f3b-97a1-7ec1dcfbe531</tstamps>
+    </comp>
+    <comp ref="D9">
+      <value>1N4001</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4001" description="50V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e5dbcf36-1441-4ef7-9f56-8b198d7c1735</tstamps>
+    </comp>
+    <comp ref="D10">
+      <value>1N4001</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4001" description="50V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bd653fb2-6bf2-4907-9639-0df82ab7e18d</tstamps>
+    </comp>
+    <comp ref="IC1">
+      <value>LTC4368IMS-2#PBF</value>
+      <footprint>SOP50P490X110-10N</footprint>
+      <datasheet>https://www.arrow.com/en/products/ltc4368ims-2pbf/analog-devices</datasheet>
+      <fields>
+        <field name="Description">Surge Suppressors 100V OV, UV, OC and Reverse Supply Protection Controller with -3mV Reverse Threshold</field>
+        <field name="Height">1.1</field>
+        <field name="Manufacturer_Name">Analog Devices</field>
+        <field name="Manufacturer_Part_Number">LTC4368IMS-2#PBF</field>
+        <field name="Mouser Part Number">584-LTC4368IMS2PBF</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Analog-Devices/LTC4368IMS-2PBF?qs=5aG0NVq1C4yQGBsRaTKLEg%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts" part="LTC4368IMS-2#PBF" description=""/>
+      <property name="Description" value="Surge Suppressors 100V OV, UV, OC and Reverse Supply Protection Controller with -3mV Reverse Threshold"/>
+      <property name="Height" value="1.1"/>
+      <property name="Mouser Part Number" value="584-LTC4368IMS2PBF"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Analog-Devices/LTC4368IMS-2PBF?qs=5aG0NVq1C4yQGBsRaTKLEg%3D%3D"/>
+      <property name="Manufacturer_Name" value="Analog Devices"/>
+      <property name="Manufacturer_Part_Number" value="LTC4368IMS-2#PBF"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611e624f</tstamps>
+    </comp>
+    <comp ref="IC2">
+      <value>LM2679S-ADJ_NOPB</value>
+      <footprint>PSU_Board:TO127P1435X464-8N</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2679.pdf</datasheet>
+      <fields>
+        <field name="Description">SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit</field>
+        <field name="Height">4.64</field>
+        <field name="Manufacturer_Name">Texas Instruments</field>
+        <field name="Manufacturer_Part_Number">LM2679S-ADJ/NOPB</field>
+        <field name="Mouser Part Number">926-LM2679S-ADJ/NOPB</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM2679S-ADJ-NOPB?qs=X1J7HmVL2ZGdZbHD%252BPn1rg%3D%3D</field>
+      </fields>
+      <libsource lib="PSU_Board" part="LM2679S-ADJ_NOPB" description="SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit"/>
+      <property name="Description" value="SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit"/>
+      <property name="Height" value="4.64"/>
+      <property name="Mouser Part Number" value="926-LM2679S-ADJ/NOPB"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM2679S-ADJ-NOPB?qs=X1J7HmVL2ZGdZbHD%252BPn1rg%3D%3D"/>
+      <property name="Manufacturer_Name" value="Texas Instruments"/>
+      <property name="Manufacturer_Part_Number" value="LM2679S-ADJ/NOPB"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a5204756-7f86-40f2-a652-9dbcca1ec2c0</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Wago PCB 2 Pole</value>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bb8199de-6f9e-4429-ac37-73d54de1c446</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Wago PCB 2 Pole</value>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>20236ddc-98ed-4719-ac21-8a7df8203fc2</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Wago PCB 2 Pole</value>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c20f008a-5d4f-41de-a370-47cfbe150ac9</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Wago PCB 2 Pole</value>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b7c05c36-1785-43e0-a6a8-d26455336680</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>Wago PCB 2 Pole</value>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7d36ae10-6d9b-4816-898b-9020de9a8bc3</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>Wago PCB 2 Pole</value>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c98301f7-3c31-4d95-9696-37a894f6a7b9</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>JST 01x02</value>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>55a2db0b-8149-47f9-a74e-47f1a3e26820</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>JST 01x02</value>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>108c10b8-2d30-4278-963c-972e580409a1</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>JST 01x02</value>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bcd3d12f-30fa-44a9-9c6d-561b9cbc640d</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>JST 01x02</value>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>80c7edcf-6ab0-4f17-9413-b7d1f070ef70</tstamps>
+    </comp>
+    <comp ref="J11">
+      <value>JST 01x04</value>
+      <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d80f7454-c53b-4abe-b297-991ea47708d2</tstamps>
+    </comp>
+    <comp ref="J12">
+      <value>JST 01x02</value>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>524ef823-107a-4ab2-aa79-a6968d6540ea</tstamps>
+    </comp>
+    <comp ref="JP1">
+      <value>5.1V / 8.4V</value>
+      <libsource lib="Jumper" part="Jumper_3_Bridged12" description="Jumper, 3-pole, pins 1+2 closed/bridged"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>31ef0010-f476-4bb4-82da-7fa4bec02476</tstamps>
+    </comp>
+    <comp ref="JP2">
+      <value>Jumper_2_Open</value>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a3bbf21b-482f-4a3a-9e80-39b9f1e5e8ef</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>15uH</value>
+      <datasheet>https://www.mouser.co.uk/ProductDetail/Bourns/SRP1265C-150M?qs=OlC7AqGiEDnNYfbirifssw%3D%3D</datasheet>
+      <libsource lib="Device" part="L_Ferrite" description="Inductor with ferrite core"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>65589fd2-ba2d-4505-8223-5e5d9ec2194b</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>DMT6002LPS-13</value>
+      <footprint>SamacSys_Parts:PowerDI5060-8</footprint>
+      <libsource lib="Device" part="Q_NMOS_SGD" description="N-MOSFET transistor, source/gate/drain"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611fa833</tstamps>
+    </comp>
+    <comp ref="Q2">
+      <value>DMT6002LPS-13</value>
+      <footprint>SamacSys_Parts:PowerDI5060-8</footprint>
+      <libsource lib="Device" part="Q_NMOS_SGD" description="N-MOSFET transistor, source/gate/drain"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611fe1c6</tstamps>
+    </comp>
+    <comp ref="Q3">
+      <value>Q_PMOS_GDS</value>
+      <libsource lib="Device" part="Q_PMOS_GDS" description="P-MOSFET transistor, gate/drain/source"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ede81877-ee59-4b3f-9383-28f6e70df317</tstamps>
+    </comp>
+    <comp ref="Q4">
+      <value>BC547</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</datasheet>
+      <libsource lib="Transistor_BJT" part="BC547" description="0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cfeaf61d-cf8b-49fe-9d00-64ecaebb9292</tstamps>
+    </comp>
+    <comp ref="Q5">
+      <value>BC547</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</datasheet>
+      <libsource lib="Transistor_BJT" part="BC547" description="0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f543c112-e3e8-4b69-adab-faeaf3f67f68</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>100K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611ec717</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>24K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611f020f</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>750K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611ef710</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2b91427b-9039-4178-bcab-ee8be76de207</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>1M3</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000611efad4</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>22K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061204030</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>100K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3fa1514c-0fde-4ffa-953d-4c82937c0e89</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>100K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8f84e6d3-48fe-4eae-96c7-940f1c338ac4</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>100K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d5e38fca-598b-4d8a-98c9-6da71b070d70</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>100K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6aa1474a-1313-45cb-94fa-3b89ca8ce305</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>5K9</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4a975e03-f6c6-454a-ab2d-32b793cacd28</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>3K24</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>857a622e-ee63-427d-91b0-51b3917a95d8</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>4K99</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3b9eba01-bacc-48e0-b11d-1d7b67e62764</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>782d0516-a833-459e-a87d-9ace26f3c757</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_Push</value>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f0392e65-5f42-4db7-bc59-f587f1892960</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>AMS1117-5.0</value>
+      <footprint>Package_TO_SOT_SMD:SOT-223-3_TabPin2</footprint>
+      <datasheet>http://www.advanced-monolithic.com/pdf/ds1117.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="AMS1117-5.0" description="1A Low Dropout regulator, positive, 5.0V fixed output, SOT-223"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c218ee94-ee12-45bf-8f25-fd38039db53f</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>AMS1117-5.0</value>
+      <footprint>Package_TO_SOT_SMD:SOT-223-3_TabPin2</footprint>
+      <datasheet>http://www.advanced-monolithic.com/pdf/ds1117.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="AMS1117-5.0" description="1A Low Dropout regulator, positive, 5.0V fixed output, SOT-223"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pi-tranceiver-psu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fb0ae926-985f-4335-9241-cb84922f1742</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Screw_Terminal_01x02">
+      <description>Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TerminalBlock*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Screw_Terminal_01x02</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x04">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Schottky">
+      <description>Schottky diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Zener">
+      <description>Zener diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Zener</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L_Ferrite">
+      <description>Inductor with ferrite core</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L_Ferrite</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Q_NMOS_SGD">
+      <description>N-MOSFET transistor, source/gate/drain</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NMOS_SGD</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="passive"/>
+        <pin num="2" name="G" type="input"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Q_PMOS_GDS">
+      <description>P-MOSFET transistor, gate/drain/source</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_PMOS_GDS</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="1N4001">
+      <description>50V 1A General Purpose Rectifier Diode, DO-41</description>
+      <docs>http://www.vishay.com/docs/88503/1n4001.pdf</docs>
+      <footprints>
+        <fp>D*DO?41*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">1N4001</field>
+        <field name="Footprint">Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</field>
+        <field name="Datasheet">http://www.vishay.com/docs/88503/1n4001.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="Jumper_2_Open">
+      <description>Jumper, 2-pole, open</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Jumper*</fp>
+        <fp>TestPoint*2Pads*</fp>
+        <fp>TestPoint*Bridge*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_2_Open</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="Jumper_3_Bridged12">
+      <description>Jumper, 3-pole, pins 1+2 closed/bridged</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Jumper*</fp>
+        <fp>TestPoint*3Pads*</fp>
+        <fp>TestPoint*Bridge*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_3_Bridged12</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="C" type="input"/>
+        <pin num="3" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="PSU_Board" part="LM2679S-ADJ_NOPB">
+      <description>SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm2679.pdf</docs>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">LM2679S-ADJ_NOPB</field>
+        <field name="Footprint">TO127P1435X464-8N</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/lm2679.pdf</field>
+        <field name="Description">SIMPLE SWITCHER 8V to 40V, 5A Step-Down DC/DC Switching Regulator with Adjustable Current Limit</field>
+        <field name="Height">4.64</field>
+        <field name="Mouser Part Number">926-LM2679S-ADJ/NOPB</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM2679S-ADJ-NOPB?qs=X1J7HmVL2ZGdZbHD%252BPn1rg%3D%3D</field>
+        <field name="Manufacturer_Name">Texas Instruments</field>
+        <field name="Manufacturer_Part_Number">LM2679S-ADJ/NOPB</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SW_OUT" type="output"/>
+        <pin num="2" name="IN" type="input"/>
+        <pin num="3" name="C_BOOST" type="passive"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="CURRENT_ADJ" type="passive"/>
+        <pin num="6" name="FB" type="passive"/>
+        <pin num="7" name="SS" type="passive"/>
+        <pin num="8" name="TAB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="AMS1117-5.0">
+      <description>1A Low Dropout regulator, positive, 5.0V fixed output, SOT-223</description>
+      <docs>http://www.advanced-monolithic.com/pdf/ds1117.pdf</docs>
+      <footprints>
+        <fp>SOT?223*TabPin2*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AMS1117-5.0</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-223-3_TabPin2</field>
+        <field name="Datasheet">http://www.advanced-monolithic.com/pdf/ds1117.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="VO" type="power_out"/>
+        <pin num="3" name="VI" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="SamacSys_Parts" part="865080545012">
+      <docs>http://katalog.we-online.de/pbs/datasheet/865080545012.pdf</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">SamacSys_Parts_865080545012</field>
+        <field name="Footprint">CAPAE660X770N</field>
+        <field name="Datasheet">http://katalog.we-online.de/pbs/datasheet/865080545012.pdf</field>
+        <field name="Description">Wurth Elektronik 100uF 35 V dc Aluminium Electrolytic Capacitor, WCAP-ASLI Series 2000h 6.3 (Dia.) x 7.55mm</field>
+        <field name="Height">7.7</field>
+        <field name="Mouser Part Number">710-865080545012</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080545012?qs=0KOYDY2FL297tvB6LOdg5A%3D%3D</field>
+        <field name="Manufacturer_Name">Wurth Elektronik</field>
+        <field name="Manufacturer_Part_Number">865080545012</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SamacSys_Parts" part="LTC4368IMS-2#PBF">
+      <docs>https://www.arrow.com/en/products/ltc4368ims-2pbf/analog-devices</docs>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">SamacSys_Parts_LTC4368IMS-2#PBF</field>
+        <field name="Footprint">SOP50P490X110-10N</field>
+        <field name="Datasheet">https://www.arrow.com/en/products/ltc4368ims-2pbf/analog-devices</field>
+        <field name="Description">Surge Suppressors 100V OV, UV, OC and Reverse Supply Protection Controller with -3mV Reverse Threshold</field>
+        <field name="Height">1.1</field>
+        <field name="Mouser Part Number">584-LTC4368IMS2PBF</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Analog-Devices/LTC4368IMS-2PBF?qs=5aG0NVq1C4yQGBsRaTKLEg%3D%3D</field>
+        <field name="Manufacturer_Name">Analog Devices</field>
+        <field name="Manufacturer_Part_Number">LTC4368IMS-2#PBF</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="passive"/>
+        <pin num="2" name="UV" type="passive"/>
+        <pin num="3" name="OV" type="passive"/>
+        <pin num="4" name="RETRY" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="~{SHDN}" type="passive"/>
+        <pin num="7" name="~{FAULT}" type="passive"/>
+        <pin num="8" name="VOUT" type="passive"/>
+        <pin num="9" name="SENSE" type="passive"/>
+        <pin num="10" name="GATE" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="BC547">
+      <description>0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92</description>
+      <docs>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</docs>
+      <footprints>
+        <fp>TO?92*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">BC547</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline</field>
+        <field name="Datasheet">https://www.onsemi.com/pub/Collateral/BC550-D.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="passive"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="E" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="Diode">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Diode.kicad_sym</uri>
+    </library>
+    <library logical="Jumper">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Jumper.kicad_sym</uri>
+    </library>
+    <library logical="PSU_Board">
+      <uri>C:/Users/GarethBlades/OneDrive - Eseye/Documents/GitHub/pi-transceiver/electronics/PSU Board/Library/SamacSys_Parts.kicad_sym</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Regulator_Linear.kicad_sym</uri>
+    </library>
+    <library logical="Switch">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Switch.kicad_sym</uri>
+    </library>
+    <library logical="Transistor_BJT">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Transistor_BJT.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="IC1" pin="5" pinfunction="GND" pintype="passive"/>
+      <node ref="IC2" pin="4" pinfunction="GND" pintype="power_in"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J10" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J11" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J12" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J5" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J9" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q4" pin="3" pinfunction="E" pintype="passive"/>
+      <node ref="Q5" pin="3" pinfunction="E" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="1" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="2" name="Net-(C1-Pad1)">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="IC1" pin="4" pinfunction="RETRY" pintype="passive"/>
+    </net>
+    <net code="3" name="Net-(C2-Pad1)">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="IC1" pin="1" pinfunction="VIN" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="Q3" pin="2" pinfunction="D" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="4" name="Net-(C3-Pad1)">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="IC1" pin="8" pinfunction="VOUT" pintype="passive"/>
+      <node ref="IC1" pin="9" pinfunction="SENSE" pintype="passive"/>
+      <node ref="IC2" pin="2" pinfunction="IN" pintype="input"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q2" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="5" name="Net-(C4-Pad1)">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="IC1" pin="2" pinfunction="UV" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(D5-Pad2)">
+      <node ref="D10" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(D6-Pad1)">
+      <node ref="D10" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D8" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D9" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(IC1-Pad3)">
+      <node ref="IC1" pin="3" pinfunction="OV" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="11" name="Net-(IC1-Pad6)">
+      <node ref="IC1" pin="6" pinfunction="~{SHDN}" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="12" name="Net-(IC1-Pad10)">
+      <node ref="IC1" pin="10" pinfunction="GATE" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="Q2" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(IC2-Pad1)">
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="IC2" pin="1" pinfunction="SW_OUT" pintype="output"/>
+      <node ref="L1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(IC2-Pad3)">
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="IC2" pin="3" pinfunction="C_BOOST" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(IC2-Pad5)">
+      <node ref="IC2" pin="5" pinfunction="CURRENT_ADJ" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(IC2-Pad7)">
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="IC2" pin="7" pinfunction="SS" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(J6-Pad1)">
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="JP2" pin="2" pinfunction="B" pintype="passive"/>
+      <node ref="L1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="VI" pintype="power_in"/>
+    </net>
+    <net code="18" name="Net-(J7-Pad1)">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="JP2" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="VO" pintype="power_out"/>
+    </net>
+    <net code="19" name="Net-(J10-Pad1)">
+      <node ref="D9" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J10" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(J11-Pad2)">
+      <node ref="D6" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J11" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(J11-Pad3)">
+      <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J11" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="22" name="Net-(J11-Pad4)">
+      <node ref="D8" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J11" pin="4" pinfunction="Pin_4" pintype="passive"/>
+    </net>
+    <net code="23" name="Net-(J12-Pad1)">
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="J12" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="VO" pintype="power_out"/>
+    </net>
+    <net code="24" name="Net-(JP1-Pad1)">
+      <node ref="JP1" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+    </net>
+    <net code="25" name="Net-(JP1-Pad2)">
+      <node ref="IC2" pin="6" pinfunction="FB" pintype="passive"/>
+      <node ref="JP1" pin="2" pinfunction="C" pintype="input"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+    </net>
+    <net code="26" name="Net-(JP1-Pad3)">
+      <node ref="JP1" pin="3" pinfunction="B" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+    </net>
+    <net code="27" name="Net-(Q1-Pad1)">
+      <node ref="Q1" pin="1" pinfunction="S" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="S" pintype="passive"/>
+    </net>
+    <net code="28" name="Net-(Q3-Pad1)">
+      <node ref="Q3" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="Q4" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="29" name="Net-(Q3-Pad3)">
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q3" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="VI" pintype="power_in"/>
+    </net>
+    <net code="30" name="Net-(Q4-Pad2)">
+      <node ref="Q4" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="Q5" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+    </net>
+    <net code="31" name="Net-(Q5-Pad2)">
+      <node ref="Q5" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+    </net>
+    <net code="32" name="Net-(SW1-Pad2)">
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="33" name="unconnected-(IC1-Pad7)">
+      <node ref="IC1" pin="7" pinfunction="~{FAULT}" pintype="passive"/>
+    </net>
+    <net code="34" name="unconnected-(IC2-Pad8)">
+      <node ref="IC2" pin="8" pinfunction="TAB" pintype="passive"/>
+    </net>
+  </nets>
+</export>
