@@ -1,5 +1,7 @@
 ﻿
 using System.Runtime.InteropServices;
+using Iot.Device.Adc;
+
 
 namespace rig_controller.Services
 {
@@ -8,6 +10,9 @@ namespace rig_controller.Services
 
         private static int OPEN_READ_WRITE = 2;
         private static int I2C_CLIENT = 0x0703;
+
+        public Ina219 dev;
+
 
         // Config Register (R/W)
         const byte REG_CONFIG = 0x00;
@@ -68,8 +73,6 @@ namespace rig_controller.Services
         private byte shunt_adc_resolution;
         private byte mode;
         private int config;
-
-
 
 
         [DllImport("libc.so.6", EntryPoint = "open")]
@@ -164,11 +167,22 @@ namespace rig_controller.Services
         {
             int val;
             float shunt_voltage;
-            float bus_voltage;
+            UnitsNet.ElectricPotential bus_voltage;
             float current_ma;
             float power_w;
             float percent;
             bool on_battery;
+
+
+            System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
+
+            
+
+            using var obs =  new Ina219(settings);
+
+
+
+
 
             await INA219_Write(REG_CALIBRATION, cal_value);
             await INA219_Read(REG_SHUNTVOLTAGE, out val);
@@ -180,7 +194,9 @@ namespace rig_controller.Services
 
             await INA219_Write(REG_CALIBRATION, cal_value);
             await INA219_Read(REG_BUSVOLTAGE, out val);
-            bus_voltage = (float)((val >> 3) * 0.004);
+           // bus_voltage = (float)((val >> 3) * 0.004);
+
+            bus_voltage = obs.ReadBusVoltage();
 
             await INA219_Read(REG_CURRENT, out val);
             if (val > 32767)
@@ -197,7 +213,8 @@ namespace rig_controller.Services
             }
             power_w = (float)(val * power_lsb);
 
-            percent = (float)((bus_voltage - 6) / 2.4 * 100);
+            // percent = (float)((bus_voltage - 6) / 2.4 * 100);
+            percent = 0;
 
             on_battery = (current_ma < 0);
 
@@ -213,7 +230,7 @@ namespace rig_controller.Services
 
     public record INA219_Reading
     {
-        public float Bus_voltage { get; set; }
+        public UnitsNet.ElectricPotential Bus_voltage { get; set; }
         public float Shunt_voltage { get; set; }
         public float Current_ma { get; set; }
 
