@@ -27,8 +27,8 @@ namespace rig_controller.Services
 
             INA219_Reading reading;
 
-            await upshatService.SetAddress(0x42);
-            await upshatService.set_calibration_32V_2A();
+            //await upshatService.SetAddress(0x42);
+            //await upshatService.set_calibration_32V_2A();
 
             string digits = (f / 1000000.0).ToString("0000.000");
 
