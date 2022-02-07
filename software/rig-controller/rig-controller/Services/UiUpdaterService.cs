@@ -39,7 +39,7 @@ namespace rig_controller.Services
             await AddLogLine("Server told UI to set frequency to " + f / 1000000.0);
 
             //test
-            await dacService.SetDAC(0x62, out v, false,Convert.ToUInt16( f / 1000000.0));
+            await dacService.SetDAC(i2cDacService.MCP4726_DEFAULT_ADDRESS, false,Convert.ToUInt16( f / 1000000.0),out v);
 
             await AddLogLine("DeviceId " + v);
 
