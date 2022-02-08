@@ -1,4 +1,7 @@
 ﻿using System.Collections.Concurrent;
+using Iot.Device.Ads1115;
+using System.Device.I2c;
+
 
 namespace rig_controller.Services
 {
@@ -19,18 +22,45 @@ namespace rig_controller.Services
     /// </summary>
     public class ADS1115SysBusAdcChannelReaderService : IAdcChannelReaderService
     {
+        public Ads1115 dev;
         private static readonly ConcurrentDictionary<DeviceChannel, double> scalesCache = new();
 
-        public async Task<AdcReading> Read(int device, int channel)
+        private void InitializeSystem()
         {
-            double scale = await GetScale(device, channel);
 
-            if (!int.TryParse((await File.ReadAllTextAsync($"/sys/bus/iio/devices/iio:device{device}/in_voltage{channel}_raw")).Trim(), out int raw))
+
+
+            I2cConnectionSettings settings = new(1, (int)I2cAddress.GND);
+            I2cDevice device = I2cDevice.Create(settings);
+
+
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
             {
-                throw new NotImplementedException();
+
+                dev = new Iot.Device.Ads1115.Ads1115(device, InputMultiplexer.AIN0, MeasuringRange.FS4096);
             }
 
-            var millivolts = (int)(raw * scale);
+        }
+
+        public async Task<AdcReading> Read(int device, int channel)
+
+        {
+            var millivolts = 0;
+
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            {
+                millivolts = (int) dev.ReadVoltage(InputMultiplexer.AIN0).Millivolts;
+
+                //double scale = await GetScale(device, channel);
+
+                //if (!int.TryParse((await File.ReadAllTextAsync($"/sys/bus/iio/devices/iio:device{device}/in_voltage{channel}_raw")).Trim(), out int raw))
+                //{
+                //    throw new NotImplementedException();
+                //}
+
+                //millivolts = (int)(raw * scale);
+            }
+           
 
             return new AdcReading { Channel = channel, Device = device, Millivolts = millivolts };
         }

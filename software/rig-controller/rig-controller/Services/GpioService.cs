@@ -1,4 +1,6 @@
-﻿namespace rig_controller.Services
+﻿using System.Device.Gpio;
+
+namespace rig_controller.Services
 {
     public class GpioService
     {
@@ -26,7 +28,12 @@
             // HACK - replace with https://abyz.me.uk/rpi/pigpio/sif.html#cmdCmd_t
             try
             {
-                System.Diagnostics.Process.Start("pigs", $"w {pin} {(state ? 1 : 0)}");
+                using var controller = new GpioController();
+                controller.OpenPin(pin, PinMode.Output);
+                controller.Write (pin, state);
+
+
+                //System.Diagnostics.Process.Start("pigs", $"w {pin} {(state ? 1 : 0)}");
             }
             catch (Exception ex)
             {
