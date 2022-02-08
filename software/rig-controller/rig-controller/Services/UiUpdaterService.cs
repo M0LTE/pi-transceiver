@@ -41,12 +41,16 @@ namespace rig_controller.Services
             //test
             await dacService.SetDAC(i2cDacService.MCP4726_DEFAULT_ADDRESS, false,Convert.ToUInt16( f / 1000000.0),out v);
 
-            await AddLogLine("DeviceId " + v);
+            await AddLogLine("DAC response " + v);
 
             reading = await upshatService.Read();
 
             await AddLogLine("Battery " + reading.Percent );
             await AddLogLine("Bus V " + reading.Bus_voltage);
+            await AddLogLine("Current " + reading.Current_ma);
+            await AddLogLine("Power " + reading.Power_w );
+            await AddLogLine("Shunt V " + reading.Shunt_voltage);
+            await AddLogLine("On battery " + reading.On_battery);
 
 
         }

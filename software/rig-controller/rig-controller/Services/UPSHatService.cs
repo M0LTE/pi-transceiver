@@ -91,7 +91,16 @@ namespace rig_controller.Services
 
         public UPSHatService()
         {
-            
+            System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
+
+
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            {
+                dev = new Ina219(settings);
+                set_calibration_32V_2A();
+
+            }
+
         }
 
         public Task SetAddress(byte deviceAddress)
@@ -180,57 +189,69 @@ namespace rig_controller.Services
             bool on_battery;
 
 
-            System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
-
-            
-
-            dev =  new Ina219(settings);
-
-            await set_calibration_32V_2A();
+            //System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
 
 
-            dev.SetCalibration(cal_value);
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            {
+                //dev =  new Ina219(settings);
+
+                // await set_calibration_32V_2A();
 
 
-            //await INA219_Write(REG_CALIBRATION, cal_value);
-            //await INA219_Read(REG_SHUNTVOLTAGE, out val);
-            //if (val > 32767)
-            //{
-            //    val -= 65535;
-            //}
-            //shunt_voltage = (float)(val * 0.01);
+                dev.SetCalibration(cal_value);
 
-            shunt_voltage = dev.ReadShuntVoltage();
 
-            //await INA219_Write(REG_CALIBRATION, cal_value);
-            //await INA219_Read(REG_BUSVOLTAGE, out val);
-           // bus_voltage = (float)((val >> 3) * 0.004);
+                //await INA219_Write(REG_CALIBRATION, cal_value);
+                //await INA219_Read(REG_SHUNTVOLTAGE, out val);
+                //if (val > 32767)
+                //{
+                //    val -= 65535;
+                //}
+                //shunt_voltage = (float)(val * 0.01);
 
-            bus_voltage = dev.ReadBusVoltage();
+                shunt_voltage = dev.ReadShuntVoltage();
 
-            //await INA219_Read(REG_CURRENT, out val);
-            //if (val > 32767)
-            //{
-            //    val -= 65535;
-            //}
-            //current_ma = (float)(val * current_lsb);
+                //await INA219_Write(REG_CALIBRATION, cal_value);
+                //await INA219_Read(REG_BUSVOLTAGE, out val);
+                // bus_voltage = (float)((val >> 3) * 0.004);
 
-            current_ma = dev.ReadCurrent();
+                bus_voltage = dev.ReadBusVoltage();
 
-            //await INA219_Write(REG_CALIBRATION, cal_value);
-            //await INA219_Read(REG_POWER, out val);
-            //if (val > 32767)
-            //{
-            //    val -= 65535;
-            //}
-            //power_w = (float)(val * power_lsb);
+                //await INA219_Read(REG_CURRENT, out val);
+                //if (val > 32767)
+                //{
+                //    val -= 65535;
+                //}
+                //current_ma = (float)(val * current_lsb);
 
-            power_w = dev.ReadPower();
+                current_ma = dev.ReadCurrent();
 
-            // percent = (float)((bus_voltage - 6) / 2.4 * 100);
-            percent = 0;
+                //await INA219_Write(REG_CALIBRATION, cal_value);
+                //await INA219_Read(REG_POWER, out val);
+                //if (val > 32767)
+                //{
+                //    val -= 65535;
+                //}
+                //power_w = (float)(val * power_lsb);
 
-            on_battery = (current_ma.Value < 0);
+                power_w = dev.ReadPower();
+
+                percent = (float)((bus_voltage.Value - 6) / 2.4 * 100);
+
+                on_battery = (current_ma.Value > 0);
+
+
+            }
+            else
+            {
+                bus_voltage = new UnitsNet.ElectricPotential();
+                shunt_voltage = new UnitsNet.ElectricPotential();
+                current_ma = new UnitsNet.ElectricCurrent();
+                power_w = new UnitsNet.Power();
+                percent = 0;
+                on_battery = false;
+            }
 
             return new INA219_Reading { Bus_voltage = bus_voltage, Shunt_voltage = shunt_voltage, Current_ma = current_ma, Power_w = power_w, Percent = percent, On_battery = on_battery };
         }

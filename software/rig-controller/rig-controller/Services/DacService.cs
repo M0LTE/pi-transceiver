@@ -1,5 +1,6 @@
 ﻿
 using System.Runtime.InteropServices;
+using System.Device.I2c;
 
 
 namespace rig_controller.Services
@@ -14,6 +15,8 @@ namespace rig_controller.Services
         // constants for i2c
         private static int OPEN_READ_WRITE = 2;
         private static int I2C_CLIENT = 0x0703;
+
+        public I2cDevice dev;
 
         [DllImport("libc.so.6", EntryPoint = "open")]
         private static extern int Open(string fileName, int mode);
@@ -30,12 +33,31 @@ namespace rig_controller.Services
 
         // externals for the i2c libraries
 
+        //System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
+
+        //dev = System.Device.I2c.I2cDevice Create(System.Device.I2c.I2cConnectionSettings settings);
+
+        private I2cDevice i2cDAC;
+
+        private void InitializeSystem()
+        {
+            var i2cSettings = new I2cConnectionSettings(1, MCP4726_DEFAULT_ADDRESS);
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            {
+               
+                i2cDAC = I2cDevice.Create(i2cSettings); //   GetDeviceSelector(I2C_CONTROLLER_NAME);
+            }
+
+        }
+    
+
 
         private readonly ILogger<i2cDacService> _logger;
 
         public i2cDacService(ILogger<i2cDacService> logger)
         {
             _logger = logger;
+            InitializeSystem();
 
         }
 
@@ -77,13 +99,13 @@ namespace rig_controller.Services
                 outputLevel = 4095;
             }
 
-            int i2cHandle = Open("/dev/i2c-1", OPEN_READ_WRITE);
+            //int i2cHandle = Open("/dev/i2c-1", OPEN_READ_WRITE);
             // mount the device at address 'device' for communication
             //int registerAddress = 0x62;
-            int deviceReturnCode = Ioctl(i2cHandle, I2C_CLIENT, deviceAddress);
+           // int deviceReturnCode = Ioctl(i2cHandle, I2C_CLIENT, deviceAddress);
 
-            if (deviceReturnCode != -1)
-            {
+            //if (deviceReturnCode != -1)
+            //{
 
                 byte[] data = new byte[3];
 
@@ -92,12 +114,13 @@ namespace rig_controller.Services
                 data[1] = (byte)(outputLevel >> 4); // Another way
                 data[2] = (byte)((outputLevel & 15) << 4);
 
-                deviceReturnCode = Write(i2cHandle, data, 3);
+                //deviceReturnCode = Write(i2cHandle, data, 3);
+                i2cDAC.Write(data);
 
-            }
+            // }
 
-            returnValue = deviceReturnCode;
-
+            //returnValue = deviceReturnCode;
+            returnValue = 0;
 
             return Task.CompletedTask;
         }
