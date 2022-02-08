@@ -63,7 +63,7 @@ namespace rig_controller.Services
 
 
 
-        private int cal_value = 0;
+        private ushort cal_value = 0;
         private double current_lsb = 0;
         private double power_lsb = 0;
 
@@ -146,18 +146,24 @@ namespace rig_controller.Services
 
             power_lsb = .002;  // Power LSB = 2mW per bit
 
-            INA219_Write(REG_CALIBRATION, cal_value);
+            //INA219_Write(REG_CALIBRATION, cal_value);
+            dev.SetCalibration(cal_value);
 
-            bus_voltage_range = BUSV_RANGE_32V;
-            gain = GAIN_DIV_8_320MV;
-            bus_adc_resolution = ADCRES_12BIT_32S;
-            shunt_adc_resolution = ADCRES_12BIT_32S;
-            mode = MODE_SANDBVOLT_CONTINUOUS;
+            //bus_voltage_range = BUSV_RANGE_32V;
+            //gain = GAIN_DIV_8_320MV;
+            //bus_adc_resolution = ADCRES_12BIT_32S;
+            //shunt_adc_resolution = ADCRES_12BIT_32S;
+            //mode = MODE_SANDBVOLT_CONTINUOUS;
 
-            config = bus_voltage_range << 13 | gain << 11 | bus_adc_resolution << 7 | shunt_adc_resolution << 3 | mode;
+            //config = bus_voltage_range << 13 | gain << 11 | bus_adc_resolution << 7 | shunt_adc_resolution << 3 | mode;
 
 
-            INA219_Write(REG_CONFIG, config);
+            //INA219_Write(REG_CONFIG, config);
+
+            dev.ShuntAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
+            dev.BusAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
+            dev.BusVoltageRange = Ina219BusVoltageRange.Range32v;
+            dev.PgaSensitivity = Ina219PgaSensitivity.PlusOrMinus320mv;
 
             return Task.CompletedTask;
 
@@ -166,10 +172,10 @@ namespace rig_controller.Services
         public async Task<INA219_Reading> Read()
         {
             int val;
-            float shunt_voltage;
+            UnitsNet.ElectricPotential shunt_voltage;
             UnitsNet.ElectricPotential bus_voltage;
-            float current_ma;
-            float power_w;
+            UnitsNet.ElectricCurrent current_ma;
+            UnitsNet.Power power_w;
             float percent;
             bool on_battery;
 
@@ -178,45 +184,53 @@ namespace rig_controller.Services
 
             
 
-            using var obs =  new Ina219(settings);
+            dev =  new Ina219(settings);
+
+            await set_calibration_32V_2A();
 
 
+            dev.SetCalibration(cal_value);
 
 
+            //await INA219_Write(REG_CALIBRATION, cal_value);
+            //await INA219_Read(REG_SHUNTVOLTAGE, out val);
+            //if (val > 32767)
+            //{
+            //    val -= 65535;
+            //}
+            //shunt_voltage = (float)(val * 0.01);
 
-            await INA219_Write(REG_CALIBRATION, cal_value);
-            await INA219_Read(REG_SHUNTVOLTAGE, out val);
-            if (val > 32767)
-            {
-                val -= 65535;
-            }
-            shunt_voltage = (float)(val * 0.01);
+            shunt_voltage = dev.ReadShuntVoltage();
 
-            await INA219_Write(REG_CALIBRATION, cal_value);
-            await INA219_Read(REG_BUSVOLTAGE, out val);
+            //await INA219_Write(REG_CALIBRATION, cal_value);
+            //await INA219_Read(REG_BUSVOLTAGE, out val);
            // bus_voltage = (float)((val >> 3) * 0.004);
 
-            bus_voltage = obs.ReadBusVoltage();
+            bus_voltage = dev.ReadBusVoltage();
 
-            await INA219_Read(REG_CURRENT, out val);
-            if (val > 32767)
-            {
-                val -= 65535;
-            }
-            current_ma = (float)(val * current_lsb);
+            //await INA219_Read(REG_CURRENT, out val);
+            //if (val > 32767)
+            //{
+            //    val -= 65535;
+            //}
+            //current_ma = (float)(val * current_lsb);
 
-            await INA219_Write(REG_CALIBRATION, cal_value);
-            await INA219_Read(REG_POWER, out val);
-            if (val > 32767)
-            {
-                val -= 65535;
-            }
-            power_w = (float)(val * power_lsb);
+            current_ma = dev.ReadCurrent();
+
+            //await INA219_Write(REG_CALIBRATION, cal_value);
+            //await INA219_Read(REG_POWER, out val);
+            //if (val > 32767)
+            //{
+            //    val -= 65535;
+            //}
+            //power_w = (float)(val * power_lsb);
+
+            power_w = dev.ReadPower();
 
             // percent = (float)((bus_voltage - 6) / 2.4 * 100);
             percent = 0;
 
-            on_battery = (current_ma < 0);
+            on_battery = (current_ma.Value < 0);
 
             return new INA219_Reading { Bus_voltage = bus_voltage, Shunt_voltage = shunt_voltage, Current_ma = current_ma, Power_w = power_w, Percent = percent, On_battery = on_battery };
         }
@@ -231,10 +245,10 @@ namespace rig_controller.Services
     public record INA219_Reading
     {
         public UnitsNet.ElectricPotential Bus_voltage { get; set; }
-        public float Shunt_voltage { get; set; }
-        public float Current_ma { get; set; }
+        public UnitsNet.ElectricPotential Shunt_voltage { get; set; }
+        public UnitsNet.ElectricCurrent Current_ma { get; set; }
 
-        public float Power_w { get; set; }
+        public UnitsNet.Power Power_w { get; set; }
 
         public float Percent { get; set; }
 
