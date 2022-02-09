@@ -64,7 +64,7 @@ namespace rig_controller.Services
 
 
         private ushort cal_value = 0;
-        private double current_lsb = 0;
+        private float current_lsb = 0;
         private double power_lsb = 0;
 
         private byte bus_voltage_range;
@@ -149,14 +149,14 @@ namespace rig_controller.Services
 
         public Task set_calibration_32V_2A()
         {
-            current_lsb = .1;  // Current LSB = 100uA per bit
+            current_lsb = .1F;  // Current LSB = 100uA per bit
 
             cal_value = 4096;
 
             power_lsb = .002;  // Power LSB = 2mW per bit
 
             //INA219_Write(REG_CALIBRATION, cal_value);
-            dev.SetCalibration(cal_value);
+            dev.SetCalibration(cal_value,current_lsb);
 
             //bus_voltage_range = BUSV_RANGE_32V;
             //gain = GAIN_DIV_8_320MV;
