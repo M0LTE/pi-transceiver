@@ -28,7 +28,7 @@ This will result in a system without a graphical desktop interface, which is the
 1. Insert the micro SD card
 1. Power up the Pi
 1. Wait until you see a login prompt
-1. Connect to the Pi using your favourite SSH client. PuTTY is fine on Windows. Log in using the username and password you set earlier.
+1. Connect to the Pi using your favourite SSH client. PuTTY is fine on Windows. Log in using the username and password you set earlier. The default username is "pi"
 1. Issue the command `sudo apt update; sudo apt full-upgrade -y` and wait until completion
 
 ### Install GNU Radio and LimeSDR components
