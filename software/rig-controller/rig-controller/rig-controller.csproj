@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Iot.Device.Bindings" Version="2.0.0" />
+    <PackageReference Include="System.Device.Gpio" Version="2.0.0" />
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
   </ItemGroup>
 
