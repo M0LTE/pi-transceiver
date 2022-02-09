@@ -53,7 +53,28 @@ namespace rig_controller.Services
                 I2cConnectionSettings settings = new(1, (int)I2cAddress.GND);
                 I2cDevice adcdevice = I2cDevice.Create(settings);
                 dev = new Iot.Device.Ads1115.Ads1115(adcdevice, InputMultiplexer.AIN0, MeasuringRange.FS4096);
-                millivolts = (int) dev.ReadVoltage(InputMultiplexer.AIN0).Millivolts;
+
+                switch (device)
+
+                {
+                    case 0:
+                        millivolts = (int)dev.ReadVoltage(InputMultiplexer.AIN0).Millivolts;
+                        break;
+                    case 1:
+                        millivolts = (int)dev.ReadVoltage(InputMultiplexer.AIN1 ).Millivolts;
+                        break;
+                    case 2:
+                        millivolts = (int)dev.ReadVoltage(InputMultiplexer.AIN2).Millivolts;
+                        break;
+                    case 3:
+                        millivolts = (int)dev.ReadVoltage(InputMultiplexer.AIN3).Millivolts;
+                        break;
+                 
+                    default:
+                        millivolts = 0;
+                        break;
+                }
+               
 
                 //double scale = await GetScale(device, channel);
 
