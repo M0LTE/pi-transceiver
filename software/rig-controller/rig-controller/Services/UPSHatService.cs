@@ -241,7 +241,7 @@ namespace rig_controller.Services
 
                 dev.SetCalibration(cal_value, current_lsb);
        
-                power_w = (double)(dev.ReadPower().Watts) * power_lsb;
+                power_w = (double)(dev.ReadPower().Watts) ;
 
                 percent = (float)((bus_voltage.Value - 6) / 2.4 * 100);
 
