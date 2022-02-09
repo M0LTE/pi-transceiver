@@ -149,11 +149,11 @@ namespace rig_controller.Services
 
         public Task set_calibration_32V_2A()
         {
-            current_lsb = .0001F;  // Current LSB = 100uA per bit
+            current_lsb = (float).0001;  // Current LSB = 100uA per bit
 
             cal_value = 4096;
 
-            power_lsb = .002;  // Power LSB = 2mW per bit
+            power_lsb = (double).002;  // Power LSB = 2mW per bit
 
             //INA219_Write(REG_CALIBRATION, cal_value);
             dev.SetCalibration(cal_value,current_lsb);

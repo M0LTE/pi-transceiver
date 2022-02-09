@@ -28,11 +28,13 @@ namespace rig_controller.Services
             // HACK - replace with https://abyz.me.uk/rpi/pigpio/sif.html#cmdCmd_t
             try
             {
-                using var controller = new GpioController();
+                using var controller = new GpioController( );
                 controller.OpenPin(pin, PinMode.Output);
                 controller.Write (pin, state ? PinValue.High : PinValue.Low);
 
                 _logger.LogTrace($"Set GPIO ({pin}:{(state ? 1 : 0)}");
+
+             
 
                 //System.Diagnostics.Process.Start("pigs", $"w {pin} {(state ? 1 : 0)}");
             }
