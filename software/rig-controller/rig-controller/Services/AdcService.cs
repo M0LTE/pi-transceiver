@@ -30,15 +30,15 @@ namespace rig_controller.Services
 
 
 
-            I2cConnectionSettings settings = new(1, (int)I2cAddress.GND);
-            I2cDevice device = I2cDevice.Create(settings);
+            //I2cConnectionSettings settings = new(1, (int)I2cAddress.GND);
+            //I2cDevice device = I2cDevice.Create(settings);
 
 
-            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
-            {
+            //if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            //{
 
-                dev = new Iot.Device.Ads1115.Ads1115(device, InputMultiplexer.AIN0, MeasuringRange.FS4096);
-            }
+            //    dev = new Iot.Device.Ads1115.Ads1115(device, InputMultiplexer.AIN0, MeasuringRange.FS4096);
+            //}
 
         }
 
@@ -49,6 +49,10 @@ namespace rig_controller.Services
 
             if (Environment.OSVersion.Platform != PlatformID.Win32NT)
             {
+
+                I2cConnectionSettings settings = new(1, (int)I2cAddress.GND);
+                I2cDevice adcdevice = I2cDevice.Create(settings);
+                dev = new Iot.Device.Ads1115.Ads1115(adcdevice, InputMultiplexer.AIN0, MeasuringRange.FS4096);
                 millivolts = (int) dev.ReadVoltage(InputMultiplexer.AIN0).Millivolts;
 
                 //double scale = await GetScale(device, channel);

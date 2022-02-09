@@ -12,23 +12,23 @@ namespace rig_controller.Services
         const byte MCP4726_CMD_WRITEDACEEPROM = 0x60; // Writes data to the DAC and the EEPROM (persisting the assigned value after reset)
         public const byte MCP4726_DEFAULT_ADDRESS = 0x62; // Default i2c address for this DAC
 
-        // constants for i2c
-        private static int OPEN_READ_WRITE = 2;
-        private static int I2C_CLIENT = 0x0703;
+        //// constants for i2c
+        //private static int OPEN_READ_WRITE = 2;
+        //private static int I2C_CLIENT = 0x0703;
 
         public I2cDevice dev;
 
-        [DllImport("libc.so.6", EntryPoint = "open")]
-        private static extern int Open(string fileName, int mode);
+        //[DllImport("libc.so.6", EntryPoint = "open")]
+        //private static extern int Open(string fileName, int mode);
 
-        [DllImport("libc.so.6", EntryPoint = "ioctl", SetLastError = true)]
-        private static extern int Ioctl(int fd, int request, int data);
+        //[DllImport("libc.so.6", EntryPoint = "ioctl", SetLastError = true)]
+        //private static extern int Ioctl(int fd, int request, int data);
 
-        [DllImport("libc.so.6", EntryPoint = "read", SetLastError = true)]
-        private static extern int Read(int handle, byte[] data, int length);
+        //[DllImport("libc.so.6", EntryPoint = "read", SetLastError = true)]
+        //private static extern int Read(int handle, byte[] data, int length);
 
-        [DllImport("libc.so.6", EntryPoint = "write", SetLastError = true)]
-        private static extern int Write(int handle, byte[] data, int length);
+        //[DllImport("libc.so.6", EntryPoint = "write", SetLastError = true)]
+        //private static extern int Write(int handle, byte[] data, int length);
 
 
         // externals for the i2c libraries
