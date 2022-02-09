@@ -35,12 +35,6 @@ display -> underscan -> no
 reboot
 
 # install .NET 6
-wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
-chmod +x dotnet-install.sh
-./dotnet-install.sh
-logout
-
-# or!
 wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet6pi/master/install.sh | sudo bash
 
 # pull and run the software
