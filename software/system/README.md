@@ -33,6 +33,8 @@ This will result in a system without a graphical desktop interface, which is the
 
 ### Install GNU Radio and LimeSDR components
 
+There is no GNU Radio PPA for Raspberry Pi OS either for Buster or Bullseye as it stands.
+
 1. Install GNU Radio by issuing the command:
 
 ```
@@ -79,3 +81,8 @@ wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet6pi/master/instal
 ```
 2. Reboot by issuing the command `sudo reboot`
 3. Connect back up to the Pi using SSH once it has rebooted
+
+
+## Hardware
+
+- When connecting the official touchscreen, the only connections should be VCC, ground, and the ribbon cable. Nothing more. Else you are bridging two I2C buses which will have unpredictable effects.
