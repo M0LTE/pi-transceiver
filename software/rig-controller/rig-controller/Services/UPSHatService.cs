@@ -175,6 +175,8 @@ namespace rig_controller.Services
             dev.PgaSensitivity = Ina219PgaSensitivity.PlusOrMinus320mv;
             dev.OperatingMode = Ina219OperatingMode.ShuntAndBusContinuous;
 
+           
+
             return Task.CompletedTask;
 
         }
@@ -227,7 +229,7 @@ namespace rig_controller.Services
                 //current_ma = (float)(val * current_lsb);
 
                 dev.SetCalibration(cal_value, current_lsb);
-                current_ma = dev.ReadCurrent().Milliamperes * current_lsb ;
+                current_ma = dev.ReadCurrent().Value ;
 
                 //await INA219_Write(REG_CALIBRATION, cal_value);
                 //await INA219_Read(REG_POWER, out val);
