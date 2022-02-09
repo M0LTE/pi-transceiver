@@ -184,7 +184,7 @@ namespace rig_controller.Services
             UnitsNet.ElectricPotential shunt_voltage;
             UnitsNet.ElectricPotential bus_voltage;
             UnitsNet.ElectricCurrent current_ma;
-            UnitsNet.Power power_w;
+            double power_w;
             float percent;
             bool on_battery;
 
@@ -225,7 +225,7 @@ namespace rig_controller.Services
                 //}
                 //current_ma = (float)(val * current_lsb);
 
-                current_ma = dev.ReadCurrent();
+                current_ma = dev.ReadCurrent() * current_lsb ;
 
                 //await INA219_Write(REG_CALIBRATION, cal_value);
                 //await INA219_Read(REG_POWER, out val);
@@ -235,11 +235,11 @@ namespace rig_controller.Services
                 //}
                 //power_w = (float)(val * power_lsb);
 
-                power_w = dev.ReadPower();
+                power_w = (double)(dev.ReadPower().Watts) * power_lsb;
 
                 percent = (float)((bus_voltage.Value - 6) / 2.4 * 100);
 
-                on_battery = (current_ma.Value > 0);
+                on_battery = (current_ma.Value < 0);
 
 
             }
@@ -248,7 +248,7 @@ namespace rig_controller.Services
                 bus_voltage = new UnitsNet.ElectricPotential();
                 shunt_voltage = new UnitsNet.ElectricPotential();
                 current_ma = new UnitsNet.ElectricCurrent();
-                power_w = new UnitsNet.Power();
+                power_w = 0;
                 percent = 0;
                 on_battery = false;
             }
@@ -269,7 +269,7 @@ namespace rig_controller.Services
         public UnitsNet.ElectricPotential Shunt_voltage { get; set; }
         public UnitsNet.ElectricCurrent Current_ma { get; set; }
 
-        public UnitsNet.Power Power_w { get; set; }
+        public double Power_w { get; set; }
 
         public float Percent { get; set; }
 
