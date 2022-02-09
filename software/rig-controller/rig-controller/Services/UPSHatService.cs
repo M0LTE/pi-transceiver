@@ -149,7 +149,7 @@ namespace rig_controller.Services
 
         public Task set_calibration_32V_2A()
         {
-            current_lsb = .1F;  // Current LSB = 100uA per bit
+            current_lsb = .0001F;  // Current LSB = 100uA per bit
 
             cal_value = 4096;
 
@@ -200,8 +200,6 @@ namespace rig_controller.Services
                 // await set_calibration_32V_2A();
 
 
-                dev.SetCalibration(cal_value);
-
 
                 //await INA219_Write(REG_CALIBRATION, cal_value);
                 //await INA219_Read(REG_SHUNTVOLTAGE, out val);
@@ -211,12 +209,14 @@ namespace rig_controller.Services
                 //}
                 //shunt_voltage = (float)(val * 0.01);
 
+                dev.SetCalibration(cal_value, current_lsb);
                 shunt_voltage = dev.ReadShuntVoltage();
 
                 //await INA219_Write(REG_CALIBRATION, cal_value);
                 //await INA219_Read(REG_BUSVOLTAGE, out val);
                 // bus_voltage = (float)((val >> 3) * 0.004);
 
+                dev.SetCalibration(cal_value, current_lsb);
                 bus_voltage = dev.ReadBusVoltage();
 
                 //await INA219_Read(REG_CURRENT, out val);
@@ -226,6 +226,7 @@ namespace rig_controller.Services
                 //}
                 //current_ma = (float)(val * current_lsb);
 
+                dev.SetCalibration(cal_value, current_lsb);
                 current_ma = dev.ReadCurrent().Milliamperes * current_lsb ;
 
                 //await INA219_Write(REG_CALIBRATION, cal_value);
@@ -237,6 +238,7 @@ namespace rig_controller.Services
                 //power_w = (float)(val * power_lsb);
 
                 dev.SetCalibration(cal_value, current_lsb);
+       
                 power_w = (double)(dev.ReadPower().Watts) * power_lsb;
 
                 percent = (float)((bus_voltage.Value - 6) / 2.4 * 100);
