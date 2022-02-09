@@ -33,23 +33,15 @@ namespace rig_controller.Services
 
         // externals for the i2c libraries
 
-        //System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
 
-        //dev = System.Device.I2c.I2cDevice Create(System.Device.I2c.I2cConnectionSettings settings);
 
         private I2cDevice i2cDAC;
 
         private void InitializeSystem()
         {
-            var i2cSettings = new I2cConnectionSettings(1, MCP4726_DEFAULT_ADDRESS);
-            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
-            {
-               
-                i2cDAC = I2cDevice.Create(i2cSettings); //   GetDeviceSelector(I2C_CONTROLLER_NAME);
-            }
 
         }
-    
+
 
 
         private readonly ILogger<i2cDacService> _logger;
@@ -94,6 +86,13 @@ namespace rig_controller.Services
 
             }
 
+            var i2cSettings = new I2cConnectionSettings(1, deviceAddress);
+
+
+            i2cDAC = I2cDevice.Create(i2cSettings); //   GetDeviceSelector(I2C_CONTROLLER_NAME);
+
+
+
             if (outputLevel > 4095)
             {
                 outputLevel = 4095;
@@ -102,20 +101,20 @@ namespace rig_controller.Services
             //int i2cHandle = Open("/dev/i2c-1", OPEN_READ_WRITE);
             // mount the device at address 'device' for communication
             //int registerAddress = 0x62;
-           // int deviceReturnCode = Ioctl(i2cHandle, I2C_CLIENT, deviceAddress);
+            // int deviceReturnCode = Ioctl(i2cHandle, I2C_CLIENT, deviceAddress);
 
             //if (deviceReturnCode != -1)
             //{
 
-                byte[] data = new byte[3];
+            byte[] data = new byte[3];
 
-                data[0] = writeEEPROM ? MCP4726_CMD_WRITEDACEEPROM : MCP4726_CMD_WRITEDAC;
+            data[0] = writeEEPROM ? MCP4726_CMD_WRITEDACEEPROM : MCP4726_CMD_WRITEDAC;
 
-                data[1] = (byte)(outputLevel >> 4); // Another way
-                data[2] = (byte)((outputLevel & 15) << 4);
+            data[1] = (byte)(outputLevel >> 4); // Another way
+            data[2] = (byte)((outputLevel & 15) << 4);
 
-                //deviceReturnCode = Write(i2cHandle, data, 3);
-                i2cDAC.Write(data);
+            //deviceReturnCode = Write(i2cHandle, data, 3);
+            i2cDAC.Write(data);
 
             // }
 
