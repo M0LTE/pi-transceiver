@@ -173,6 +173,7 @@ namespace rig_controller.Services
             dev.BusAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
             dev.BusVoltageRange = Ina219BusVoltageRange.Range32v;
             dev.PgaSensitivity = Ina219PgaSensitivity.PlusOrMinus320mv;
+            dev.OperatingMode = Ina219OperatingMode.ShuntAndBusContinuous;
 
             return Task.CompletedTask;
 
@@ -180,10 +181,10 @@ namespace rig_controller.Services
 
         public async Task<INA219_Reading> Read()
         {
-            int val;
+       
             UnitsNet.ElectricPotential shunt_voltage;
             UnitsNet.ElectricPotential bus_voltage;
-            UnitsNet.ElectricCurrent current_ma;
+            double current_ma;
             double power_w;
             float percent;
             bool on_battery;
@@ -225,7 +226,7 @@ namespace rig_controller.Services
                 //}
                 //current_ma = (float)(val * current_lsb);
 
-                current_ma = dev.ReadCurrent() * current_lsb ;
+                current_ma = dev.ReadCurrent().Milliamperes * current_lsb ;
 
                 //await INA219_Write(REG_CALIBRATION, cal_value);
                 //await INA219_Read(REG_POWER, out val);
@@ -235,11 +236,12 @@ namespace rig_controller.Services
                 //}
                 //power_w = (float)(val * power_lsb);
 
+                dev.SetCalibration(cal_value, current_lsb);
                 power_w = (double)(dev.ReadPower().Watts) * power_lsb;
 
                 percent = (float)((bus_voltage.Value - 6) / 2.4 * 100);
 
-                on_battery = (current_ma.Value < 0);
+                on_battery = (current_ma < 0);
 
 
             }
@@ -247,7 +249,7 @@ namespace rig_controller.Services
             {
                 bus_voltage = new UnitsNet.ElectricPotential();
                 shunt_voltage = new UnitsNet.ElectricPotential();
-                current_ma = new UnitsNet.ElectricCurrent();
+                current_ma = 0;
                 power_w = 0;
                 percent = 0;
                 on_battery = false;
@@ -267,7 +269,7 @@ namespace rig_controller.Services
     {
         public UnitsNet.ElectricPotential Bus_voltage { get; set; }
         public UnitsNet.ElectricPotential Shunt_voltage { get; set; }
-        public UnitsNet.ElectricCurrent Current_ma { get; set; }
+        public double Current_ma { get; set; }
 
         public double Power_w { get; set; }
 
