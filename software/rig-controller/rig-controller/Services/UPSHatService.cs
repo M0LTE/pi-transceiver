@@ -1,151 +1,76 @@
-﻿
-using System.Runtime.InteropServices;
-using Iot.Device.Adc;
-
+﻿using Iot.Device.Adc;
+using System.Device.I2c;
+using UnitsNet;
 
 namespace rig_controller.Services
 {
-    public class UPSHatService
+    public class PiUpsHatService : IDisposable
     {
+        private readonly Ina219? device;
+        private readonly ushort calValue = 4096;
+        private readonly float currentLsb = 0.0001f;  // Current LSB = 100uA per bit
+        private readonly PlatformInfoProvider platformInfoProvider;
 
-        private static int OPEN_READ_WRITE = 2;
-        private static int I2C_CLIENT = 0x0703;
-
-        public Ina219 dev;
-
-
-
-
-        private ushort cal_value = 0;
-        private float current_lsb = 0;
-        private double power_lsb = 0;
-
-
-
-        private byte deviceaddress;
-
-        public UPSHatService()
+        public PiUpsHatService(PlatformInfoProvider platformInfoProvider)
         {
-            System.Device.I2c.I2cConnectionSettings settings = new System.Device.I2c.I2cConnectionSettings(1, 0x42);
+            this.platformInfoProvider = platformInfoProvider;
 
-
-            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            if (!platformInfoProvider.IsWindows)
             {
-                dev = new Ina219(settings);
-                set_calibration_32V_2A();
+                I2cConnectionSettings settings = new(1, 0x42);
+                device = new Ina219(settings);
+                SetupDevice();
+            }
+        }
 
+        private void SetupDevice()
+        {
+            SetCalibration();
+            device.ShuntAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
+            device.BusAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
+            device.BusVoltageRange = Ina219BusVoltageRange.Range32v;
+            device.PgaSensitivity = Ina219PgaSensitivity.PlusOrMinus320mv;
+            device.OperatingMode = Ina219OperatingMode.ShuntAndBusContinuous;
+        }
+
+        public Task<Ina219Reading> Read()
+        {
+            if (platformInfoProvider.IsWindows)
+            {
+                return Task.FromResult(new Ina219Reading { BusVoltage = new(), ShuntVoltage = new(), Milliamps = default, Watts = default, Percent = default, OnBattery = default });
             }
 
+            SetCalibration();
+            var shuntVoltage = device.ReadShuntVoltage();
+
+            SetCalibration();
+            var busVoltage = device.ReadBusVoltage();
+
+            SetCalibration();
+            var milliAmps = device.ReadCurrent().Value;
+
+            SetCalibration();
+            var watts = (double)(device.ReadPower().Watts);
+            var percent = (float)((busVoltage.Value - 6) / 2.4 * 100.0);
+
+            return Task.FromResult(new Ina219Reading { BusVoltage = busVoltage, ShuntVoltage = shuntVoltage, Milliamps = milliAmps, Watts = watts, Percent = percent, OnBattery = milliAmps < 0 });
         }
 
-        public Task SetAddress(byte deviceAddress)
+        private void SetCalibration() => device.SetCalibration(calValue, currentLsb);
+
+        public void Dispose()
         {
-            deviceaddress = deviceAddress;
-
-
-            return Task.CompletedTask;
+            device?.Dispose();
         }
-
-
-
-
-
-        public Task set_calibration_32V_2A()
-        {
-            current_lsb = (float).0001;  // Current LSB = 100uA per bit
-
-            cal_value = 4096;
-
-            power_lsb = (double).002;  // Power LSB = 2mW per bit
-
-
-            dev.SetCalibration(cal_value, current_lsb);
-
-
-
-            dev.ShuntAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
-            dev.BusAdcResolutionOrSamples = Ina219AdcResolutionOrSamples.Adc32Sample;
-            dev.BusVoltageRange = Ina219BusVoltageRange.Range32v;
-            dev.PgaSensitivity = Ina219PgaSensitivity.PlusOrMinus320mv;
-            dev.OperatingMode = Ina219OperatingMode.ShuntAndBusContinuous;
-
-
-
-            return Task.CompletedTask;
-
-        }
-
-        public async Task<INA219_Reading> Read()
-        {
-
-            UnitsNet.ElectricPotential shunt_voltage;
-            UnitsNet.ElectricPotential bus_voltage;
-            double current_ma;
-            double power_w;
-            float percent;
-            bool on_battery;
-
-
-
-
-
-            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
-            {
-
-
-                dev.SetCalibration(cal_value, current_lsb);
-                shunt_voltage = dev.ReadShuntVoltage();
-
-
-
-                dev.SetCalibration(cal_value, current_lsb);
-                bus_voltage = dev.ReadBusVoltage();
-
-
-                dev.SetCalibration(cal_value, current_lsb);
-                current_ma = dev.ReadCurrent().Value;
-
-
-                dev.SetCalibration(cal_value, current_lsb);
-
-                power_w = (double)(dev.ReadPower().Watts);
-
-                percent = (float)((bus_voltage.Value - 6) / 2.4 * 100);
-
-                on_battery = (current_ma < 0);
-
-
-            }
-            else
-            {
-                bus_voltage = new UnitsNet.ElectricPotential();
-                shunt_voltage = new UnitsNet.ElectricPotential();
-                current_ma = 0;
-                power_w = 0;
-                percent = 0;
-                on_battery = false;
-            }
-
-            return new INA219_Reading { Bus_voltage = bus_voltage, Shunt_voltage = shunt_voltage, Current_ma = current_ma, Power_w = power_w, Percent = percent, On_battery = on_battery };
-        }
-
-
-
-
-
-
     }
 
-    public record INA219_Reading
+    public record Ina219Reading
     {
-        public UnitsNet.ElectricPotential Bus_voltage { get; set; }
-        public UnitsNet.ElectricPotential Shunt_voltage { get; set; }
-        public double Current_ma { get; set; }
-
-        public double Power_w { get; set; }
-
+        public ElectricPotential BusVoltage { get; set; }
+        public ElectricPotential ShuntVoltage { get; set; }
+        public double Milliamps { get; set; }
+        public double Watts { get; set; }
         public float Percent { get; set; }
-
-        public bool On_battery { get; set; }
+        public bool OnBattery { get; set; }
     }
 }

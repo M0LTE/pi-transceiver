@@ -15,6 +15,7 @@ builder.Services.AddTransient<PttService>();
 builder.Services.AddTransient<IFlowgraphControlService, GnuRadioFlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
 builder.Services.AddTransient<IAdcChannelReaderService, ADS1115SysBusAdcChannelReaderService>();
+builder.Services.AddTransient<PlatformInfoProvider>();
 
 var app = builder.Build();
 
