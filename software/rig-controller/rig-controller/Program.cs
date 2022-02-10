@@ -12,7 +12,7 @@ builder.Services.AddHostedService<FlexKnobHostedService>();
 builder.Services.AddHostedService<UiUpdaterHostedService>();
 builder.Services.AddSingleton<GpioService>();
 builder.Services.AddTransient<PttService>();
-builder.Services.AddTransient<FlowgraphControlService>();
+builder.Services.AddTransient<IFlowgraphControlService, GnuRadioFlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
 builder.Services.AddTransient<IAdcChannelReaderService, ADS1115SysBusAdcChannelReaderService>();
 

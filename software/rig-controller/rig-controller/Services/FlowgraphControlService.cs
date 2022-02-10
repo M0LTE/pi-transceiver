@@ -2,52 +2,57 @@
 
 namespace rig_controller.Services
 {
-    public class FlowgraphControlService
+    public interface IFlowgraphControlService
+    {
+        Task<bool> MuteAudioSource();
+        Task<bool> SetFrequency(long hz);
+        Task<bool> UnmuteAudioSource();
+    }
+
+    public class GnuRadioFlowgraphControlService : IFlowgraphControlService
     {
         private readonly RigStateService rigStateService;
+        private readonly ILogger<GnuRadioFlowgraphControlService> logger;
+        private static readonly IFlowgraphXmlRpcProxy proxy = XmlRpcProxyGen.Create<IFlowgraphXmlRpcProxy>();
 
-        private readonly ILogger<FlowgraphControlService> logger;
-
-        [XmlRpcUrl("http://localhost:8080")]
-        public interface ISet_freq_value : IXmlRpcProxy
-        {
-            [XmlRpcMethod("set_freq_value")]
-            string set_freq_value(long test);
-        }
-
-        readonly ISet_freq_value proxy = XmlRpcProxyGen.Create<ISet_freq_value>();
-
-        public FlowgraphControlService(ILogger<FlowgraphControlService> logger, RigStateService rigStateService)
+        public GnuRadioFlowgraphControlService(ILogger<GnuRadioFlowgraphControlService> logger, RigStateService rigStateService)
         {
             this.logger = logger;
             this.rigStateService = rigStateService;
         }
 
-        internal Task MuteAudioSource()
+        public Task<bool> MuteAudioSource()
         {
             logger.LogTrace("TODO: mute flow graph");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
 
-        internal Task UnmuteAudioSource()
+        public Task<bool> UnmuteAudioSource()
         {
             logger.LogTrace("TODO: unmute flow graph");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
 
-        internal Task SetFrequency()
+        public Task<bool> SetFrequency(long hz)
         {
-           
             try
-            { string ret = proxy.set_freq_value(rigStateService.RigState.Frequency); }
-            catch
             {
-                logger.LogTrace("XMLRPC Error");
+                proxy.SetFrequency(hz);
             }
-           
+            catch (Exception ex)
+            {
+                logger.LogWarning(ex, "XMLRPC error");
+                return Task.FromResult(false);
+            }
 
-
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
+    }
+
+    [XmlRpcUrl("http://localhost:8080")]
+    public interface IFlowgraphXmlRpcProxy : IXmlRpcProxy
+    {
+        [XmlRpcMethod("set_freq_value")]
+        string SetFrequency(long hz);
     }
 }

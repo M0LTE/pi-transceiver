@@ -9,9 +9,9 @@ namespace rig_controller.Hubs
         private readonly RigStateService rigStateService;
         private readonly PttService pttService;
         private readonly ILogger<UiHub> logger;
-        private readonly FlowgraphControlService flowgraphControlService;
+        private readonly IFlowgraphControlService flowgraphControlService;
 
-        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, PttService pttService, ILogger<UiHub> logger, FlowgraphControlService flowgraphControlService)
+        public UiHub(UiUpdaterService uiUpdaterService, RigStateService rigStateService, PttService pttService, ILogger<UiHub> logger, IFlowgraphControlService flowgraphControlService)
         {
             this.uiUpdaterService = uiUpdaterService;
             this.rigStateService = rigStateService;
@@ -36,13 +36,13 @@ namespace rig_controller.Hubs
                 rigStateService.RigState.Frequency = newFrequency;
 
                 await uiUpdaterService.SetFrequency();
-                await flowgraphControlService.SetFrequency();
+                await flowgraphControlService.SetFrequency(newFrequency);
             }
         }
 
         public async Task TriggerFrequencyUpdate()
         {
-            await flowgraphControlService.SetFrequency();
+            await flowgraphControlService.SetFrequency(rigStateService.RigState.Frequency);
             await uiUpdaterService.SetFrequency();
         }
 
