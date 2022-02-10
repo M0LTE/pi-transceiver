@@ -11,7 +11,10 @@ namespace rig_controller.Services
 
     public class Ads1115NativeChannelReaderService : IAdcChannelReaderService
     {
-        private const int BUS_0 = 0;
+        // System.IO.IOException: Error 2. Can not open I2C device file '/dev/i2c-0'.
+        //   - sudo raspi-config, Interface Options, I2C, Enable
+
+        private const int BUS_1 = 1;
 
         private readonly Dictionary<int, int> addressMap = new() {
             { 0, 0x48 },
@@ -39,7 +42,7 @@ namespace rig_controller.Services
         {
             if (!devices.ContainsKey(deviceId))
             {
-                var i2cDevice = I2cDevice.Create(new I2cConnectionSettings(BUS_0, addressMap[deviceId]));
+                var i2cDevice = I2cDevice.Create(new I2cConnectionSettings(BUS_1, addressMap[deviceId]));
 
                 devices.Add(deviceId, new Ads1115(i2cDevice));
             }
