@@ -30,8 +30,12 @@ namespace rig_controller.Services
         {
             try
             {
-                var reading = await _adcChannelReaderService.Read(0, 0);
-                _logger.LogInformation($"{reading.Millivolts / 1000.0:0.000}V");
+                var reading0 = await _adcChannelReaderService.Read(0, 0);
+                var reading1 = await _adcChannelReaderService.Read(0, 1);
+                var reading2 = await _adcChannelReaderService.Read(0, 2);
+                var reading3 = await _adcChannelReaderService.Read(0, 3);
+
+                _logger.LogInformation($"ADC: {reading0.Millivolts / 1000.0:0.000}V {reading1.Millivolts / 1000.0:0.000}V {reading2.Millivolts / 1000.0:0.000}V {reading3.Millivolts / 1000.0:0.000}V");
             }
             catch (Exception ex)
             {
