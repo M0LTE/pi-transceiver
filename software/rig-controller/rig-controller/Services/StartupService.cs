@@ -35,7 +35,8 @@ namespace rig_controller.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error reading ADC");
+                _logger.LogError(ex, "Error reading ADC - this will be suspended");
+                await StopAsync(CancellationToken.None);
             }
         }
 
