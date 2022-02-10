@@ -11,14 +11,12 @@ namespace rig_controller.Services
 
     public class GnuRadioFlowgraphControlService : IFlowgraphControlService
     {
-        private readonly RigStateService rigStateService;
         private readonly ILogger<GnuRadioFlowgraphControlService> logger;
         private static readonly IFlowgraphXmlRpcProxy proxy = XmlRpcProxyGen.Create<IFlowgraphXmlRpcProxy>();
 
-        public GnuRadioFlowgraphControlService(ILogger<GnuRadioFlowgraphControlService> logger, RigStateService rigStateService)
+        public GnuRadioFlowgraphControlService(ILogger<GnuRadioFlowgraphControlService> logger)
         {
             this.logger = logger;
-            this.rigStateService = rigStateService;
         }
 
         public Task<bool> MuteAudioSource()
