@@ -33,9 +33,9 @@ namespace rig_controller.Services
                 var reading = await _adcChannelReaderService.Read(0, 0);
                 _logger.LogInformation($"{reading.Millivolts / 1000.0:0.000}V");
             }
-            catch (Exception ex)
+            catch
             {
-                _logger.LogError(ex, "Error reading ADC - this will be suspended");
+                _logger.LogError("Error reading ADC - this will be suspended");
                 await StopAsync(CancellationToken.None);
             }
         }
