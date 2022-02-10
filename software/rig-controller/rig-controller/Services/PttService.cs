@@ -5,7 +5,7 @@ namespace rig_controller.Services
     public class PttService
     {
         private readonly RigStateService rigStateService;
-        private readonly GpioService gpioService;
+        private readonly IGpioService gpioService;
         private readonly IFlowgraphControlService flowgraphControlService;
         private readonly UiUpdaterService uiUpdaterService;
         private readonly IOptionsMonitor<RigOptions> rigOptionsMonitor;
@@ -13,7 +13,7 @@ namespace rig_controller.Services
         private const bool RelayEnergisedGpioState = false;
         private const bool RelayDeenergisedGpioState = true;
 
-        public PttService(RigStateService rigStateService, GpioService gpioService, IFlowgraphControlService flowgraphControlService, UiUpdaterService uiUpdaterService, IOptionsMonitor<RigOptions> rigOptionsMonitor)
+        public PttService(RigStateService rigStateService, IGpioService gpioService, IFlowgraphControlService flowgraphControlService, UiUpdaterService uiUpdaterService, IOptionsMonitor<RigOptions> rigOptionsMonitor)
         {
             this.rigStateService = rigStateService;
             this.gpioService = gpioService;

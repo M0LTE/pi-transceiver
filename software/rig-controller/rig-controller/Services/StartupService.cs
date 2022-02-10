@@ -4,13 +4,13 @@ namespace rig_controller.Services
 {
     public class StartupService : IHostedService
     {
-        private readonly GpioService _gpioService;
+        private readonly IGpioService _gpioService;
         private readonly IAdcChannelReaderService _adcChannelReaderService;
         private readonly ILogger<StartupService> _logger;
         private readonly RigOptions _rigOptions;
         private Timer? _timer;
 
-        public StartupService(GpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger)
+        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger)
         {
             _gpioService = gpioService;
             _adcChannelReaderService = adcChannelReaderService;

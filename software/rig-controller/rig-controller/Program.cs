@@ -10,7 +10,7 @@ builder.Services.AddTransient<UiUpdaterService>();
 builder.Services.AddSingleton<RigStateService>();
 builder.Services.AddHostedService<FlexKnobHostedService>();
 builder.Services.AddHostedService<UiUpdaterHostedService>();
-builder.Services.AddSingleton<GpioService>();
+builder.Services.AddSingleton<IGpioService, NativeGpioService>();
 builder.Services.AddTransient<PttService>();
 builder.Services.AddTransient<IFlowgraphControlService, GnuRadioFlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
