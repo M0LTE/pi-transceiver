@@ -82,6 +82,10 @@ wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet6pi/master/instal
 2. Reboot by issuing the command `sudo reboot`
 3. Connect back up to the Pi using SSH once it has rebooted
 
+### Enable I2C
+
+I2C is not enabled by default. Enable it by running `sudo raspi-config` on the Pi, then selecting Interface Options, I2C, Enable. No need to reboot.
+
 ### Run the rig controller software
 
 To fetch a working copy of the software:
