@@ -82,6 +82,34 @@ wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet6pi/master/instal
 2. Reboot by issuing the command `sudo reboot`
 3. Connect back up to the Pi using SSH once it has rebooted
 
+### Run the rig controller software
+
+To fetch a working copy of the software:
+
+```
+cd ~
+git clone https://github.com/M0LTE/pi-transceiver.git
+```
+
+To update the software:
+
+```
+cd ~/pi-transceiver
+git pull
+```
+
+To run the software in the foreground (NB there will be no touchscreen UI since the screen will be used for console output - useful for debugging):
+
+```
+cd ~/pi-transceiver/software/rig-controller/rig-controller/
+dotnet run
+```
+
+Then on a second computer on the same network, open http://pi-transceiver:5155 in a web browser. You'll get the radio UI.
+
+NOTE: as above - in the final product, this radio UI will be on the touchscreen.
+
+Instructions on setting up the software to run in the background and display the UI on the touchscreen (or HDMI monitor) will follow.
 
 ## Hardware
 
