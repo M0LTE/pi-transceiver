@@ -7,19 +7,26 @@ namespace rig_controller.Services
         private readonly IGpioService _gpioService;
         private readonly IAdcChannelReaderService _adcChannelReaderService;
         private readonly ILogger<StartupService> _logger;
+        private readonly PlatformInfoProvider platformInfoProvider;
         private readonly RigOptions _rigOptions;
         private Timer? _timer;
 
-        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger)
+        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider)
         {
             _gpioService = gpioService;
             _adcChannelReaderService = adcChannelReaderService;
             _logger = logger;
+            this.platformInfoProvider = platformInfoProvider;
             _rigOptions = options.Value;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
+            if (!File.Exists("/dev/i2c-0") && !platformInfoProvider.IsWindows)
+            {
+                throw new InvalidOperationException("I2C is not enabled. If this is a Raspberry Pi: sudo raspi-config, Interface Options, I2C, Enable");
+            }
+
             await _gpioService.SetGpio(_rigOptions.RXTX_CHANGEOVER_RELAY_PIN, true);
             await _gpioService.SetGpio(_rigOptions.PA_RELAY_PIN, true);
 
