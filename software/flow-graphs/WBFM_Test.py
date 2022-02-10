@@ -7,7 +7,7 @@
 # GNU Radio Python Flow Graph
 # Title: FM receiver
 # Author: Lime Microsystems
-# GNU Radio version: 3.8.5.0
+# GNU Radio version: 3.8.2.0
 
 from gnuradio import analog
 from gnuradio import audio
@@ -53,7 +53,7 @@ class WBFM_Test(gr.top_block):
                 trans_width,
                 firdes.WIN_HAMMING,
                 6.76))
-        self.limesdr_source_0_0 = limesdr.source('1D588FD736569E', 0, '', False)
+        self.limesdr_source_0_0 = limesdr.source('1D588FD736569E', 0, '')
 
 
         self.limesdr_source_0_0.set_sample_rate(samp_rate)
@@ -77,6 +77,7 @@ class WBFM_Test(gr.top_block):
         	quad_rate=480e3,
         	audio_decimation=10,
         )
+
 
 
         ##################################################
