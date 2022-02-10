@@ -21,6 +21,11 @@ from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
 import limesdr
+try:
+    from xmlrpc.server import SimpleXMLRPCServer
+except ImportError:
+    from SimpleXMLRPCServer import SimpleXMLRPCServer
+import threading
 
 
 class WBFM_Test(gr.top_block):
@@ -34,11 +39,17 @@ class WBFM_Test(gr.top_block):
         self.volume = volume = 1
         self.trans_width = trans_width = 210000
         self.samp_rate = samp_rate = 2e6
+        self.freq_value = freq_value = 94200000
         self.cut_freq = cut_freq = 28000
 
         ##################################################
         # Blocks
         ##################################################
+        self.xmlrpc_server_0 = SimpleXMLRPCServer(('localhost', 8080), allow_none=True)
+        self.xmlrpc_server_0.register_instance(self)
+        self.xmlrpc_server_0_thread = threading.Thread(target=self.xmlrpc_server_0.serve_forever)
+        self.xmlrpc_server_0_thread.daemon = True
+        self.xmlrpc_server_0_thread.start()
         self.rational_resampler_xxx_1_0_1 = filter.rational_resampler_ccc(
                 interpolation=48,
                 decimation=200,
@@ -59,7 +70,7 @@ class WBFM_Test(gr.top_block):
         self.limesdr_source_0_0.set_sample_rate(samp_rate)
 
 
-        self.limesdr_source_0_0.set_center_freq(94.2e6, 0)
+        self.limesdr_source_0_0.set_center_freq(freq_value, 0)
 
         self.limesdr_source_0_0.set_bandwidth(1.5e6, 0)
 
@@ -111,6 +122,13 @@ class WBFM_Test(gr.top_block):
         self.samp_rate = samp_rate
         self.limesdr_source_0_0.set_digital_filter(self.samp_rate, 0)
         self.limesdr_source_0_0.set_digital_filter(self.samp_rate, 1)
+
+    def get_freq_value(self):
+        return self.freq_value
+
+    def set_freq_value(self, freq_value):
+        self.freq_value = freq_value
+        self.limesdr_source_0_0.set_center_freq(self.freq_value, 0)
 
     def get_cut_freq(self):
         return self.cut_freq

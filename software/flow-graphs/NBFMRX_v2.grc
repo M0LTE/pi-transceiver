@@ -53,6 +53,18 @@ blocks:
     coordinate: [896, 12.0]
     rotation: 0
     state: enabled
+- name: freq_value
+  id: variable
+  parameters:
+    comment: ''
+    value: '433000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 332.0]
+    rotation: 0
+    state: true
 - name: rf_decim
   id: variable
   parameters:
@@ -236,7 +248,7 @@ blocks:
     nco_freq_ch0: '0'
     nco_freq_ch1: '0'
     oversample: '0'
-    rf_freq: freq
+    rf_freq: freq_value
     samp_rate: samp_rate
     serial: 1D588FD736569E
   states:
@@ -290,6 +302,20 @@ blocks:
     coordinate: [432, 308.0]
     rotation: 0
     state: enabled
+- name: xmlrpc_server_0
+  id: xmlrpc_server
+  parameters:
+    addr: localhost
+    alias: ''
+    comment: ''
+    port: '8080'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 96.0]
+    rotation: 0
+    state: true
 
 connections:
 - [analog_nbfm_rx_0, '0', blocks_multiply_const_vxx_0_0, '0']

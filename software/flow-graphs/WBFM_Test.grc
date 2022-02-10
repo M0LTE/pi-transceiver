@@ -44,6 +44,18 @@ blocks:
     coordinate: [313, 405]
     rotation: 0
     state: true
+- name: freq_value
+  id: variable
+  parameters:
+    comment: ''
+    value: '94200000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [544, 136.0]
+    rotation: 0
+    state: true
 - name: samp_rate
   id: variable
   parameters:
@@ -65,7 +77,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [570, 368]
+    coordinate: [712, 60.0]
     rotation: 0
     state: true
 - name: volume
@@ -142,7 +154,6 @@ blocks:
     analog_bandw_ch1: 1.5e6
     calibr_bandw_ch0: '0'
     calibr_bandw_ch1: '0'
-    ch_align: 'False'
     channel_mode: '0'
     comment: ''
     dacVal: '180'
@@ -158,7 +169,7 @@ blocks:
     nco_freq_ch0: '0'
     nco_freq_ch1: '0'
     oversample: '0'
-    rf_freq: 94.2e6
+    rf_freq: freq_value
     samp_rate: samp_rate
     serial: 1D588FD736569E
   states:
@@ -212,6 +223,20 @@ blocks:
     coordinate: [520, 248]
     rotation: 0
     state: enabled
+- name: xmlrpc_server_0
+  id: xmlrpc_server
+  parameters:
+    addr: localhost
+    alias: ''
+    comment: ''
+    port: '8080'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 96.0]
+    rotation: 0
+    state: true
 
 connections:
 - [analog_wfm_rcv_0_1, '0', blocks_multiply_const_vxx_0_1, '0']
