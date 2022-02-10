@@ -14,7 +14,7 @@ builder.Services.AddSingleton<GpioService>();
 builder.Services.AddTransient<PttService>();
 builder.Services.AddTransient<IFlowgraphControlService, GnuRadioFlowgraphControlService>();
 builder.Services.AddHostedService<StartupService>();
-builder.Services.AddTransient<IAdcChannelReaderService, Ads1115NativeChannelReaderService>();
+builder.Services.AddSingleton<IAdcChannelReaderService, Ads1115NativeChannelReaderService>();
 builder.Services.AddTransient<PlatformInfoProvider>();
 
 builder.WebHost.ConfigureKestrel(options =>
