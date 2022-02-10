@@ -17,7 +17,13 @@ builder.Services.AddHostedService<StartupService>();
 builder.Services.AddTransient<IAdcChannelReaderService, ADS1115SysBusAdcChannelReaderService>();
 builder.Services.AddTransient<PlatformInfoProvider>();
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5155);
+});
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
