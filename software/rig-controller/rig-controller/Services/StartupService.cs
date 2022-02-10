@@ -33,8 +33,6 @@ namespace rig_controller.Services
             _timer = new Timer(Tick, null, 0, 10000);
         }
 
-        static bool laststate = false;
-
         private async void Tick(object? state)
         {
             try
@@ -45,9 +43,6 @@ namespace rig_controller.Services
                 var reading3 = await _adcChannelReaderService.Read(0, 3);
 
                 _logger.LogInformation($"ADC: {reading0.Millivolts / 1000.0:0.000}V {reading1.Millivolts / 1000.0:0.000}V {reading2.Millivolts / 1000.0:0.000}V {reading3.Millivolts / 1000.0:0.000}V");
-
-                await _gpioService.SetGpio(23, laststate);
-                laststate = !laststate;
             }
             catch (Exception ex)
             {
