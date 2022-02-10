@@ -1,10 +1,63 @@
-﻿using System.Collections.Concurrent;
+﻿using Iot.Device.Ads1115;
+using System.Collections.Concurrent;
+using System.Device.I2c;
 
 namespace rig_controller.Services
 {
-    public interface IAdcChannelReaderService
+    public interface IAdcChannelReaderService : IDisposable
     {
         Task<AdcReading> Read(int device, int channel);
+    }
+
+    public class Ads1115NativeChannelReaderService : IAdcChannelReaderService
+    {
+        private const int BUS_0 = 0;
+
+        private readonly Dictionary<int, int> addressMap = new() {
+            { 0, 0x48 },
+            { 1, 0x49 },
+            { 2, 0x4a },
+            { 3, 0x4b },
+        };
+
+        private readonly Dictionary<int, InputMultiplexer> channelMap = new()
+        {
+            { 0, InputMultiplexer.AIN0 },
+            { 1, InputMultiplexer.AIN1 },
+            { 2, InputMultiplexer.AIN2 },
+            { 3, InputMultiplexer.AIN3 },
+        };
+
+        private readonly Dictionary<int,Ads1115> devices;
+
+        public Ads1115NativeChannelReaderService()
+        {
+            devices = new Dictionary<int, Ads1115>();
+        }
+
+        public Task<AdcReading> Read(int deviceId, int channel)
+        {
+            if (!devices.ContainsKey(deviceId))
+            {
+                var i2cDevice = I2cDevice.Create(new I2cConnectionSettings(BUS_0, addressMap[deviceId]));
+
+                devices.Add(deviceId, new Ads1115(i2cDevice));
+            }
+
+            var device = devices[deviceId];
+
+            var reading = device.ReadVoltage(channelMap[channel]);
+
+            return Task.FromResult(new AdcReading { Channel = channel, Device = deviceId, Millivolts = (int)reading.Millivolts });
+        }
+
+        public void Dispose()
+        {
+            foreach (var device in devices.Values)
+            {
+                device.Dispose();
+            }
+        }
     }
 
     /// <summary>
@@ -61,6 +114,10 @@ namespace rig_controller.Services
             }
 
             return scale;
+        }
+
+        public void Dispose()
+        {
         }
 
         private record DeviceChannel
