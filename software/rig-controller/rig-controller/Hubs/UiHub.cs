@@ -36,6 +36,7 @@ namespace rig_controller.Hubs
                 rigStateService.RigState.Frequency = newFrequency;
 
                 await uiUpdaterService.SetFrequency();
+                await flowgraphControlService.SetFrequency();
             }
         }
 
