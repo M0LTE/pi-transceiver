@@ -40,7 +40,7 @@ namespace rig_controller.Services
                 _logger.LogInformation($"ADC: {reading0.Millivolts / 1000.0:0.000}V {reading1.Millivolts / 1000.0:0.000}V {reading2.Millivolts / 1000.0:0.000}V {reading3.Millivolts / 1000.0:0.000}V");
 
                 await _gpioService.SetGpio(23, laststate);
-                state = !laststate;
+                laststate = !laststate;
             }
             catch (Exception ex)
             {
