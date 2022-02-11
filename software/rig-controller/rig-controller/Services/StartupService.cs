@@ -6,18 +6,20 @@ namespace rig_controller.Services
     {
         private readonly IGpioService _gpioService;
         private readonly IAdcChannelReaderService _adcChannelReaderService;
+        private readonly IPiUpsHatService  _piUpsHatService;
         private readonly ILogger<StartupService> _logger;
         private readonly PlatformInfoProvider platformInfoProvider;
         private readonly RigOptions _rigOptions;
         private Timer? _timer;
 
-        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider)
+        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider,IPiUpsHatService piUpsHatService)
         {
             _gpioService = gpioService;
             _adcChannelReaderService = adcChannelReaderService;
             _logger = logger;
             this.platformInfoProvider = platformInfoProvider;
             _rigOptions = options.Value;
+            _piUpsHatService = piUpsHatService;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -49,7 +51,22 @@ namespace rig_controller.Services
                 _logger.LogError(ex, "Error reading ADC - this will be suspended");
                 await StopAsync(CancellationToken.None);
             }
+
+            try
+            {
+                var UPSreading0 = await _piUpsHatService.Read();
+              
+
+                _logger.LogInformation($"UPS Battery: {UPSreading0.BusVoltage:0.000}V");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error reading UPS - this will be suspended");
+                await StopAsync(CancellationToken.None);
+            }
         }
+
+       
 
         public Task StopAsync(CancellationToken cancellationToken)
         {

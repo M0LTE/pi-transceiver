@@ -2,9 +2,15 @@
 using System.Device.I2c;
 using UnitsNet;
 
+
 namespace rig_controller.Services
 {
-    public class PiUpsHatService : IDisposable
+    public interface IPiUpsHatService : IDisposable
+    {
+        Task<Ina219Reading> Read();
+    }
+
+    public class PiUpsHatService : IPiUpsHatService
     {
         private readonly Ina219? device;
         private readonly ushort calValue = 4096;
