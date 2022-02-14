@@ -160,7 +160,7 @@ blocks:
     digital_bandw_ch0: samp_rate
     digital_bandw_ch1: samp_rate
     filename: ''
-    gain_dB_ch0: '60'
+    gain_dB_ch0: '70'
     gain_dB_ch1: '60'
     lna_path_ch0: '255'
     lna_path_ch1: '1'
