@@ -24,7 +24,7 @@ namespace rig_controller.Services
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            if (!File.Exists("/dev/i2c-0") && !platformInfoProvider.IsWindows)
+            if (!File.Exists("/dev/i2c-1") && !platformInfoProvider.IsWindows)
             {
                 throw new InvalidOperationException("I2C is not enabled. If this is a Raspberry Pi: sudo raspi-config, Interface Options, I2C, Enable");
             }
