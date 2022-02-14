@@ -57,7 +57,11 @@ namespace rig_controller.Services
                 var UPSreading0 = await _piUpsHatService.Read();
               
 
-                _logger.LogInformation($"UPS Battery: {UPSreading0.BusVoltage:0.000}V");
+                //_logger.LogInformation($"UPS Battery: {UPSreading0.BusVoltage:0.000}V");
+                //_logger.LogInformation($"UPS Milliamps: {UPSreading0.Milliamps:0.000}V");
+                //_logger.LogInformation($"UPS Power: {UPSreading0.Milliamps:0.000}V");
+
+                _logger.LogInformation($"UPS: {UPSreading0.BusVoltage :0.000}V {UPSreading0.Milliamps :0.000}mA {UPSreading0.Watts :0.000}W {UPSreading0.Percent / 1000.0:0.000}% {UPSreading0.OnBattery:0}");
             }
             catch (Exception ex)
             {
