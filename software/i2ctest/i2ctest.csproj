@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishSingleFile>true</PublishSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="System.Device.Gpio" />
+    <None Remove="System.CommandLine" />
+    <None Remove="System.CommandLine.NamingConventionBinder" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Device.Gpio" Version="2.0.0" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta3.22114.1" />
+    <PackageReference Include="System.CommandLine.NamingConventionBinder" Version="2.0.0-beta3.22114.1" />
+  </ItemGroup>
+</Project>
