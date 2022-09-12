@@ -1,17 +1,20 @@
 # pi-transceiver / software / system
 Here is a folder for scripts etc to build the system 
+Notes added by G4CDF based on experience following these instructions
 
 ## Install notes 2022-02-09
 
 Complete from-the-ground-up build of a working system.
 
 It is highly recommended to copy-paste these commands into a remote connection rather than typing them in by hand on the Pi.
+G4CDF> To paste into PuTTY just right click on the line rather than the usual CTRL V.
 
 This will result in a system without a graphical desktop interface, which is the same as how the system will run once the radio software is installed.
 
 ### Prepare the micro SD card
 1. Download latest Raspberry Pi Imager https://www.raspberrypi.com/software/
 1. Choose OS -> Raspberry Pi OS (other) -> Raspberry Pi OS Lite (32-bit) - Bullseye 2022-01-28
+G4CDF> I ixtllled the full 32 bit version to a 32 GB SD card
 1. Choose storage -> pick micro SD card, which you have inserted
 1. Click the Cog icon
    1. Set hostname: e.g. pi-transceiver
