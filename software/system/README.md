@@ -14,7 +14,9 @@ This will result in a system without a graphical desktop interface, which is the
 ### Prepare the micro SD card
 1. Download latest Raspberry Pi Imager https://www.raspberrypi.com/software/
 1. Choose OS -> Raspberry Pi OS (other) -> Raspberry Pi OS Lite (32-bit) - Bullseye 2022-01-28
-G4CDF> I ixtllled the full 32 bit version to a 32 GB SD card
+
+G4CDF> I installed the full 32 bit version to a 32 GB SD card
+
 1. Choose storage -> pick micro SD card, which you have inserted
 1. Click the Cog icon
    1. Set hostname: e.g. pi-transceiver
@@ -23,6 +25,8 @@ G4CDF> I ixtllled the full 32 bit version to a 32 GB SD card
    1. Configure wi-fi if desired
    1. Click save
 1. Click Write, then click Yes, and wait
+
+G4CDF>  These settings can be made on the Raspberry PI GUI  
 
 ### First boot
 
@@ -33,6 +37,8 @@ G4CDF> I ixtllled the full 32 bit version to a 32 GB SD card
 1. Wait until you see a login prompt
 1. Connect to the Pi using your favourite SSH client. PuTTY is fine on Windows. Log in using the username and password you set earlier. The default username is "pi"
 1. Issue the command `sudo apt update; sudo apt full-upgrade -y` and wait until completion
+
+G4CDF>  SSH will not work with host name only IP address
 
 ### Install GNU Radio and LimeSDR components
 
@@ -113,6 +119,8 @@ dotnet run
 ```
 
 Then on a second computer on the same network, open http://pi-transceiver:5155 in a web browser. You'll get the radio UI.
+
+G4CDF>  Windows 10 machine cannt see the Raspberry PI for some reason.
 
 NOTE: as above - in the final product, this radio UI will be on the touchscreen.
 
