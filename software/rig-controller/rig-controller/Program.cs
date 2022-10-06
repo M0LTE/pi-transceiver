@@ -17,6 +17,8 @@ builder.Services.AddHostedService<StartupService>();
 builder.Services.AddSingleton<IAdcChannelReaderService, Ads1115NativeChannelReaderService>();
 builder.Services.AddTransient<PlatformInfoProvider>();
 builder.Services.AddSingleton<IPiUpsHatService, PiUpsHatService>();
+builder.Services.AddSingleton<II2cDacService, I2cDacService>();
+
 
 
 builder.WebHost.ConfigureKestrel(options =>

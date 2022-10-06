@@ -1,6 +1,7 @@
 ﻿
 using System.Runtime.InteropServices;
 using System.Device.I2c;
+using Iot.Device.FtCommon;
 
 
 namespace rig_controller.Services
@@ -11,7 +12,7 @@ namespace rig_controller.Services
         Task SetDAC(int deviceAddress, bool writeEEPROM, UInt16 outputLevel, out int returnValue);
     }
 
-    public class I2cDacService
+    public class I2cDacService : II2cDacService
     {
         const byte MCP4726_CMD_WRITEDAC = 0x40; // Writes data to the DAC
         const byte MCP4726_CMD_WRITEDACEEPROM = 0x60; // Writes data to the DAC and the EEPROM (persisting the assigned value after reset)
@@ -21,7 +22,7 @@ namespace rig_controller.Services
         //private static int OPEN_READ_WRITE = 2;
         //private static int I2C_CLIENT = 0x0703;
 
-        public I2cDevice dev;
+        //public I2cDevice dev;
 
         //[DllImport("libc.so.6", EntryPoint = "open")]
         //private static extern int Open(string fileName, int mode);
@@ -127,6 +128,11 @@ namespace rig_controller.Services
             returnValue = 0;
 
             return Task.CompletedTask;
+        }
+
+        public void Dispose()
+        {
+            i2cDAC?.Dispose();
         }
     }
 
