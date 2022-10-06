@@ -6,7 +6,12 @@ using System.Device.I2c;
 namespace rig_controller.Services
 {
 
-    public class i2cDacService
+    public interface II2cDacService : IDisposable
+    {
+        Task SetDAC(int deviceAddress, bool writeEEPROM, UInt16 outputLevel, out int returnValue);
+    }
+
+    public class I2cDacService
     {
         const byte MCP4726_CMD_WRITEDAC = 0x40; // Writes data to the DAC
         const byte MCP4726_CMD_WRITEDACEEPROM = 0x60; // Writes data to the DAC and the EEPROM (persisting the assigned value after reset)
@@ -44,9 +49,9 @@ namespace rig_controller.Services
 
 
 
-        private readonly ILogger<i2cDacService> _logger;
+        private readonly ILogger<I2cDacService> _logger;
 
-        public i2cDacService(ILogger<i2cDacService> logger)
+        public I2cDacService(ILogger<I2cDacService> logger)
         {
             _logger = logger;
             InitializeSystem();

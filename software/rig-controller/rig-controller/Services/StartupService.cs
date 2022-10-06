@@ -7,12 +7,14 @@ namespace rig_controller.Services
         private readonly IGpioService _gpioService;
         private readonly IAdcChannelReaderService _adcChannelReaderService;
         private readonly IPiUpsHatService  _piUpsHatService;
+        private readonly II2cDacService _i2cDacService;
         private readonly ILogger<StartupService> _logger;
         private readonly PlatformInfoProvider platformInfoProvider;
         private readonly RigOptions _rigOptions;
         private Timer? _timer;
 
-        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService, ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider,IPiUpsHatService piUpsHatService)
+        public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService,
+            ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider,IPiUpsHatService piUpsHatService, II2cDacService i2CDacService)
         {
             _gpioService = gpioService;
             _adcChannelReaderService = adcChannelReaderService;
@@ -20,6 +22,7 @@ namespace rig_controller.Services
             this.platformInfoProvider = platformInfoProvider;
             _rigOptions = options.Value;
             _piUpsHatService = piUpsHatService;
+            _i2cDacService = i2CDacService;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -49,7 +52,7 @@ namespace rig_controller.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error reading ADC - this will be suspended");
-                await StopAsync(CancellationToken.None);
+                //await StopAsync(CancellationToken.None);
             }
 
             try
@@ -66,8 +69,21 @@ namespace rig_controller.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error reading UPS - this will be suspended");
-                await StopAsync(CancellationToken.None);
+                //await StopAsync(CancellationToken.None);
             }
+
+            try
+            {
+                Random rnd = new Random();
+                int iout;
+
+                await _i2cDacService.SetDAC(I2cDacService.MCP4726_DEFAULT_ADDRESS, false, (ushort)rnd.Next(4095), out iout);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error writing DAC - this will be suspended");
+            }
+
         }
 
        
