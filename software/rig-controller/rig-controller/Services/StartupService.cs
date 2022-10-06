@@ -77,7 +77,7 @@ namespace rig_controller.Services
                 Random rnd = new Random();
                 int iout;
 
-                await _i2cDacService.SetDAC(I2cDacService.MCP4726_DEFAULT_ADDRESS, false, (ushort)rnd.Next(4095), out iout);
+                await _i2cDacService.SetDAC(0x60, false, (ushort)rnd.Next(4095), out iout);
             }
             catch (Exception ex)
             {
