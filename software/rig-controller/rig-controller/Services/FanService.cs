@@ -15,7 +15,8 @@ namespace rig_controller.Services
     }
     public class FanService : IFanService
     {
-        const int gpioPWMPin = 12;
+        const int gpioPWMPinFan1 = 12;
+        const int gpioPWMPinFan2 = 13;
         const int frequency = 25000;
         const double initialDutyCycle = 0;
 
@@ -39,7 +40,7 @@ namespace rig_controller.Services
          
 
             //using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
-            using (var controller = PwmChannel.Create(0,0, frequency, initialDutyCycle))
+            using (var controller = PwmChannel.Create(0,1, frequency, initialDutyCycle))
             {
                 double dutyCycle = 1;
                 
