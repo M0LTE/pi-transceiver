@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Iot.Device.GrovePiDevice.Sensors;
+using Microsoft.Extensions.Logging;
 using System.Device.Gpio;
 using System.Device.Pwm;
 using System.Device.Pwm.Drivers;
@@ -30,12 +31,19 @@ namespace rig_controller.Services
         public Task PWMFanSimpleExample()
         {
             _logger.LogInformation("Starting PWM Controller - Simple Demo");
+
+
+            using var gcontroller = new GpioController();
+            gcontroller.SetPinMode(12, PinMode.Output);
+
             //using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
             using (var controller = PwmChannel.Create(0,0, frequency, initialDutyCycle))
             {
                 double dutyCycle = 1;
                 
                 controller.Start();
+
+
 
                 controller.DutyCycle = dutyCycle;
 
