@@ -73,7 +73,7 @@ namespace rig_controller.Services
 
         private void ReadTachometer()
         {
-            var pin = 29;
+            var pin = 5;
             var pulses = 0;
             var startTime = DateTime.Now;
             var sampleMilliseconds = 5000;
