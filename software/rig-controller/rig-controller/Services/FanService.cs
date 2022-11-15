@@ -34,7 +34,9 @@ namespace rig_controller.Services
 
 
             using var gcontroller = new GpioController();
+            gcontroller.OpenPin(12);
             gcontroller.SetPinMode(12, PinMode.Output);
+         
 
             //using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
             using (var controller = PwmChannel.Create(0,0, frequency, initialDutyCycle))
