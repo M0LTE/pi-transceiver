@@ -29,7 +29,7 @@ namespace rig_controller.Services
 
         public Task PWMFanSimpleExample()
         {
-            _logger.LogTrace("Starting PWM Controller - Simple Demo");
+            _logger.LogInformation("Starting PWM Controller - Simple Demo");
             using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle))
             {
                 double dutyCycle = 1;
@@ -37,26 +37,26 @@ namespace rig_controller.Services
 
                 controller.DutyCycle = dutyCycle;
 
-                _logger.LogTrace("Duty cycle " + dutyCycle);
+                _logger.LogInformation("Duty cycle " + dutyCycle);
                 Task.Delay(new TimeSpan(0, 0, 10)).Wait(); //10 second wait to give fan time to power up
                 ReadTachometer();
 
                 dutyCycle = 0.7;
                 controller.DutyCycle = dutyCycle;
-                _logger.LogTrace("Duty cycle " + dutyCycle);
+                _logger.LogInformation("Duty cycle " + dutyCycle);
                 Task.Delay(new TimeSpan(0, 0, 2)).Wait(); //2 second wait
                 ReadTachometer();
 
                 dutyCycle = 0.3;
                 controller.DutyCycle = dutyCycle;
-                _logger.LogTrace("Duty cycle " + dutyCycle);
+                _logger.LogInformation("Duty cycle " + dutyCycle);
                 Task.Delay(new TimeSpan(0, 0, 2)).Wait(); //2 second wait
                 ReadTachometer();
 
                 controller.DutyCycle = 0;
                 controller.Stop();
                 controller.Dispose();
-                _logger.LogTrace("Finished - Simple Demo");
+                _logger.LogInformation("Finished - Simple Demo");
 
                 
             }
@@ -87,7 +87,7 @@ namespace rig_controller.Services
                 var revsPerSecond = (pulses / 2) / (milliSeconds / 1000);
                 var rpm = Convert.ToInt32(revsPerSecond * 60);
                 controller.UnregisterCallbackForPinValueChangedEvent(pin, onPinEvent);
-                _logger.LogTrace($"Fan is running at {rpm} revolutions per minute");
+                _logger.LogInformation($"Fan is running at {rpm} revolutions per minute");
             }
         }
     }
