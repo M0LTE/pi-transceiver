@@ -15,7 +15,7 @@ namespace rig_controller.Services
     public class FanService : IFanService
     {
         const int gpioPWMPin = 12;
-        const int frequency = 25;
+        const int frequency = 25000;
         const double initialDutyCycle = 0;
 
         private readonly ILogger<FanService> _logger;
