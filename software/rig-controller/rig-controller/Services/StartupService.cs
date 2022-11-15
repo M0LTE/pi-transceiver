@@ -8,13 +8,14 @@ namespace rig_controller.Services
         private readonly IAdcChannelReaderService _adcChannelReaderService;
         private readonly IPiUpsHatService  _piUpsHatService;
         private readonly II2cDacService _i2cDacService;
+        private readonly IFanService _fanService;
         private readonly ILogger<StartupService> _logger;
         private readonly PlatformInfoProvider platformInfoProvider;
         private readonly RigOptions _rigOptions;
         private Timer? _timer;
 
         public StartupService(IGpioService gpioService, IOptions<RigOptions> options, IAdcChannelReaderService adcChannelReaderService,
-            ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider,IPiUpsHatService piUpsHatService, II2cDacService i2CDacService)
+            ILogger<StartupService> logger, PlatformInfoProvider platformInfoProvider,IPiUpsHatService piUpsHatService, II2cDacService i2CDacService, IFanService fanService)
         {
             _gpioService = gpioService;
             _adcChannelReaderService = adcChannelReaderService;
@@ -23,6 +24,7 @@ namespace rig_controller.Services
             _rigOptions = options.Value;
             _piUpsHatService = piUpsHatService;
             _i2cDacService = i2CDacService;
+            _fanService = fanService;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -36,6 +38,8 @@ namespace rig_controller.Services
             await _gpioService.SetGpio(_rigOptions.PA_RELAY_PIN, true);
 
             _timer = new Timer(Tick, null, 0, 10000);
+
+            await _fanService.PWMFanSimpleExample();
         }
 
         private async void Tick(object? state)
