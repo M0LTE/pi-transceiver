@@ -38,7 +38,7 @@ namespace rig_controller.Services
                 controller.DutyCycle = dutyCycle;
 
                 _logger.LogInformation("Duty cycle " + dutyCycle);
-                Task.Delay(new TimeSpan(0, 0, 10)).Wait(); //10 second wait to give fan time to power up
+                Task.Delay(new TimeSpan(0, 0, 2)).Wait(); //10 second wait to give fan time to power up
                 ReadTachometer();
 
                 dutyCycle = 0.7;
