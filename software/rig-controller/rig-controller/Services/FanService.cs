@@ -30,9 +30,10 @@ namespace rig_controller.Services
         public Task PWMFanSimpleExample()
         {
             _logger.LogInformation("Starting PWM Controller - Simple Demo");
-            using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle))
+            using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
             {
                 double dutyCycle = 1;
+                
                 controller.Start();
 
                 controller.DutyCycle = dutyCycle;
