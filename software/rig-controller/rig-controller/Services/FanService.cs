@@ -32,7 +32,7 @@ namespace rig_controller.Services
             _logger.LogTrace("Starting PWM Controller - Simple Demo");
             using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle))
             {
-                double dutyCycle = 100;
+                double dutyCycle = 1;
                 controller.Start();
 
                 controller.DutyCycle = dutyCycle;
@@ -41,13 +41,13 @@ namespace rig_controller.Services
                 Task.Delay(new TimeSpan(0, 0, 10)).Wait(); //10 second wait to give fan time to power up
                 ReadTachometer();
 
-                dutyCycle = 70;
+                dutyCycle = 0.7;
                 controller.DutyCycle = dutyCycle;
                 _logger.LogTrace("Duty cycle " + dutyCycle);
                 Task.Delay(new TimeSpan(0, 0, 2)).Wait(); //2 second wait
                 ReadTachometer();
 
-                dutyCycle = 30;
+                dutyCycle = 0.3;
                 controller.DutyCycle = dutyCycle;
                 _logger.LogTrace("Duty cycle " + dutyCycle);
                 Task.Delay(new TimeSpan(0, 0, 2)).Wait(); //2 second wait
