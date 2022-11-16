@@ -7,6 +7,9 @@ namespace rig_controller.Services
     public interface IAdcChannelReaderService : IDisposable
     {
         Task<AdcReading> Read(int device, int channel);
+
+        public bool ENABLED { get; set; }
+
     }
 
     public class Ads1115NativeChannelReaderService : IAdcChannelReaderService
@@ -15,6 +18,7 @@ namespace rig_controller.Services
         //   - sudo raspi-config, Interface Options, I2C, Enable
 
         private const int BUS_1 = 1;
+       
 
         private readonly Dictionary<int, int> addressMap = new() {
             { 0, 0x48 },
@@ -37,6 +41,8 @@ namespace rig_controller.Services
         {
             devices = new Dictionary<int, Ads1115>();
         }
+
+        public bool ENABLED { get; set; } = true;
 
         public Task<AdcReading> Read(int deviceId, int channel)
         {
@@ -76,6 +82,8 @@ namespace rig_controller.Services
     public class ADS1115SysBusAdcChannelReaderService : IAdcChannelReaderService
     {
         private static readonly ConcurrentDictionary<DeviceChannel, double> scalesCache = new();
+
+        public bool ENABLED { get; set; } = true;
 
         public async Task<AdcReading> Read(int device, int channel)
         {
