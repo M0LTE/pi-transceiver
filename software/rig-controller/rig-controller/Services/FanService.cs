@@ -17,7 +17,7 @@ namespace rig_controller.Services
     {
         const int gpioPWMPinFan1 = 12;
         const int gpioPWMPinFan2 = 13;
-        const int frequency = 25000;
+        const int frequency = 21000;
         const double initialDutyCycle = 0;
 
         private readonly ILogger<FanService> _logger;
