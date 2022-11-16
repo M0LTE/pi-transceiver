@@ -40,7 +40,7 @@ namespace rig_controller.Services
          
 
             //using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
-            using (var controller = PwmChannel.Create(0,1, frequency, initialDutyCycle))
+            using (var controller = PwmChannel.Create(0,0, frequency, initialDutyCycle))
             {
                 double dutyCycle = 1;
                 
