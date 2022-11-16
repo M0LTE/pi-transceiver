@@ -34,9 +34,9 @@ namespace rig_controller.Services
             _logger.LogInformation("Starting PWM Controller - Simple Demo");
 
 
-            using var gcontroller = new GpioController();
-            gcontroller.OpenPin(12);
-            gcontroller.SetPinMode(12, PinMode.Output);
+            //using var gcontroller = new GpioController();
+            //gcontroller.OpenPin(12);
+            //gcontroller.SetPinMode(12, PinMode.Output);
          
 
             //using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
