@@ -39,7 +39,7 @@ namespace rig_controller.Services
 
             _timer = new Timer(Tick, null, 0, 10000);
 
-            await _fanService.PWMFanSimpleExample();
+            _fanService.PWMFanSimpleExample();
         }
 
         private async void Tick(object? state)

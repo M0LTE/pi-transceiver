@@ -42,7 +42,7 @@ namespace rig_controller.Services
             //using (var controller = new SoftwarePwmChannel(gpioPWMPin,frequency,initialDutyCycle,true))
             using (var controller = PwmChannel.Create(0,0, frequency, initialDutyCycle))
             {
-                double dutyCycle = 1;
+                double dutyCycle = 0.8;
                 
                 controller.Start();
 
@@ -51,7 +51,7 @@ namespace rig_controller.Services
                 controller.DutyCycle = dutyCycle;
 
                 _logger.LogInformation("Duty cycle " + dutyCycle);
-                Task.Delay(new TimeSpan(0, 0, 2)).Wait(); //10 second wait to give fan time to power up
+                Task.Delay(new TimeSpan(0, 0, 10)).Wait(); //10 second wait to give fan time to power up
                 ReadTachometer();
 
                 dutyCycle = 0.7;
