@@ -1310,7 +1310,7 @@
       (reference "D2") (unit 1) (value "APA102-2020") (footprint "Pi_Tx:LED-APA102-2020")
     )
     (path "/c029135b-4c03-4ca1-aedd-e82609a63298/aa35521e-cb4d-44cb-9854-5adc4ae48459"
-      (reference "D3") (unit 1) (value "LED") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D3") (unit 1) (value "LED_Orange") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/c029135b-4c03-4ca1-aedd-e82609a63298/eb586da8-4af3-47a9-a079-40eebcd2c8bc"
       (reference "D4") (unit 1) (value "SP0503BAHT") (footprint "Package_TO_SOT_SMD:SOT-143")
@@ -1352,7 +1352,7 @@
       (reference "D16") (unit 1) (value "1SS400") (footprint "Diode_SMD:D_SOD-523")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/396dedae-4e52-4073-b1d4-3a311fa64d25"
-      (reference "D17") (unit 1) (value "LED") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D17") (unit 1) (value "LED_Red") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/1c440c66-c071-470d-832b-00289a9ca7bb"
       (reference "H1") (unit 1) (value "MountingHole_Pad") (footprint "MountingHole:MountingHole_4.3mm_M4_DIN965_Pad")
@@ -1439,7 +1439,7 @@
       (reference "LOGO1") (unit 1) (value "Logo_Open_Hardware_Small") (footprint "Symbol:OSHW-Logo2_9.8x8mm_SilkScreen")
     )
     (path "/e44bf172-fb48-4f04-ade0-21fe71f08b88/3a427da5-2c89-4f69-89b5-2ea3abf8f6d1"
-      (reference "Q1") (unit 1) (value "SUD09P10-195") (footprint "Package_TO_SOT_SMD:TO-252-2")
+      (reference "Q1") (unit 1) (value "RD3G01BAT") (footprint "Package_TO_SOT_SMD:TO-252-2")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/710b77e0-7b8d-4acb-8f2a-e7c93a00a523"
       (reference "Q2") (unit 1) (value "BC848W") (footprint "Package_TO_SOT_SMD:SOT-23")
@@ -1508,10 +1508,10 @@
       (reference "R21") (unit 1) (value "4k7") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c029135b-4c03-4ca1-aedd-e82609a63298/a8a6c6ab-e734-47dd-87c0-f155e00cf612"
-      (reference "R22") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R22") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c029135b-4c03-4ca1-aedd-e82609a63298/ca50c18d-5698-47ad-80c8-988790793750"
-      (reference "R23") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R23") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c029135b-4c03-4ca1-aedd-e82609a63298/9b63e202-2dca-4b7c-8771-d477af6cea34"
       (reference "R24") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric")
@@ -1541,7 +1541,7 @@
       (reference "R32") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/e44bf172-fb48-4f04-ade0-21fe71f08b88/23f26b39-e6d1-48c7-bd10-d4706c2bbb72"
-      (reference "R33") (unit 1) (value "470") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R33") (unit 1) (value "470R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/e44bf172-fb48-4f04-ade0-21fe71f08b88/d03aacb4-931f-4c31-9832-5393bcb7ff58"
       (reference "R34") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0603_1608Metric")
@@ -1553,31 +1553,31 @@
       (reference "R36") (unit 1) (value "10m") (footprint "Resistor_SMD:R_0612_1632Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/ca4c2977-e934-431f-af92-9b086694011f"
-      (reference "R37") (unit 1) (value "150") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R37") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/8ba9630d-0d53-41ab-a8dd-246b28ea8aa3"
-      (reference "R38") (unit 1) (value "37.4") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R38") (unit 1) (value "37.4R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/a2b15623-47b8-47eb-b2ce-b363583e3a0a"
-      (reference "R39") (unit 1) (value "150") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R39") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/974ec80f-e17a-4456-9cb3-84d66d7f41db"
-      (reference "R40") (unit 1) (value "150") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R40") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/fbc71d31-9a3d-4a3d-a688-249094228a88"
-      (reference "R41") (unit 1) (value "150") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R41") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/49f80a65-5ef6-40a5-9ece-70637ce19326"
-      (reference "R42") (unit 1) (value "49.9") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R42") (unit 1) (value "49.9R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/0545b60d-e384-4cbc-88cd-60a7db8a99df"
       (reference "R43") (unit 1) (value "49.9k") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/f47856b6-2044-40c2-a47d-ebccbc6bb4be"
-      (reference "R44") (unit 1) (value "150") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R44") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/5aceb587-0661-427b-bb60-af121147b0a9"
-      (reference "R45") (unit 1) (value "150") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R45") (unit 1) (value "150R") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c1051f68-7754-464f-8e30-2d0ef5e2dfb6/06120d8b-9b8e-4afa-9298-81017156be11"
       (reference "R46") (unit 1) (value "4k7") (footprint "Resistor_SMD:R_0603_1608Metric")
@@ -1610,7 +1610,7 @@
       (reference "U4") (unit 1) (value "MP1584") (footprint "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm")
     )
     (path "/e44bf172-fb48-4f04-ade0-21fe71f08b88/06b060cc-9629-4cae-b6a5-ed7afe2eed98"
-      (reference "U5") (unit 1) (value "MCP4725xxx-xCH") (footprint "Package_TO_SOT_SMD:SOT-23-6")
+      (reference "U5") (unit 1) (value "MCP4725") (footprint "Package_TO_SOT_SMD:SOT-23-6")
     )
     (path "/e44bf172-fb48-4f04-ade0-21fe71f08b88/deee11ff-095b-45cf-8045-3597e26b0ff1"
       (reference "U6") (unit 1) (value "AP2204K-ADJ") (footprint "Package_TO_SOT_SMD:SOT-23-5")

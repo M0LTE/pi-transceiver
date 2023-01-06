@@ -1251,7 +1251,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp aa7dfe45-4828-44be-af2e-5d17b18e1198)
     )
-    (fp_text value "SUD09P10-195" (at 0 4.5) (layer "F.Fab")
+    (fp_text value "RD3G01BAT" (at 0 4.5) (layer "F.Fab")
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 50a8939a-771d-4dc4-8a3c-bc8653c9af7a)
     )
