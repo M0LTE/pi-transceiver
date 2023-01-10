@@ -1,13 +1,21 @@
 /**************************************************************************
- This is a test of the 128 * 64 OLED display on the External I2C Bus of thr RADARC Pi Transceiver PA board
+ Display the staus of the RADARC Pi Transceiver PA Board on OLED Display
 
- 
  **************************************************************************/
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <Temperature_LM75_Derived.h>
+#include <Adafruit_INA219.h>
+#include <Adafruit_MCP4725.h>
+
+#define VGG_EN_PIN  10  // Vgg Enable Pin
+#define VGG_MINIMUM 4095
+#define VGG_MAXIMUM 0
+
+Adafruit_MCP4725 dac;
+Adafruit_INA219 ina219;
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -55,10 +63,21 @@ Generic_LM75_12Bit temperature(&Wire2);
 
 void setup() {
 
+  Wire2.begin(); //  Start Internal I2C Bus
+
+  /* Set up the Vgg DAC
+  *
+  * !!DO NOT CHANGE THIS WITHOUT CONSIDERING IMPACT ON MITSUBISHI RF MODULE IF INSTALLED!!
+  */
+  pinMode(VGG_EN_PIN, OUTPUT);
+  digitalWrite(VGG_EN_PIN, LOW);
+  dac.begin(0x61, &Wire2);
+  dac.setVoltage(VGG_MINIMUM, false);
+
+  analogReadResolution(ADC_RESOLUTION);
  
   Serial.begin(9600);
 
-  // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
@@ -92,15 +111,33 @@ void loop() {
   display.println("RADARC Pi Transceiver");
   display.setCursor(42, 9);
   display.println("PA Board");
-  display.setcursor(0,18)
+  display.setCursor(0,18);
   display.print("Status: ");
-  if(Transmit_status = true) display.println("Transmit");
-  elseif(Protect_status = true) display.println("Protect");
+  if(Transmit_status == true) display.println("Transmit");
+  else if(Protect_status == true) display.println("Protect");
   else display.println("Receive");
-  display.print("Temp: ");
+  display.setCursor(0,27);
+  display.print("Temp:");
   display.print(temperature.readTemperatureC(),1);
-  display.println(" deg C")
-  
+  display.println(" deg C");
+  display.setCursor(0,36);
+  display.print("Vdd: ");
+  display.print(ina219.getBusVoltage_V(),2 );
+  display.print("V ");
+  display.print("Vgg: ");
+  display.print( analogRead(2) * ( (5.7 * 3.3) / 4095.0) , 2 );
+  display.println("V");
+  display.setCursor(0,45);
+  display.print("Idd: ");
+  display.print(ina219.getShuntVoltage_mV() /10,2 );
+  display.println("A");
+  display.setCursor(0,54);
+  display.print("Fwd:");
+  display.print(analogRead(0) * 3.3 / 4095.0,1 );
+  display.print("W ");
+  display.print("Rev: ");
+  display.print( analogRead(1) * 3.3 / 4095.0 , 1 );
+  display.println("W");
   display.display();
   delay(2000);
 }
