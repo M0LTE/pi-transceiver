@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "G4CDF")(type "KiCad")(uri "C:/Users/Micha/SynologyDrive/Documents/KICAD/Libraries/G4CDF.pretty")(options "")(descr ""))
+  (lib (name "Library")(type "KiCad")(uri "C:/Users/Michael/SynologyDrive/Documents/KICAD/Libraries/Library.pretty")(options "")(descr "")(disabled))
+)

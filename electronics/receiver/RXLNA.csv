@@ -1,0 +1,118 @@
+Source:,C:\Users\micha\SynologyDrive\Documents\KICAD\Projects\RXLNA\RXLNA.kicad_sch,,,,,
+Date:,21/10/2023 12:44,,,,,
+Tool:,Eeschema (6.0.9),,,,,
+Generator:,C:\Program Files\KiCad\6.0\bin\scripting\plugins/bom_csv_grouped_by_value.py,,,,,
+Component Count:,86,,,,,
+,,,,,,
+Individual Components:,,,,,,
+,,,,,,
+Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet
+,,C401,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C402,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C403,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C404,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C405,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C406,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C407,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C408,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C409,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C410,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C411,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C412,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C413,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C414,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C415,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C416,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C417,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C418,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C419,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C420,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C421,C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+,,C422,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C423,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C424,C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+,,C425,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C426,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C427,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C428,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C429,C_Trim,Device:C_Trim,G4CDF:TrimCap,~
+,,C430,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C431,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C432,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C433,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C434,C_Trim,Device:C_Trim,G4CDF:TrimCap,~
+,,C435,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C436,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C437,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C438,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C439,C_Trim,Device:C_Trim,G4CDF:TrimCap,~
+,,C440,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C441,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C442,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C443,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C444,C_Trim,Device:C_Trim,G4CDF:TrimCap,~
+,,C445,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,C446,C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+,,D401,SMP1330-005LF,Device:D_Dual_Series_AKC_Parallel,Package_TO_SOT_SMD:SOT-23,~
+,,J401,Conn_Coaxial,Connector:Conn_Coaxial,Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount, ~
+,,J402,Conn_Coaxial,Connector:Conn_Coaxial,Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount, ~
+,,J403,Conn_Coaxial,Connector:Conn_Coaxial,Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount, ~
+,,J404,Conn_01x06_Male,Connector:Conn_01x06_Male,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,~
+,,J405,Conn_01x01_Male,Connector:Conn_01x01_Male,G4CDF:Board outline 100_100,~
+,,J406,Conn_Coaxial,Connector:Conn_Coaxial,Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount, ~
+,,J407,Conn_Coaxial,Connector:Conn_Coaxial,Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount, ~
+,,L401,L_Trim,Device:L_Trim,Inductor_THT:L_Radial_L10.2mm_W10.2mm_Px7.62mm_Py7.62mm_Pulse_LP-30,~
+,,L402,L,Device:L,Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder,~
+,,L403,L,Device:L,G4CDF:Pipe22,~
+,,L404,L,Device:L,G4CDF:Pipe22,~
+,,L405,L,Device:L,G4CDF:Pipe22,~
+,,L406,L,Device:L,G4CDF:Pipe22,~
+,,R401,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R402,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R403,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R404,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R405,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R406,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R407,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R408,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R409,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R410,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R411,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R412,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R413,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R414,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R415,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R416,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,R417,R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+,,U401,AS179-92LF,RF_Switch:AS179-92LF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.skyworksinc.com/uploads/documents/AS179_92LF_200176H.pdf
+,,U402,AS179-92LF,RF_Switch:AS179-92LF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.skyworksinc.com/uploads/documents/AS179_92LF_200176H.pdf
+,,U403,AMS1117-5.0,Regulator_Linear:AMS1117-5.0,Package_TO_SOT_SMD:SOT-223-3_TabPin2,http://www.advanced-monolithic.com/pdf/ds1117.pdf
+,,U404,AS179-92LF,RF_Switch:AS179-92LF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.skyworksinc.com/uploads/documents/AS179_92LF_200176H.pdf
+,,U405,AMS1117-3.3,Regulator_Linear:AMS1117-3.3,Package_TO_SOT_SMD:SOT-223-3_TabPin2,http://www.advanced-monolithic.com/pdf/ds1117.pdf
+,,U406,PCF8574A,Interface_Expansion:PCF8574A,Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm,http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf
+,,U407,AS179-92LF,RF_Switch:AS179-92LF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.skyworksinc.com/uploads/documents/AS179_92LF_200176H.pdf
+,,U408,PSA4-5043,RF_Amplifier:SPF5189Z,Package_TO_SOT_SMD:SOT-89-3,www.qorvo.com/products/d/da001910
+,,U409,AS179-92LF,RF_Switch:AS179-92LF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.skyworksinc.com/uploads/documents/AS179_92LF_200176H.pdf
+,,,,,,
+,,,,,,
+,,,,,,
+Collated Components:,,,,,,
+,,,,,,
+Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet
+1,13,"C401, C402, C403, C404, C410, C412, C415, C416, C417, C418, C419, C420, C421",C,Device:C,Capacitor_SMD:C_0805_2012Metric,~
+2,11,"C405, C406, C407, C408, C409, C411, C413, C414, C422, C423, C424",C,Device:C,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+3,18,"C425, C426, C427, C428, C430, C431, C432, C433, C435, C436, C437, C438, C440, C441, C442, C443, C445, C446",C,Device:C,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+4,4,"C429, C434, C439, C444",C_Trim,Device:C_Trim,G4CDF:TrimCap,~
+5,1,D401,SMP1330-005LF,Device:D_Dual_Series_AKC_Parallel,Package_TO_SOT_SMD:SOT-23,~
+6,5,"J401, J402, J403, J406, J407",Conn_Coaxial,Connector:Conn_Coaxial,Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount, ~
+7,1,J404,Conn_01x06_Male,Connector:Conn_01x06_Male,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,~
+8,1,J405,Conn_01x01_Male,Connector:Conn_01x01_Male,G4CDF:Board outline 100_100,~
+9,1,L401,L_Trim,Device:L_Trim,Inductor_THT:L_Radial_L10.2mm_W10.2mm_Px7.62mm_Py7.62mm_Pulse_LP-30,~
+10,1,L402,L,Device:L,Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder,~
+11,4,"L403, L404, L405, L406",L,Device:L,G4CDF:Pipe22,~
+12,17,"R401, R402, R403, R404, R405, R406, R407, R408, R409, R410, R411, R412, R413, R414, R415, R416, R417",R,Device:R,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,~
+13,5,"U401, U402, U404, U407, U409",AS179-92LF,RF_Switch:AS179-92LF,Package_TO_SOT_SMD:SOT-363_SC-70-6,http://www.skyworksinc.com/uploads/documents/AS179_92LF_200176H.pdf
+14,1,U403,AMS1117-5.0,Regulator_Linear:AMS1117-5.0,Package_TO_SOT_SMD:SOT-223-3_TabPin2,http://www.advanced-monolithic.com/pdf/ds1117.pdf
+15,1,U405,AMS1117-3.3,Regulator_Linear:AMS1117-3.3,Package_TO_SOT_SMD:SOT-223-3_TabPin2,http://www.advanced-monolithic.com/pdf/ds1117.pdf
+16,1,U406,PCF8574A,Interface_Expansion:PCF8574A,Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm,http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf
+17,1,U408,PSA4-5043,RF_Amplifier:SPF5189Z,Package_TO_SOT_SMD:SOT-89-3,www.qorvo.com/products/d/da001910
