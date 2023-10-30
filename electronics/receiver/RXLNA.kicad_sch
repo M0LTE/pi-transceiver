@@ -212,7 +212,7 @@
       (reference "C428") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder")
     )
     (path "/be0f6ff5-89d1-4987-92dc-0284b6ca8ea9/567a7c71-2bbd-461d-b0f2-7b3074a976dd"
-      (reference "C429") (unit 1) (value "C_Trim") (footprint "G4CDF:TrimCap")
+      (reference "C429") (unit 1) (value "5-22pF") (footprint "G4CDF:TrimCap")
     )
     (path "/be0f6ff5-89d1-4987-92dc-0284b6ca8ea9/209b1cce-f375-4d0b-ab4d-ee4f3552f01f"
       (reference "C430") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder")

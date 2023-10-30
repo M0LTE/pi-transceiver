@@ -616,7 +616,7 @@
     (property "Reference" "C429" (id 0) (at 89.3064 96.6275 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C_Trim" (id 1) (at 89.3064 99.4026 0)
+    (property "Value" "5-22pF" (id 1) (at 89.3064 99.4026 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "G4CDF:TrimCap" (id 2) (at 86.36 97.79 0)
