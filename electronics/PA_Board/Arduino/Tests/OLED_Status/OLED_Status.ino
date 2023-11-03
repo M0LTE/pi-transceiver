@@ -72,7 +72,9 @@ void setup() {
   pinMode(VGG_EN_PIN, OUTPUT);
   digitalWrite(VGG_EN_PIN, LOW);
   dac.begin(0x61, &Wire2);
-  dac.setVoltage(VGG_MINIMUM, false);
+  dac.setVoltage(VGG_MAXIMUM, false);
+
+  ina219.begin(&Wire2);
 
   analogReadResolution(ADC_RESOLUTION);
  
@@ -121,14 +123,14 @@ void loop() {
   display.print(temperature.readTemperatureC(),1);
   display.println(" deg C");
   display.setCursor(0,36);
-  display.print("Vdd: ");
+  display.print("Vdd:");
   display.print(ina219.getBusVoltage_V(),2 );
   display.print("V ");
-  display.print("Vgg: ");
+  display.print("Vgg:");
   display.print( analogRead(2) * ( (5.7 * 3.3) / 4095.0) , 2 );
   display.println("V");
   display.setCursor(0,45);
-  display.print("Idd: ");
+  display.print("Idd:");
   display.print(ina219.getShuntVoltage_mV() /10,2 );
   display.println("A");
   display.setCursor(0,54);
