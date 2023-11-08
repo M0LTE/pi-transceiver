@@ -1225,7 +1225,7 @@
     (property "Footprint" "Package_TO_SOT_SMD:SOT-23" (id 2) (at 43.18 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (id 3) (at 43.18 95.25 0)
+    (property "Datasheet" "https://www.skyworksinc.com/-/media/SkyWorks/Documents/Products/101-200/SMP1330_Series_200050N.pdf" (id 3) (at 43.18 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 9e3d2cf8-92d8-4520-b210-cfda448eca5d))
