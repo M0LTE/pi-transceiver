@@ -3679,12 +3679,12 @@
     (property "LCSC Part" "" (at 207.645 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f979f73c-c0e5-49ff-b09f-646ea6a47414))
-    (pin "1" (uuid f979f73c-c0e5-49ff-b09f-646ea6a47414))
-    (pin "2" (uuid f3d8bc13-4f69-492f-b3ea-45471afdf08f))
-    (pin "2" (uuid f3d8bc13-4f69-492f-b3ea-45471afdf08f))
-    (pin "3" (uuid e33216cc-27a7-42b6-9b2c-00a69d53ede5))
-    (pin "3" (uuid e33216cc-27a7-42b6-9b2c-00a69d53ede5))
+    (pin "1" (uuid f979f73c-c0e5-49ff-b09f-646ea6a47417))
+    (pin "1" (uuid f979f73c-c0e5-49ff-b09f-646ea6a47417))
+    (pin "2" (uuid f3d8bc13-4f69-492f-b3ea-45471afdf092))
+    (pin "2" (uuid f3d8bc13-4f69-492f-b3ea-45471afdf092))
+    (pin "3" (uuid e33216cc-27a7-42b6-9b2c-00a69d53ede8))
+    (pin "3" (uuid e33216cc-27a7-42b6-9b2c-00a69d53ede8))
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c1051f68-7754-464f-8e30-2d0ef5e2dfb6"
