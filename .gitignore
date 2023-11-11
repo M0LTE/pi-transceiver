@@ -378,3 +378,5 @@ fp-info-cache
 *.dsn
 *.ses
 
+electronics/receiver/FilterDesign/filter.dat
+electronics/receiver/FilterDesign/filter.dpl
