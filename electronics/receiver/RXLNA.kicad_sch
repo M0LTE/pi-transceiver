@@ -173,19 +173,19 @@
       (reference "C415") (unit 1) (value "1n0") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/728798fa-9d6f-4377-acf9-c914beeba9dd"
-      (reference "C416") (unit 1) (value "1n0") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C416") (unit 1) (value "8.2pF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/e0ce33dd-abc9-430c-b7bc-d293eef27e3e"
-      (reference "C417") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C417") (unit 1) (value "4.7pF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/4e90804a-2aa9-4a6b-8eb6-c8d8905473fe"
-      (reference "C418") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C418") (unit 1) (value "4.7pF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/58d59f63-c870-43d8-892c-99ee8ed5b9d8"
-      (reference "C419") (unit 1) (value "1n0") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C419") (unit 1) (value "8.2pF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/c01f4cb7-2dc2-4405-8414-68c8d75e154b"
-      (reference "C420") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C420") (unit 1) (value "1nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/f195ffce-ec97-4eab-b40a-4a534a289884"
       (reference "C421") (unit 1) (value "1n0") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -290,10 +290,10 @@
       (reference "J407") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/1c30f851-2fb0-45f3-8fdc-63b3f8d6503e"
-      (reference "L401") (unit 1) (value "L_Trim") (footprint "Inductor_THT:L_Radial_L10.2mm_W10.2mm_Px7.62mm_Py7.62mm_Pulse_LP-30")
+      (reference "L401") (unit 1) (value "145nH") (footprint "Inductor_THT:L_Radial_L10.2mm_W10.2mm_Px7.62mm_Py7.62mm_Pulse_LP-30")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/87c81b9c-37cb-45ba-981a-b54e8769e25e"
-      (reference "L402") (unit 1) (value "L") (footprint "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder")
+      (reference "L402") (unit 1) (value "470nH") (footprint "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder")
     )
     (path "/be0f6ff5-89d1-4987-92dc-0284b6ca8ea9/cdf8cd44-779d-450d-91a8-35bc6b4ed616"
       (reference "L403") (unit 1) (value "54n58") (footprint "G4CDF:Pipe22")
