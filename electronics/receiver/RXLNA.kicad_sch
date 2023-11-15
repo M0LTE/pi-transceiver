@@ -374,7 +374,7 @@
       (reference "U405") (unit 1) (value "AMS1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
     )
     (path "/b3031e3f-415e-4b5b-a1bc-6773b71af3ea/2bad4e8b-36aa-4a0b-ab67-e9477132d368"
-      (reference "U406") (unit 1) (value "PCF8574A") (footprint "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
+      (reference "U406") (unit 1) (value "PCF8574AT") (footprint "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
     )
     (path "/90ef6158-65c1-4457-ba89-f5a7394a6be3/86313e00-e179-4042-b547-8a6d6361d2b0"
       (reference "U407") (unit 1) (value "AS179-92LF") (footprint "Package_TO_SOT_SMD:SOT-363_SC-70-6")

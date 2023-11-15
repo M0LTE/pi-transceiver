@@ -1,0 +1,23 @@
+Software Interface Description for Pi-transcever Reeciver Module
+
+Control of the receiver module (Rx Module) is via the I2C bus.
+
+The Rx Module is an I2C bus slave.  The device used is a PCF8574AT, Datasheet is in /datasheets as PCF8574_PCF8574A-3139141.
+
+Address=  01110000 
+
+Data=  Data_gain OR Data_Tx_state
+
+Data_gain=  00000001 (Rx_gain = 13dB)
+Data_gain=  00000010  (Rx_gain = -10 dB)
+
+For LimeSDR Mini:
+
+Data_Tx_state=  00011000 (Transmit state)
+Data_Tx_state=  00100100 (Receive state)
+
+For Caribou Lite:
+
+Data_Tx_state=  00011000 (Transmit state)
+Data_Tx_state=  00010100  (Receive state)
+
