@@ -380,3 +380,9 @@ fp-info-cache
 
 electronics/receiver/FilterDesign/filter.dat
 electronics/receiver/FilterDesign/filter.dpl
+*.zip
+*.zip
+electronics/receiver/RXLNA-backups/RXLNA-2023-10-19_142238.zip
+electronics/receiver/RXLNA-backups/RXLNA-2023-10-19_150235.zip
+electronics/receiver/RXLNA-backups/RXLNA-2023-10-19_151235.zip
+electronics/receiver/RXLNA-backups/RXLNA-2023-10-19_191940.zip
