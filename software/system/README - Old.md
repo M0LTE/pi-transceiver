@@ -1,41 +1,32 @@
 # pi-transceiver / software / system
 Here is a folder for scripts etc to build the system 
-The original description here was created by M0LTE for Raspberry Pi OS (Buster/Bullseye) with additional input from G4CDF. This updated version is due to the release of new versions of Raspberry Pi OS (Bookworm), GNU_Radio 3.10, and gr-limesdr.
-Despite the new versions it is not possible to update to the latest Raspberry Pi OS (Bookworm). This is due to the limitation that the GNURadio plugin for GNURadio gr-limesdr is not supported in the latest version of GNURadio 3.10 and we must use GNURadio 3.8. GNURadio 3.8 is not supported under Bookworm so we must also use previous Raspberry Pi OS (Bullseye).
+Notes added by G4CDF based on experience following these instructions
 
-The install notes have two versions, one for the headless build for the pi-transceiver, and the second for a developer build with GUI
+## Install notes 2022-02-09
 
-## Install notes Headless Version 2023-11-24
-
-Complete from-the-ground-up build of a working headless system. Based on Raspberry Pi 4 Model B. 
+Complete from-the-ground-up build of a working system.
 
 It is highly recommended to copy-paste these commands into a remote connection rather than typing them in by hand on the Pi.
+G4CDF> To paste into PuTTY just right click on the line rather than the usual CTRL V.
 
 This will result in a system without a graphical desktop interface, which is the same as how the system will run once the radio software is installed.
 
 ### Prepare the micro SD card
 1. Download latest Raspberry Pi Imager https://www.raspberrypi.com/software/
-1. Choose Device -> Raspberry Pi 4
-1. Choose OS -> Raspberry Pi OS (other) -> Raspberry Pi OS (other) -> Raspberry Pi OS (Legacy) Lite
+1. Choose OS -> Raspberry Pi OS (other) -> Raspberry Pi OS Lite (32-bit) - Bullseye 2022-01-28
 
-   Insert SD Card in PC. 32MB recommended
+G4CDF> I installed the full 32 bit version to a 32 GB SD card
 
 1. Choose storage -> pick micro SD card, which you have inserted
-1. Click NEXT
-1. Click EDIT SETTINGS
-1. Under GENERAL tab
-1. Set hostname: e.g. pi-transceiver
-1. Set username and password - pick whatever you want
-1. Set locale
-1. Configure wi-fi if desired
-1. Under SERVICES tab
-1. Enable SSH
-1. Click SAVE
-1. Click YES to apply customisation settings
-1. Click YES to continue at warning and wait.....
+1. Click the Cog icon
+   1. Set hostname: e.g. pi-transceiver
+   1. Enable SSH, use password auth
+   1. Set username and password - pick whatever you want
+   1. Configure wi-fi if desired
+   1. Click save
+1. Click Write, then click Yes, and wait
 
-   SD card will be written and verified. remove when "Write Successful" message appears.
-
+G4CDF>  These settings can be made on the Raspberry PI GUI  
 
 ### First boot
 
@@ -43,30 +34,21 @@ This will result in a system without a graphical desktop interface, which is the
 1. Plug in a screen - either the official touchscreen or an HDMI monitor
 1. Insert the micro SD card
 1. Power up the Pi
-1. The Raspberry Pi will reboot several times including a login a couple of login prompts if WLAN enabled.
-1. Wait until you see a stable login prompt
+1. Wait until you see a login prompt
 1. Connect to the Pi using your favourite SSH client. PuTTY is fine on Windows. Log in using the username and password you set earlier. The default username is "pi"
-1. Issue the command
-```
-sudo apt update; sudo apt full-upgrade -y
-``` 
-and wait until completion
+1. Issue the command `sudo apt update; sudo apt full-upgrade -y` and wait until completion
 
-
+G4CDF>  SSH will not work with host name only IP address
 
 ### Install GNU Radio and LimeSDR components
 
 There is no GNU Radio PPA for Raspberry Pi OS either for Buster or Bullseye as it stands.
 
-1.Install GNU Radio by issuing the command:
+1. Install GNU Radio by issuing the command:
+
 ```
 sudo apt install gnuradio -y
 ```
-When installation is complete, issue the command 
-```
-gnuradio-config-info -v
-```
-   Which should show version 3.8 of GNURadio has been successfully installed.
 
 2. Install LimeSuite by issuing the commands:
 ```
@@ -83,11 +65,6 @@ sudo ldconfig
 cd ~/LimeSuite/udev-rules
 sudo ./install.sh
 ```
-If the Lime SDR Mini is plugged into the  raspberry Pi then issue the command:
-```
-LimeUtil -find
-```
-This should detect the Lime SDR and give the serial of the device.
 
 3. Install the LimeSDR plugin for GNU Radio by issuing the commands:
 
@@ -113,9 +90,6 @@ wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet6pi/master/instal
 ```
 2. Reboot by issuing the command `sudo reboot`
 3. Connect back up to the Pi using SSH once it has rebooted
-
-*** THIS GOES WRONG HERE FOR ME ***
-The end of the install does a test to "Run dotnet -- info" and it returns "No such file or directory"
 
 ### Enable I2C
 
