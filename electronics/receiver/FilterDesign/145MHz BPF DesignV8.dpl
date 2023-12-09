@@ -1,0 +1,29 @@
+<Qucs Schematic 0.0.19>
+<Properties>
+  <View=415,210,817,525,2.77778,0,0>
+  <Grid=10,10,0>
+  <DataSet=145MHz BPF DesignV8.dat>
+  <DataDisplay=145MHz BPF DesignV8.sch>
+  <OpenDisplay=1>
+  <Script=145MHz BPF DesignV8.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 530 410 240 160 3 #c0c0c0 1 00 0 1.3e+08 5e+06 1.7e+08 0 -40 5 0 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"dBS11" #0000ff 0 3 0 0 0>
+	<"dBS21" #ff0000 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
