@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Pi_Tx")(type "KiCad")(uri "${KIPRJMOD}/Pi_Tx.kicad_sym")(options "")(descr ""))
+)

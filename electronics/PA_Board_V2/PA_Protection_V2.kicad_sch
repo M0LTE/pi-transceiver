@@ -2030,7 +2030,6 @@
   )
 
   (no_connect (at 92.71 59.69) (uuid 0903437b-a820-421a-9287-d2c9b298db96))
-  (no_connect (at 92.71 74.93) (uuid 2cbc1cab-ea02-4362-afd2-0029c92df44a))
   (no_connect (at 92.71 128.27) (uuid 2ff5b312-a641-4053-90b8-85ab93aaf642))
   (no_connect (at 92.71 125.73) (uuid 2ff5b312-a641-4053-90b8-85ab93aaf643))
   (no_connect (at 139.7 131.445) (uuid 56a240f7-e759-437f-b21c-90f4d18951a6))
@@ -2171,7 +2170,7 @@
     (stroke (width 0) (type default))
     (uuid 1ac16fb3-4096-410d-a9e8-384cb7ebb853)
   )
-  (polyline (pts (xy 17.78 66.04) (xy 17.78 117.475))
+  (polyline (pts (xy 16.51 67.31) (xy 16.51 121.92))
     (stroke (width 0) (type default))
     (uuid 1b58f036-a651-40f0-84cd-d1a426bc47b7)
   )
@@ -2280,7 +2279,7 @@
     (stroke (width 0) (type default))
     (uuid 36cb3ce1-3f14-4510-ab8e-0df4243cf639)
   )
-  (polyline (pts (xy 17.78 117.475) (xy 55.88 117.475))
+  (polyline (pts (xy 16.51 121.92) (xy 54.61 121.92))
     (stroke (width 0) (type default))
     (uuid 37766246-d982-4655-bd8c-a2e83e6dce24)
   )
@@ -2489,7 +2488,7 @@
     (stroke (width 0) (type default))
     (uuid 67a1aca9-5835-4700-866a-86f64c8a93b2)
   )
-  (polyline (pts (xy 17.78 66.04) (xy 55.88 66.04))
+  (polyline (pts (xy 16.51 67.31) (xy 54.61 67.31))
     (stroke (width 0) (type default))
     (uuid 68be3b47-95c5-49ae-a458-e859798feca3)
   )
@@ -2610,6 +2609,10 @@
     (stroke (width 0) (type default))
     (uuid 829653c3-87f3-40c1-ad4e-a60fae0a609f)
   )
+  (wire (pts (xy 92.71 74.93) (xy 109.855 74.93))
+    (stroke (width 0) (type default))
+    (uuid 8472d60a-f987-41b7-a6d0-d4af6b366d59)
+  )
   (wire (pts (xy 219.075 153.67) (xy 219.075 156.21))
     (stroke (width 0) (type default))
     (uuid 879cad1c-eeed-4b8c-bfad-a3f66e2d3e54)
@@ -2626,7 +2629,7 @@
     (stroke (width 0) (type default))
     (uuid 89078719-2c13-475e-8246-ee70f5d968ea)
   )
-  (polyline (pts (xy 55.88 117.475) (xy 55.88 66.04))
+  (polyline (pts (xy 54.61 121.92) (xy 54.61 67.31))
     (stroke (width 0) (type default))
     (uuid 8c10179b-25d5-422c-bedf-738c3f6c7467)
   )
@@ -3140,8 +3143,8 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 048c5643-1c38-4f3a-9821-17c6509a809d)
   )
-  (text "Arduino Pin Mapping\nATSAMD21E18 I/O Multiplexer\n0 PA00 DOTSTAR SDI\n1 PA01 DOTSTAR CLK\n2 PA03 ADC_FWD\n3 PA04 ADC_REV\n4 PA05 ADC_Vgg\n5 PA06 TX_Relay_Out\n6 PA08 SERCOM0 PAD 0 Slave_TxD\n7 PA09 SERCOM0 PAD 1 Slave_RxD\n8 PA10 Watchdog LED\n9 PA11 SLAVE GPIO INT\n10 PA15 En_Vgg_PA\n11 PA16 SERCOM1 PAD 0 Ext_SDA\n12 PA17 SERCOM1 PAD 1 Ext_SCL\n13 PA19 LM75 Interrupt\n14 PA22 SERCOM3 PAD 0 Int_SDA\n15 PA23 SERCOM3 PAD 1 Int_SCL\n16 PA24 USB DM\n17 PA25 USB DP\n18 PA28 USB Host Enable\n   PA30 DEBUG SWCLK\n   PA31 DEGUG SWDIO\n"
-    (at 19.05 114.935 0)
+  (text "Arduino Pin Mapping\nATSAMD21E18 I/O Multiplexer\n0  PA00 SK6812 DATA\n1  PA03 ADC_FWD\n2  PA04 ADC_REV\n3  PA05 ADC_VGG\n4  PA06 TX_RELAY\n5  PA07 DRIVER_EN\n6  PA08 SERCOM0 PAD 0 PI_TXD\n7  PA09 SERCOM0 PAD 1 PI_RXD\n8  PA10 WATCHDOG_LED\n9  PA11 PI_TXEN\n10 PA14 FAN_RPM\n11 PA15 EN_VGG\n12 PA16 SERCOM1 PAD 0 EXT_SDA\n13 PA17 SERCOM1 PAD 1 EXT_SCL\n14 PA18 FAN_PWM\n15 PA19 LM75_INT\n16 PA22 SERCOM3 PAD 0 INT_SDA\n17 PA23 SERCOM3 PAD 1 INT_SCL\n18 PA24 USB_DM\n19 PA25 USB_DP\n20 PA28 USB_EN\n   PA30 DEBUG SWCLK\n   PA31 DEGUG SWDIO\n"
+    (at 19.05 120.65 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 255ac3ef-cc71-4f33-a61b-fa94116b0114)
   )
@@ -3291,6 +3294,10 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 355e4fa4-a7a7-479e-a7fc-a5e9cf4efb39)
   )
+  (hierarchical_label "DRIVER_EN" (shape output) (at 109.855 74.93 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 4865c65a-90a9-4dba-9a2c-a37b031ea39c)
+  )
   (hierarchical_label "TX_Relay" (shape output) (at 109.855 72.39 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 604dca4d-ded9-44f1-9cf1-de9e4a2c7afe)
@@ -3319,7 +3326,7 @@
   (symbol (lib_id "Device:C") (at 150.495 57.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00afe94d-4e97-4b17-9152-148342a9fdf1)
-    (property "Reference" "C7" (at 146.685 54.61 0)
+    (property "Reference" "C39" (at 146.685 54.61 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 145.415 60.325 0)
@@ -3342,7 +3349,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C7") (unit 1)
+          (reference "C39") (unit 1)
         )
       )
     )
@@ -3351,7 +3358,7 @@
   (symbol (lib_id "LED:SK6805") (at 147.32 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00b717c7-d149-4449-94b2-9d4afbd3ceba)
-    (property "Reference" "D18" (at 156.9319 28.2758 0)
+    (property "Reference" "D15" (at 156.9319 28.2758 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SK6812" (at 151.765 38.735 0)
@@ -3376,7 +3383,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D18") (unit 1)
+          (reference "D15") (unit 1)
         )
       )
     )
@@ -3385,7 +3392,7 @@
   (symbol (lib_id "Device:R") (at 226.06 45.085 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 03288cb1-6505-446e-b653-9038eaafb14d)
-    (property "Reference" "R18" (at 227.838 44.2503 0)
+    (property "Reference" "R31" (at 227.838 44.2503 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100k" (at 227.838 46.7872 0)
@@ -3408,7 +3415,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R18") (unit 1)
+          (reference "R31") (unit 1)
         )
       )
     )
@@ -3417,7 +3424,7 @@
   (symbol (lib_id "Device:R") (at 245.11 20.955 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0425c16d-b407-41e4-8e58-c9c0feae3404)
-    (property "Reference" "R20" (at 245.11 16.2392 90)
+    (property "Reference" "R28" (at 245.11 16.2392 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4k7" (at 245.11 18.7761 90)
@@ -3440,7 +3447,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R20") (unit 1)
+          (reference "R28") (unit 1)
         )
       )
     )
@@ -3541,7 +3548,7 @@
   (symbol (lib_id "Device:R") (at 120.015 82.55 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0b3422e2-e5b4-4902-aff1-ec87efb033fc)
-    (property "Reference" "R3" (at 120.015 77.8342 90)
+    (property "Reference" "R42" (at 120.015 77.8342 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 120.015 80.3711 90)
@@ -3564,7 +3571,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R3") (unit 1)
+          (reference "R42") (unit 1)
         )
       )
     )
@@ -3648,7 +3655,7 @@
   (symbol (lib_id "Device:R") (at 219.71 45.085 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1064022f-7ded-49fe-83bf-2afe3f641c0f)
-    (property "Reference" "R16" (at 213.995 43.815 0)
+    (property "Reference" "R29" (at 213.995 43.815 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100k" (at 213.36 46.99 0)
@@ -3671,7 +3678,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R16") (unit 1)
+          (reference "R29") (unit 1)
         )
       )
     )
@@ -3680,7 +3687,7 @@
   (symbol (lib_id "Device:C") (at 234.315 123.19 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 10a8fa4c-a090-4fae-848b-b09cd5c5cb23)
-    (property "Reference" "C9" (at 237.236 122.3553 0)
+    (property "Reference" "C2" (at 237.236 122.3553 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 237.236 124.8922 0)
@@ -3703,7 +3710,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C9") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -3712,7 +3719,7 @@
   (symbol (lib_id "Device:R") (at 227.965 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 165cddde-753f-448c-a7dc-09636af8a971)
-    (property "Reference" "R19" (at 229.743 84.2553 0)
+    (property "Reference" "R34" (at 229.743 84.2553 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100k" (at 229.743 86.7922 0)
@@ -3735,7 +3742,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R19") (unit 1)
+          (reference "R34") (unit 1)
         )
       )
     )
@@ -3744,7 +3751,7 @@
   (symbol (lib_id "Device:R") (at 213.995 73.025 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1995948c-df67-4aed-9d0a-325e911cb38f)
-    (property "Reference" "R14" (at 213.995 68.3092 90)
+    (property "Reference" "R33" (at 213.995 68.3092 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 213.995 70.8461 90)
@@ -3767,7 +3774,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R14") (unit 1)
+          (reference "R33") (unit 1)
         )
       )
     )
@@ -3776,7 +3783,7 @@
   (symbol (lib_id "Device:R") (at 200.025 128.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1a68a53b-cf9b-45fe-b35d-41262dd39166)
-    (property "Reference" "R7" (at 197.485 124.46 0)
+    (property "Reference" "R5" (at 197.485 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4k7" (at 200.025 132.08 0)
@@ -3799,7 +3806,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R7") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
@@ -3808,7 +3815,7 @@
   (symbol (lib_id "Device:C") (at 88.9 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1dc09ae3-020f-422e-ad6c-2ebcd029e1de)
-    (property "Reference" "C6" (at 91.821 38.5353 0)
+    (property "Reference" "C44" (at 91.821 38.5353 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 91.821 41.0722 0)
@@ -3831,7 +3838,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C6") (unit 1)
+          (reference "C44") (unit 1)
         )
       )
     )
@@ -3915,7 +3922,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2904") (at 239.395 33.655 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 23503166-0fcf-412b-821b-1f857e893c61)
-    (property "Reference" "U3" (at 239.395 24.8752 0)
+    (property "Reference" "U12" (at 239.395 24.8752 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LM2904" (at 239.395 27.4121 0)
@@ -3944,7 +3951,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "U3") (unit 1)
+          (reference "U12") (unit 1)
         )
       )
     )
@@ -4028,7 +4035,7 @@
   (symbol (lib_id "Device:C") (at 269.875 80.645 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2790e7cd-49bd-4f62-a6a8-a71bdc4aea6a)
-    (property "Reference" "C12" (at 272.796 79.8103 0)
+    (property "Reference" "C50" (at 272.796 79.8103 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1n" (at 272.796 82.3472 0)
@@ -4051,7 +4058,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C12") (unit 1)
+          (reference "C50") (unit 1)
         )
       )
     )
@@ -4110,7 +4117,7 @@
   (symbol (lib_id "Device:R") (at 245.11 61.595 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2968ed8c-2587-4408-a9c2-bb54a7d86876)
-    (property "Reference" "R21" (at 245.11 56.8792 90)
+    (property "Reference" "R35" (at 245.11 56.8792 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4k7" (at 245.11 59.4161 90)
@@ -4133,7 +4140,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R21") (unit 1)
+          (reference "R35") (unit 1)
         )
       )
     )
@@ -4167,7 +4174,7 @@
   (symbol (lib_id "Device:R") (at 262.89 80.645 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2b79beff-c883-4953-b307-3c9920fb102a)
-    (property "Reference" "R25" (at 257.81 78.74 0)
+    (property "Reference" "R36" (at 257.81 78.74 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 257.81 82.55 0)
@@ -4190,7 +4197,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R25") (unit 1)
+          (reference "R36") (unit 1)
         )
       )
     )
@@ -4199,7 +4206,7 @@
   (symbol (lib_id "MCU_Microchip_SAMD:ATSAMD21E18A-A") (at 74.93 97.79 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2b883022-1db4-4696-84aa-1d97ea450303)
-    (property "Reference" "U1" (at 65.405 146.05 0)
+    (property "Reference" "U13" (at 65.405 146.05 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "ATSAMD21E18A-A" (at 97.155 146.05 0)
@@ -4252,7 +4259,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "U1") (unit 1)
+          (reference "U13") (unit 1)
         )
       )
     )
@@ -4261,7 +4268,7 @@
   (symbol (lib_id "Device:C") (at 40.005 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2db867cc-7673-4b35-bdee-e99c0112ea68)
-    (property "Reference" "C1" (at 42.926 52.5053 0)
+    (property "Reference" "C37" (at 42.926 52.5053 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 42.926 55.0422 0)
@@ -4284,7 +4291,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C1") (unit 1)
+          (reference "C37") (unit 1)
         )
       )
     )
@@ -4318,7 +4325,7 @@
   (symbol (lib_id "Device:C") (at 27.94 179.705 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2ed78741-a6df-4fe7-adc4-a3073c196cef)
-    (property "Reference" "C2" (at 30.861 178.8703 0)
+    (property "Reference" "C53" (at 30.861 178.8703 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4n7" (at 30.861 181.4072 0)
@@ -4341,7 +4348,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C2") (unit 1)
+          (reference "C53") (unit 1)
         )
       )
     )
@@ -4375,7 +4382,7 @@
   (symbol (lib_id "Device:R") (at 137.795 146.685 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 35ac138c-9947-4666-b1d2-0d18ea4f2b92)
-    (property "Reference" "R4" (at 134.62 142.875 0)
+    (property "Reference" "R16" (at 134.62 142.875 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4k7" (at 138.43 150.495 0)
@@ -4398,7 +4405,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R4") (unit 1)
+          (reference "R16") (unit 1)
         )
       )
     )
@@ -4432,7 +4439,7 @@
   (symbol (lib_id "Device:R") (at 146.05 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 37058c66-8363-46bf-bb9c-fc2901b32164)
-    (property "Reference" "R51" (at 147.828 101.6579 0)
+    (property "Reference" "R11" (at 147.828 101.6579 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 147.828 104.0821 0)
@@ -4455,7 +4462,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R51") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -4489,7 +4496,7 @@
   (symbol (lib_id "Device:R") (at 170.18 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 37a5aa1c-757e-42dd-ab8f-2082cc9c00a3)
-    (property "Reference" "R11" (at 170.815 54.61 0)
+    (property "Reference" "R25" (at 170.815 54.61 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4k7" (at 170.815 62.23 0)
@@ -4512,7 +4519,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R11") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -4521,7 +4528,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x06") (at 188.595 74.295 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3bed65fc-0bdb-4cb9-874f-0f69b06eb7c2)
-    (property "Reference" "J4" (at 190.627 74.3529 0)
+    (property "Reference" "J6" (at 190.627 74.3529 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x06" (at 190.627 76.7771 0)
@@ -4548,7 +4555,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "J4") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -4582,7 +4589,7 @@
   (symbol (lib_id "Device:L_Ferrite") (at 67.31 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3fb4050a-f346-4ac8-a77e-9e9236a58184)
-    (property "Reference" "L1" (at 69.469 38.5353 0)
+    (property "Reference" "L9" (at 69.469 38.5353 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "L_Ferrite" (at 69.469 41.0722 0)
@@ -4605,7 +4612,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "L1") (unit 1)
+          (reference "L9") (unit 1)
         )
       )
     )
@@ -4648,7 +4655,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x05") (at 124.46 135.89 0) (unit 1)
     (in_bom no) (on_board yes) (dnp no)
     (uuid 4460e4ec-25f9-4934-b263-374dc0ab362e)
-    (property "Reference" "J2" (at 126.492 135.0553 0)
+    (property "Reference" "J10" (at 126.492 135.0553 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x05" (at 121.92 126.365 0)
@@ -4674,7 +4681,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "J2") (unit 1)
+          (reference "J10") (unit 1)
         )
       )
     )
@@ -4683,7 +4690,7 @@
   (symbol (lib_id "Connector:USB_B_Micro") (at 38.1 163.195 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4d4a752b-cc56-447b-9862-f2677b2033db)
-    (property "Reference" "J1" (at 38.1 151.8752 0)
+    (property "Reference" "J9" (at 38.1 151.8752 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "USB_B_Micro" (at 38.1 154.4121 0)
@@ -4710,7 +4717,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "J1") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
@@ -4801,7 +4808,7 @@
   (symbol (lib_id "Device:C") (at 52.705 31.115 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5557f745-78c8-4768-8c03-188688923038)
-    (property "Reference" "C4" (at 55.626 30.2803 0)
+    (property "Reference" "C40" (at 55.626 30.2803 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 55.626 32.8172 0)
@@ -4824,7 +4831,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C4") (unit 1)
+          (reference "C40") (unit 1)
         )
       )
     )
@@ -4833,7 +4840,7 @@
   (symbol (lib_id "Device:R") (at 147.955 146.685 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 58e09f80-5435-43b1-8c4e-433df8ddbd39)
-    (property "Reference" "R8" (at 144.78 142.875 0)
+    (property "Reference" "R18" (at 144.78 142.875 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4k7" (at 149.225 150.495 0)
@@ -4856,7 +4863,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R8") (unit 1)
+          (reference "R18") (unit 1)
         )
       )
     )
@@ -4890,7 +4897,7 @@
   (symbol (lib_id "Device:R") (at 213.995 31.115 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 627d4b07-69d0-41be-8154-1d7b2df00c55)
-    (property "Reference" "R13" (at 213.995 26.3992 90)
+    (property "Reference" "R27" (at 213.995 26.3992 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 213.995 28.9361 90)
@@ -4913,7 +4920,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R13") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
     )
@@ -4922,7 +4929,7 @@
   (symbol (lib_id "Device:R") (at 259.08 148.59 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 63fa1b36-110a-4ffa-b88c-81eb1bbe5364)
-    (property "Reference" "R15" (at 264.795 147.32 0)
+    (property "Reference" "R19" (at 264.795 147.32 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 257.302 150.2922 0)
@@ -4945,7 +4952,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R15") (unit 1)
+          (reference "R19") (unit 1)
         )
       )
     )
@@ -4979,7 +4986,7 @@
   (symbol (lib_id "LED:SK6805") (at 168.91 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6506110d-1895-4878-a9ee-64ee1d9715ad)
-    (property "Reference" "D19" (at 178.5219 28.2758 0)
+    (property "Reference" "D14" (at 178.5219 28.2758 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SK6812" (at 173.99 38.735 0)
@@ -5004,7 +5011,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D19") (unit 1)
+          (reference "D14") (unit 1)
         )
       )
     )
@@ -5063,7 +5070,7 @@
   (symbol (lib_id "Device:C") (at 48.895 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 70e0855d-b0d6-485d-8594-51614b80c17f)
-    (property "Reference" "C3" (at 51.816 52.5053 0)
+    (property "Reference" "C45" (at 51.816 52.5053 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 51.816 55.0422 0)
@@ -5086,7 +5093,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C3") (unit 1)
+          (reference "C45") (unit 1)
         )
       )
     )
@@ -5095,7 +5102,7 @@
   (symbol (lib_id "Device:C") (at 156.21 145.415 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7c5d5135-4b13-4acd-9d44-a0808b23ca17)
-    (property "Reference" "C8" (at 159.131 144.5803 0)
+    (property "Reference" "C24" (at 159.131 144.5803 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 159.131 147.1172 0)
@@ -5118,7 +5125,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C8") (unit 1)
+          (reference "C24") (unit 1)
         )
       )
     )
@@ -5152,7 +5159,7 @@
   (symbol (lib_id "Device:C") (at 182.88 27.305 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8160df0b-a48d-43fa-92b3-df9fb889d012)
-    (property "Reference" "C55" (at 185.801 26.4703 0)
+    (property "Reference" "C52" (at 185.801 26.4703 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 185.801 29.0072 0)
@@ -5175,7 +5182,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C55") (unit 1)
+          (reference "C52") (unit 1)
         )
       )
     )
@@ -5184,7 +5191,7 @@
   (symbol (lib_id "Device:R") (at 165.1 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 81953199-ebe6-4196-bd34-206d4594d25f)
-    (property "Reference" "R10" (at 161.29 54.61 0)
+    (property "Reference" "R24" (at 161.29 54.61 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4k7" (at 165.735 62.23 0)
@@ -5207,7 +5214,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R10") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -5241,7 +5248,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2904") (at 239.395 75.565 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 83fe581d-119f-43ee-962c-ad43ffda1673)
-    (property "Reference" "U3" (at 239.395 66.7852 0)
+    (property "Reference" "U12" (at 239.395 66.7852 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LM2904" (at 239.395 69.3221 0)
@@ -5270,7 +5277,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "U3") (unit 2)
+          (reference "U12") (unit 2)
         )
       )
     )
@@ -5279,7 +5286,7 @@
   (symbol (lib_id "74xGxx:74LVC1G34") (at 124.46 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 85152f26-1bdc-491d-8dc0-0660d3eca425)
-    (property "Reference" "U12" (at 127.635 34.925 0)
+    (property "Reference" "U15" (at 127.635 34.925 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "74LV1T34" (at 125.73 26.035 0)
@@ -5305,7 +5312,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "U12") (unit 1)
+          (reference "U15") (unit 1)
         )
       )
     )
@@ -5421,7 +5428,7 @@
   (symbol (lib_id "Device:R") (at 219.71 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9b587166-b4eb-4dd9-b5d8-7c9b1c9ad5a8)
-    (property "Reference" "R17" (at 221.488 84.2553 0)
+    (property "Reference" "R32" (at 221.488 84.2553 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100k" (at 221.488 86.7922 0)
@@ -5444,7 +5451,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R17") (unit 1)
+          (reference "R32") (unit 1)
         )
       )
     )
@@ -5453,7 +5460,7 @@
   (symbol (lib_id "Device:R") (at 262.89 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9b63e202-2dca-4b7c-8771-d477af6cea34)
-    (property "Reference" "R24" (at 264.668 38.5353 0)
+    (property "Reference" "R26" (at 264.668 38.5353 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 257.81 41.275 0)
@@ -5476,7 +5483,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R24") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
     )
@@ -5517,7 +5524,7 @@
   (symbol (lib_id "Device:C") (at 251.46 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9c201e14-8151-4a90-9449-a3bceca13d86)
-    (property "Reference" "C10" (at 246.38 113.03 0)
+    (property "Reference" "C48" (at 246.38 113.03 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 245.745 118.11 0)
@@ -5540,7 +5547,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C10") (unit 1)
+          (reference "C48") (unit 1)
         )
       )
     )
@@ -5549,7 +5556,7 @@
   (symbol (lib_id "Device:C") (at 61.595 31.115 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9e6120ca-3d5f-43be-bb83-f38e0b24f09e)
-    (property "Reference" "C5" (at 64.516 30.2803 0)
+    (property "Reference" "C54" (at 64.516 30.2803 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 64.516 32.8172 0)
@@ -5572,7 +5579,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C5") (unit 1)
+          (reference "C54") (unit 1)
         )
       )
     )
@@ -5663,7 +5670,7 @@
   (symbol (lib_id "Diode:1N914") (at 233.68 61.595 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a8a6b2dd-25b9-4541-b078-1817b5cba7ec)
-    (property "Reference" "D6" (at 233.68 56.6252 0)
+    (property "Reference" "D10" (at 233.68 56.6252 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1SS400" (at 233.68 59.1621 0)
@@ -5686,7 +5693,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D6") (unit 1)
+          (reference "D10") (unit 1)
         )
       )
     )
@@ -5695,7 +5702,7 @@
   (symbol (lib_id "Device:R") (at 254.635 73.025 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a8a6c6ab-e734-47dd-87c0-f155e00cf612)
-    (property "Reference" "R22" (at 254.635 68.3092 90)
+    (property "Reference" "R37" (at 254.635 68.3092 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "330R" (at 254.635 70.8461 90)
@@ -5718,7 +5725,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R22") (unit 1)
+          (reference "R37") (unit 1)
         )
       )
     )
@@ -5727,7 +5734,7 @@
   (symbol (lib_id "Device:R") (at 113.665 128.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a8fbe27e-9ac5-4a7e-9fdd-562a15ef552a)
-    (property "Reference" "R2" (at 115.443 127.4353 0)
+    (property "Reference" "R44" (at 115.443 127.4353 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1k" (at 115.443 129.9722 0)
@@ -5750,7 +5757,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R2") (unit 1)
+          (reference "R44") (unit 1)
         )
       )
     )
@@ -5784,7 +5791,7 @@
   (symbol (lib_id "Device:LED") (at 125.73 87.63 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid aa35521e-cb4d-44cb-9854-5adc4ae48459)
-    (property "Reference" "D3" (at 128.651 88.3828 90)
+    (property "Reference" "D13" (at 128.651 88.3828 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "MHS171UBCT" (at 128.651 90.9197 90)
@@ -5807,7 +5814,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D3") (unit 1)
+          (reference "D13") (unit 1)
         )
       )
     )
@@ -5891,7 +5898,7 @@
   (symbol (lib_id "Device:R") (at 251.46 142.875 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b32d8f8d-8fa7-4a59-9d27-a77acfd95e0e)
-    (property "Reference" "R12" (at 251.46 140.335 90)
+    (property "Reference" "R21" (at 251.46 140.335 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47k" (at 251.46 145.415 90)
@@ -5914,7 +5921,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R12") (unit 1)
+          (reference "R21") (unit 1)
         )
       )
     )
@@ -6023,7 +6030,7 @@
   (symbol (lib_id "Power_Protection:SP0503BAHT") (at 62.23 173.355 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c07c3d74-de79-44c0-92ee-7997f8d5baa2)
-    (property "Reference" "D1" (at 67.437 172.5203 0)
+    (property "Reference" "D8" (at 67.437 172.5203 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SP0503BAHT" (at 67.437 175.0572 0)
@@ -6048,7 +6055,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D1") (unit 1)
+          (reference "D8") (unit 1)
         )
       )
     )
@@ -6120,7 +6127,7 @@
   (symbol (lib_id "Device:R") (at 255.27 33.655 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ca50c18d-5698-47ad-80c8-988790793750)
-    (property "Reference" "R23" (at 255.27 28.9392 90)
+    (property "Reference" "R30" (at 255.27 28.9392 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "330R" (at 255.27 31.4761 90)
@@ -6143,7 +6150,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R23") (unit 1)
+          (reference "R30") (unit 1)
         )
       )
     )
@@ -6152,7 +6159,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2904") (at 261.62 120.015 0) (unit 3)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cb1474c8-d052-4e8f-bcd1-c09134fcee72)
-    (property "Reference" "U3" (at 259.715 119.1803 0)
+    (property "Reference" "U12" (at 259.715 119.1803 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "LM2904" (at 259.715 121.7172 0)
@@ -6181,7 +6188,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "U3") (unit 3)
+          (reference "U12") (unit 3)
         )
       )
     )
@@ -6190,7 +6197,7 @@
   (symbol (lib_id "Device:R") (at 204.47 128.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d23f354f-fce2-4533-96ec-bed6d62d1b90)
-    (property "Reference" "R9" (at 201.93 124.46 0)
+    (property "Reference" "R1" (at 201.93 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4k7" (at 204.47 132.08 0)
@@ -6213,7 +6220,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R9") (unit 1)
+          (reference "R1") (unit 1)
         )
       )
     )
@@ -6247,7 +6254,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x04") (at 167.64 108.585 0) (unit 1)
     (in_bom no) (on_board yes) (dnp no)
     (uuid dfc29289-ac8a-4fb6-98ba-7b5b39262d4b)
-    (property "Reference" "J10" (at 169.672 109.0203 0)
+    (property "Reference" "J2" (at 169.672 109.0203 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x04" (at 161.925 102.235 0)
@@ -6272,7 +6279,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "J10") (unit 1)
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -6306,7 +6313,7 @@
   (symbol (lib_id "74xGxx:74LVC1G34") (at 142.24 121.285 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e5375dde-9cf2-4d5f-80cf-172bf6ac33e0)
-    (property "Reference" "U13" (at 145.415 124.46 0)
+    (property "Reference" "U5" (at 145.415 124.46 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "74LV1T34" (at 143.51 115.57 0)
@@ -6332,7 +6339,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "U13") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -6341,7 +6348,7 @@
   (symbol (lib_id "Device:R") (at 20.32 179.705 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e53c3df1-6386-4212-8208-fbd460969fe4)
-    (property "Reference" "R1" (at 22.098 178.8703 0)
+    (property "Reference" "R43" (at 22.098 178.8703 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1M" (at 22.098 181.4072 0)
@@ -6364,7 +6371,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "R1") (unit 1)
+          (reference "R43") (unit 1)
         )
       )
     )
@@ -6398,7 +6405,7 @@
   (symbol (lib_id "Power_Protection:SP0503BAHT") (at 144.145 178.435 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eb586da8-4af3-47a9-a079-40eebcd2c8bc)
-    (property "Reference" "D4" (at 149.352 177.6003 0)
+    (property "Reference" "D1" (at 149.352 177.6003 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SP0503BAHT" (at 149.352 180.1372 0)
@@ -6423,7 +6430,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D4") (unit 1)
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -6482,7 +6489,7 @@
   (symbol (lib_id "Diode:1N914") (at 234.315 20.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f4c7149a-7977-416c-98f2-65bd17345d43)
-    (property "Reference" "D7" (at 234.315 15.9852 0)
+    (property "Reference" "D6" (at 234.315 15.9852 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1SS400" (at 234.315 18.5221 0)
@@ -6505,7 +6512,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "D7") (unit 1)
+          (reference "D6") (unit 1)
         )
       )
     )
@@ -6564,7 +6571,7 @@
   (symbol (lib_id "Device:C") (at 269.875 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ff0c0050-e752-4b68-b0eb-450596c9463c)
-    (property "Reference" "C11" (at 272.796 38.5353 0)
+    (property "Reference" "C43" (at 272.796 38.5353 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1n" (at 272.796 41.0722 0)
@@ -6587,7 +6594,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
-          (reference "C11") (unit 1)
+          (reference "C43") (unit 1)
         )
       )
     )
