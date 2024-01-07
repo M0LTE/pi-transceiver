@@ -8,7 +8,7 @@
 #include <Adafruit_INA219.h>
 #include <Adafruit_MCP4725.h>
 
-#define VGG_EN_PIN  10  // Vgg Enable Pin
+
 #define VGG_MINIMUM 4095
 #define VGG_MAXIMUM 0
 
@@ -17,9 +17,11 @@ Adafruit_INA219 ina219;
 
 void setup(void) 
 {
-  pinMode(VGG_EN_PIN, OUTPUT);
-  digitalWrite(VGG_EN_PIN, LOW);
-  dac.begin(0x61, &Wire2);
+  pinMode(PIN_EN_VGG, OUTPUT);
+  digitalWrite(PIN_EN_VGG, LOW);
+  pinMode(PIN_DRIVER_EN, OUTPUT);
+  digitalWrite(PIN_DRIVER_EN, HIGH);
+  dac.begin(0x61);
 
   analogReadResolution(ADC_RESOLUTION);
 
@@ -33,7 +35,7 @@ void setup(void)
   
   // Initialize the INA219.
  
-  if (! ina219.begin(&Wire2)) {
+  if (! ina219.begin()) {
     Serial.println("Failed to find INA219 chip");
     while (1) { delay(10); }
   }
@@ -61,7 +63,7 @@ void loop(void)
   delay(2000);
 
   dac.setVoltage( VGG_MINIMUM, false);
-  digitalWrite(VGG_EN_PIN, HIGH);
+  digitalWrite(PIN_EN_VGG, HIGH);
   delay(1000);
   shuntvoltage = ina219.getShuntVoltage_mV();
   busvoltage = ina219.getBusVoltage_V();
@@ -76,7 +78,7 @@ void loop(void)
   delay(2000);
 
   dac.setVoltage( VGG_MAXIMUM, false);
-  digitalWrite(VGG_EN_PIN, HIGH);
+  digitalWrite(PIN_EN_VGG, HIGH);
   delay(1000);
   shuntvoltage = ina219.getShuntVoltage_mV();
   busvoltage = ina219.getBusVoltage_V();
@@ -90,5 +92,6 @@ void loop(void)
 
   delay(2000);
  
-  digitalWrite(VGG_EN_PIN, LOW);
+  digitalWrite(PIN_EN_VGG, LOW);
+
 }

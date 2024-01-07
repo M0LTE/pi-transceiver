@@ -10,8 +10,8 @@
 
 void setup()
 {
-  Wire1.begin();
-  Wire2.begin();
+  Wire.begin(); // start the internal I2C Bus
+  Wire1.begin(); // start the external I2C bus
   Serial.begin(9600);
   while (!Serial);             // Wait for serial monitor
   Serial.println("\nI2C Scanner");
@@ -23,7 +23,7 @@ void loop()
   byte error, address;
   int nDevices;
 
-  Serial.println("Scanning External I2C Bus...");
+  Serial.println("Scanning Internal I2C Bus...");
 
   nDevices = 0;
   for(address = 1; address < 127; address++ ) 
@@ -31,8 +31,8 @@ void loop()
     // The i2c_scanner uses the return value of
     // the Write.endTransmisstion to see if
     // a device did acknowledge to the address.
-    Wire1.beginTransmission(address);
-    error = Wire1.endTransmission();
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
 
     if (error == 0)
     {
@@ -57,7 +57,7 @@ void loop()
   else
     Serial.println("done\n");
 
-    Serial.println("Scanning Internal I2C Bus...");
+    Serial.println("Scanning External I2C Bus...");
 
   nDevices = 0;
   for(address = 1; address < 127; address++ ) 
@@ -65,8 +65,8 @@ void loop()
     // The i2c_scanner uses the return value of
     // the Write.endTransmisstion to see if
     // a device did acknowledge to the address.
-    Wire2.beginTransmission(address);
-    error = Wire2.endTransmission();
+    Wire1.beginTransmission(address);
+    error = Wire1.endTransmission();
 
     if (error == 0)
     {

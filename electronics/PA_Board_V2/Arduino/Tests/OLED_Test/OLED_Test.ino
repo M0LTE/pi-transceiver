@@ -50,12 +50,12 @@ const unsigned char RADARC68x44 [] PROGMEM = {
 	0x00, 0x03, 0xf0, 0xfc, 0x00, 0x03, 0xff, 0xff, 0xfc, 0x00, 0x03, 0xf0
 };
 
-Generic_LM75_12Bit temperature(&Wire2);
+Generic_LM75_12Bit temperature(&Wire);
 
 
 void setup() {
 
- 
+  Wire.begin();
   Serial.begin(9600);
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
@@ -92,14 +92,14 @@ void loop() {
   display.println("RADARC Pi Transceiver");
   display.setCursor(42, 9);
   display.println("PA Board");
-  display.setcursor(0,18)
+  display.setCursor(0,18);
   display.print("Status: ");
-  if(Transmit_status = true) display.println("Transmit");
-  elseif(Protect_status = true) display.println("Protect");
+  if(Transmit_status == true) display.println("Transmit");
+  else if(Protect_status == true) display.println("Protect");
   else display.println("Receive");
   display.print("Temp: ");
   display.print(temperature.readTemperatureC(),1);
-  display.println(" deg C")
+  display.println(" deg C");
   
   display.display();
   delay(2000);

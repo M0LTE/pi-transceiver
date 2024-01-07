@@ -416,6 +416,64 @@ Pi_Tx_PA.menu.debug.off=Off
 Pi_Tx_PA.menu.debug.on=On
 Pi_Tx_PA.menu.debug.on.build.flags.debug=-g
 
+# -----------------------------------
+# Pi_Tx_PA_V2 (SAMD21) 
+# RADARC pi-transceiver PA Board Version 2
+# Control processor (SAMD21E18)for PA module
+# -----------------------------------
+Pi_Tx_PA_V2.name=RADARC Pi_Tx_PA_V2
+
+# VID/PID for Bootloader, Arduino & CircuitPython
+Pi_Tx_PA_V2.vid.0=0x239A
+Pi_Tx_PA_V2.pid.0=0x801E
+Pi_Tx_PA_V2.vid.1=0x239A
+Pi_Tx_PA_V2.pid.1=0x001E
+
+# Upload
+Pi_Tx_PA_V2.upload.tool=bossac18
+Pi_Tx_PA_V2.upload.protocol=sam-ba
+Pi_Tx_PA_V2.upload.maximum_size=262144
+Pi_Tx_PA_V2.upload.offset=0x2000
+Pi_Tx_PA_V2.upload.use_1200bps_touch=true
+Pi_Tx_PA_V2.upload.wait_for_upload_port=true
+Pi_Tx_PA_V2.upload.native_usb=true
+
+# Build
+Pi_Tx_PA_V2.build.mcu=cortex-m0plus
+Pi_Tx_PA_V2.build.f_cpu=48000000L
+Pi_Tx_PA_V2.build.usb_product="Pi_Tx_PA_V2"
+Pi_Tx_PA_V2.build.usb_manufacturer="RADARC"
+Pi_Tx_PA_V2.build.board=Pi_Tx_PA_V2
+Pi_Tx_PA_V2.build.core=arduino
+Pi_Tx_PA_V2.build.extra_flags=-D__SAMD21E18A__ -DCRYSTALLESS -DADAFRUIT_TRINKET_M0 -DARDUINO_SAMD_ZERO -DARM_MATH_CM0PLUS {build.usb_flags}
+Pi_Tx_PA_V2.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+Pi_Tx_PA_V2.build.openocdscript=openocd_scripts/trinket_m0.cfg
+Pi_Tx_PA_V2.build.variant=Pi_Tx_PA_V2
+Pi_Tx_PA_V2.build.variant_system_lib=
+Pi_Tx_PA_V2.build.vid=0x239A
+Pi_Tx_PA_V2.build.pid=0x801E
+Pi_Tx_PA_V2.bootloader.tool=openocd
+Pi_Tx_PA_V2.bootloader.file=trinketm0/bootloader-trinket_m0-v2.0.0-adafruit.5.bin
+
+# Menu
+Pi_Tx_PA_V2.menu.opt.small=Small (-Os) (standard)
+Pi_Tx_PA_V2.menu.opt.small.build.flags.optimize=-Os
+Pi_Tx_PA_V2.menu.opt.fast=Fast (-O2)
+Pi_Tx_PA_V2.menu.opt.fast.build.flags.optimize=-O2
+Pi_Tx_PA_V2.menu.opt.faster=Faster (-O3)
+Pi_Tx_PA_V2.menu.opt.faster.build.flags.optimize=-O3
+Pi_Tx_PA_V2.menu.opt.fastest=Fastest (-Ofast)
+Pi_Tx_PA_V2.menu.opt.fastest.build.flags.optimize=-Ofast
+Pi_Tx_PA_V2.menu.opt.dragons=Here be dragons (-Ofast -funroll-loops)
+Pi_Tx_PA_V2.menu.opt.dragons.build.flags.optimize=-Ofast -funroll-loops
+Pi_Tx_PA_V2.menu.usbstack.arduino=Arduino
+Pi_Tx_PA_V2.menu.usbstack.tinyusb=TinyUSB
+Pi_Tx_PA_V2.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+Pi_Tx_PA_V2.menu.debug.off=Off
+Pi_Tx_PA_V2.menu.debug.on=On
+Pi_Tx_PA_V2.menu.debug.on.build.flags.debug=-g
+
+
 
 
 

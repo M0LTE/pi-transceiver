@@ -7,14 +7,13 @@ in Celcius every 250ms.
 
 // The Generic_LM75 class will provide 12-bit temperature
 
-Generic_LM75_12Bit temperature(&Wire2);
+Generic_LM75_12Bit temperature(&Wire);
 
 void setup() {
   while(!Serial) {}
   
   Serial.begin(9600);
 
-  Wire2.begin(); // Internal I2C Bus
 }
 
 void loop() {

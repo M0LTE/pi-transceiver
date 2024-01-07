@@ -1,5 +1,6 @@
 /**************************************************************************
  Display the staus of the RADARC Pi Transceiver PA Board on OLED Display
+ on external I2C Bus
 
  **************************************************************************/
 
@@ -10,7 +11,7 @@
 #include <Adafruit_INA219.h>
 #include <Adafruit_MCP4725.h>
 
-#define VGG_EN_PIN  10  // Vgg Enable Pin
+
 #define VGG_MINIMUM 4095
 #define VGG_MAXIMUM 0
 
@@ -58,23 +59,22 @@ const unsigned char RADARC68x44 [] PROGMEM = {
 	0x00, 0x03, 0xf0, 0xfc, 0x00, 0x03, 0xff, 0xff, 0xfc, 0x00, 0x03, 0xf0
 };
 
-Generic_LM75_12Bit temperature(&Wire2);
+Generic_LM75_12Bit temperature(&Wire);
 
 
 void setup() {
 
-  Wire2.begin(); //  Start Internal I2C Bus
 
   /* Set up the Vgg DAC
   *
   * !!DO NOT CHANGE THIS WITHOUT CONSIDERING IMPACT ON MITSUBISHI RF MODULE IF INSTALLED!!
   */
-  pinMode(VGG_EN_PIN, OUTPUT);
-  digitalWrite(VGG_EN_PIN, LOW);
-  dac.begin(0x61, &Wire2);
+  pinMode(PIN_EN_VGG, OUTPUT);
+  digitalWrite(PIN_EN_VGG, LOW);
+  dac.begin(0x61);
   dac.setVoltage(VGG_MINIMUM, false);
 
-  ina219.begin(&Wire2);
+  ina219.begin();
 
   analogReadResolution(ADC_RESOLUTION);
  
