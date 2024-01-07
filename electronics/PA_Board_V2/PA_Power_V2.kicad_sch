@@ -368,6 +368,63 @@
         )
       )
     )
+    (symbol "Device:Polyfuse" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "F" (at -2.54 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Polyfuse" (at 2.54 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 1.27 -5.08 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Resettable fuse, polymeric positive temperature coefficient" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "*polyfuse* *PTC*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Polyfuse_0_1"
+        (rectangle (start -0.762 2.54) (end 0.762 -2.54)
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.54)
+            (xy 0 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.524 2.54)
+            (xy -1.524 1.524)
+            (xy 1.524 -1.524)
+            (xy 1.524 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "Polyfuse_1_1"
+        (pin passive line (at 0 3.81 270) (length 1.27)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -3.81 90) (length 1.27)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Device:R" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "R" (at 2.032 0 90)
         (effects (font (size 1.27 1.27)))
@@ -1065,8 +1122,11 @@
     )
   )
 
-  (junction (at 132.08 32.385) (diameter 0) (color 0 0 0 0)
+  (junction (at 94.615 48.26) (diameter 0) (color 0 0 0 0)
     (uuid 04ec0276-95df-4113-8860-7c51a86065ec)
+  )
+  (junction (at 110.49 48.26) (diameter 0) (color 0 0 0 0)
+    (uuid 09208b70-d2ed-4677-b89a-b4fdacd54541)
   )
   (junction (at 255.905 81.28) (diameter 0) (color 0 0 0 0)
     (uuid 09b1ec66-97f4-4196-b90f-f113f98a896e)
@@ -1076,9 +1136,6 @@
   )
   (junction (at 102.235 84.455) (diameter 0) (color 0 0 0 0)
     (uuid 117dfcd0-cd52-4ba6-8240-51f28bc1c699)
-  )
-  (junction (at 150.495 32.385) (diameter 0) (color 0 0 0 0)
-    (uuid 24ae02bb-4df8-4499-b333-fdbaacbfb2e1)
   )
   (junction (at 224.79 32.385) (diameter 0) (color 0 0 0 0)
     (uuid 3adb22f5-b52b-4ff9-8ded-6750dfbab8f1)
@@ -1109,9 +1166,6 @@
   )
   (junction (at 116.84 111.76) (diameter 0) (color 0 0 0 0)
     (uuid 695bb441-1c37-4061-9df6-bc13af7a4ea5)
-  )
-  (junction (at 71.12 32.385) (diameter 0) (color 0 0 0 0)
-    (uuid 6f08b8c6-9406-4d1b-8197-2738fe92d057)
   )
   (junction (at 194.31 59.69) (diameter 0) (color 0 0 0 0)
     (uuid 6f5a6e04-2728-4a88-8c36-eb48b8aca9bd)
@@ -1158,17 +1212,23 @@
   (junction (at 130.175 111.76) (diameter 0) (color 0 0 0 0)
     (uuid bf5371d8-3d6c-4cef-969a-c17a3221a8aa)
   )
+  (junction (at 71.12 32.385) (diameter 0) (color 0 0 0 0)
+    (uuid c1d5ec7a-fccb-4ac5-8e16-d08353fdc612)
+  )
+  (junction (at 71.12 48.26) (diameter 0) (color 0 0 0 0)
+    (uuid c4ee9221-9e99-4ed3-b7a0-c7c1d7fab3dc)
+  )
   (junction (at 71.12 111.76) (diameter 0) (color 0 0 0 0)
     (uuid cb233169-b001-40b4-835c-508c9e88518f)
-  )
-  (junction (at 150.495 59.69) (diameter 0) (color 0 0 0 0)
-    (uuid d22cc86c-7f80-4cbc-8076-2c0e54fc40c7)
   )
   (junction (at 208.28 32.385) (diameter 0) (color 0 0 0 0)
     (uuid d6ee0467-1f62-4d95-9f43-cc232743545c)
   )
   (junction (at 219.71 49.53) (diameter 0) (color 0 0 0 0)
     (uuid dabae5ee-a4e0-4e5b-8f98-e81dddf6a977)
+  )
+  (junction (at 150.495 59.69) (diameter 0) (color 0 0 0 0)
+    (uuid df9b2acd-90a1-4854-ab9c-35eaef05ffcc)
   )
   (junction (at 130.175 121.92) (diameter 0) (color 0 0 0 0)
     (uuid e1efcae7-9fc9-44cf-8fca-d4b32a960ed6)
@@ -1177,15 +1237,13 @@
     (uuid f5778b30-1f37-4ba1-9974-8e829b58280f)
   )
 
-  (no_connect (at 109.22 86.995) (uuid 8b31bb47-720a-4ad3-ba68-f96e16e75fac))
-
   (wire (pts (xy 130.175 120.65) (xy 130.175 121.92))
     (stroke (width 0) (type default))
     (uuid 024be271-9763-451d-9f14-cc634b76d671)
   )
-  (wire (pts (xy 71.12 32.385) (xy 82.55 32.385))
+  (wire (pts (xy 71.12 48.26) (xy 94.615 48.26))
     (stroke (width 0) (type default))
-    (uuid 057f370e-11a5-4fb5-a972-d787628516c7)
+    (uuid 03a9d792-e95d-4196-8cf7-45c34805fe4d)
   )
   (polyline (pts (xy 27.94 142.875) (xy 81.915 142.875))
     (stroke (width 0) (type default))
@@ -1328,7 +1386,11 @@
     (uuid 3d80096b-467a-482b-ad79-7b679b47f72a)
   )
 
-  (wire (pts (xy 132.08 29.845) (xy 132.08 32.385))
+  (wire (pts (xy 110.49 45.085) (xy 110.49 48.26))
+    (stroke (width 0) (type default))
+    (uuid 3f1bfff3-4bce-4494-bf2d-e4c4fc1fb9f3)
+  )
+  (wire (pts (xy 94.615 45.72) (xy 94.615 48.26))
     (stroke (width 0) (type default))
     (uuid 4112bc9f-818e-45ac-84b2-153dcbd54481)
   )
@@ -1373,6 +1435,10 @@
     (stroke (width 0) (type default))
     (uuid 4ca6ceff-f46a-4150-a2c3-a9600ad64a3b)
   )
+  (wire (pts (xy 71.12 111.76) (xy 71.12 48.26))
+    (stroke (width 0) (type default))
+    (uuid 4cdb97a3-dfbc-4a5e-999f-89d1a9ff48a2)
+  )
   (wire (pts (xy 144.78 62.23) (xy 153.67 62.23))
     (stroke (width 0) (type default))
     (uuid 4d53ad78-1ce6-42b3-91b3-ab57d48f5111)
@@ -1381,13 +1447,13 @@
     (stroke (width 0) (type default))
     (uuid 4fa59d34-f7cd-4410-8d97-614c46a7c314)
   )
+  (wire (pts (xy 71.12 44.45) (xy 71.12 48.26))
+    (stroke (width 0) (type default))
+    (uuid 512127de-3b23-4c24-a2bb-58eda876382f)
+  )
   (wire (pts (xy 244.475 60.96) (xy 244.475 62.865))
     (stroke (width 0) (type default))
     (uuid 54212118-ed11-4713-afe1-3dfacc885797)
-  )
-  (wire (pts (xy 132.08 32.385) (xy 150.495 32.385))
-    (stroke (width 0) (type default))
-    (uuid 545167b8-5e55-4420-b98a-27bd818cb797)
   )
   (wire (pts (xy 194.31 59.69) (xy 203.835 59.69))
     (stroke (width 0) (type default))
@@ -1473,6 +1539,14 @@
     (stroke (width 0) (type default))
     (uuid 78d4ddf1-90d5-437a-900f-d32096de3c16)
   )
+  (wire (pts (xy 110.49 48.26) (xy 150.495 48.26))
+    (stroke (width 0) (type default))
+    (uuid 7bd443bc-7a47-49c6-9b6b-857dc2eca099)
+  )
+  (wire (pts (xy 94.615 48.26) (xy 110.49 48.26))
+    (stroke (width 0) (type default))
+    (uuid 80d2ba4d-733e-4573-bb7c-1e6e1552b215)
+  )
   (wire (pts (xy 126.365 111.76) (xy 130.175 111.76))
     (stroke (width 0) (type default))
     (uuid 8146ebaa-fd6f-47cf-b64e-23d3920caf3d)
@@ -1489,10 +1563,6 @@
   (wire (pts (xy 255.27 121.285) (xy 255.27 121.92))
     (stroke (width 0) (type default))
     (uuid 841b2e95-a5ad-4afd-a3d1-8e50a64dd4ca)
-  )
-  (wire (pts (xy 71.12 32.385) (xy 71.12 111.76))
-    (stroke (width 0) (type default))
-    (uuid 857a91ce-b51a-4b2f-8e54-e3dcddf81efe)
   )
   (wire (pts (xy 130.175 111.76) (xy 138.43 111.76))
     (stroke (width 0) (type default))
@@ -1579,6 +1649,10 @@
     (stroke (width 0) (type default))
     (uuid a16d19bc-c596-4076-8b34-6982d800d694)
   )
+  (wire (pts (xy 150.495 48.26) (xy 150.495 59.69))
+    (stroke (width 0) (type default))
+    (uuid a3739efd-b818-47ce-8b11-94874d986914)
+  )
   (wire (pts (xy 198.12 124.46) (xy 201.295 124.46))
     (stroke (width 0) (type default))
     (uuid a6bae5b6-5653-4e66-aa11-2894d989ebb5)
@@ -1615,6 +1689,10 @@
     (stroke (width 0) (type default))
     (uuid b5fe57b1-d6d8-4946-ba69-6e8cf7ed11e1)
   )
+  (wire (pts (xy 106.045 86.995) (xy 109.22 86.995))
+    (stroke (width 0) (type default))
+    (uuid b8bb7c0e-0ce5-4479-a9aa-6c6330f9c937)
+  )
   (wire (pts (xy 150.495 59.69) (xy 150.495 64.77))
     (stroke (width 0) (type default))
     (uuid b8cda43a-3b4f-468c-ba1c-ed53c95c241a)
@@ -1644,6 +1722,10 @@
     (stroke (width 0) (type default))
     (uuid c4c0376c-694f-4de7-9bce-0dc1653037d6)
   )
+  (wire (pts (xy 71.12 32.385) (xy 71.12 36.83))
+    (stroke (width 0) (type default))
+    (uuid c7944b26-48f3-4cd4-aed0-7c8aebff224a)
+  )
   (wire (pts (xy 71.12 116.84) (xy 71.12 119.38))
     (stroke (width 0) (type default))
     (uuid c7b22926-550a-40bc-a40b-5edeebe0c0c8)
@@ -1655,10 +1737,6 @@
   (wire (pts (xy 255.905 81.28) (xy 255.905 92.075))
     (stroke (width 0) (type default))
     (uuid c81ffb0b-ff57-4c09-a66b-b478aea48b37)
-  )
-  (wire (pts (xy 150.495 32.385) (xy 150.495 59.69))
-    (stroke (width 0) (type default))
-    (uuid cca6286c-89b6-447b-af96-183ebc3bda7b)
   )
   (wire (pts (xy 208.28 44.45) (xy 208.28 49.53))
     (stroke (width 0) (type default))
@@ -1690,7 +1768,7 @@
     (uuid d56541c0-4510-4306-8b11-414309d4ada4)
   )
 
-  (wire (pts (xy 150.495 32.385) (xy 208.28 32.385))
+  (wire (pts (xy 82.55 32.385) (xy 208.28 32.385))
     (stroke (width 0) (type default))
     (uuid d632b87f-676d-431f-a661-49e2a88f95d6)
   )
@@ -1709,6 +1787,10 @@
   (wire (pts (xy 95.885 81.915) (xy 105.41 81.915))
     (stroke (width 0) (type default))
     (uuid df3bf3db-7291-426e-823c-973b22836808)
+  )
+  (wire (pts (xy 106.045 91.44) (xy 106.045 86.995))
+    (stroke (width 0) (type default))
+    (uuid dffee953-53e1-4ebd-bd2a-dcec53513f21)
   )
   (wire (pts (xy 105.41 73.025) (xy 113.665 73.025))
     (stroke (width 0) (type default))
@@ -1770,9 +1852,9 @@
     (stroke (width 0) (type default))
     (uuid f522d982-ade4-40c4-b2a5-1bebab46e77c)
   )
-  (wire (pts (xy 82.55 32.385) (xy 132.08 32.385))
+  (wire (pts (xy 71.12 32.385) (xy 82.55 32.385))
     (stroke (width 0) (type default))
-    (uuid f57bbf6f-3f88-4d52-a699-bcb7b871788a)
+    (uuid f605c86a-295a-4576-8859-bb9fa3ebcafc)
   )
   (wire (pts (xy 104.775 116.84) (xy 116.84 116.84))
     (stroke (width 0) (type default))
@@ -1820,7 +1902,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 30759e89-7014-4dd5-97ab-5d910aa5a4e6)
   )
-  (text "I2C Address 0x61" (at 109.855 92.075 0)
+  (text "I2C Address 0x60" (at 103.505 91.44 0)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 51f6b18e-98de-4ffe-9c38-872c179a157e)
   )
@@ -1877,6 +1959,10 @@
   (label "Int_SCL" (at 113.665 73.025 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 449d9c92-436d-4f8f-9b16-ef5dd8b01463)
+  )
+  (label "VBAT" (at 137.795 32.385 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 8d086852-3926-43da-b7fb-e702d429328b)
   )
   (label "Int_SCL" (at 266.7 73.66 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -1937,10 +2023,42 @@
     )
   )
 
+  (symbol (lib_id "Device:Polyfuse") (at 71.12 40.64 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 042779da-dfdb-4d52-8f4b-257c97a78d03)
+    (property "Reference" "F1" (at 73.279 39.4279 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "1A" (at 73.279 41.8521 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Fuse:Fuse_1206_3216Metric" (at 72.39 45.72 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "~" (at 71.12 40.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Comment" "1A Polyfuse 1206 24V" (at 71.12 40.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC Part" "C910830" (at 71.12 40.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4fd90015-dd8b-4e3c-ab6d-13aba1923cb0))
+    (pin "2" (uuid 290adf5e-3c02-44b2-b424-0f23cc2252a2))
+    (instances
+      (project "Pi_TX_35W_PA_V2"
+        (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
+          (reference "F1") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Analog_DAC:MCP4725xxx-xCH") (at 119.38 84.455 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 06b060cc-9629-4cae-b6a5-ed7afe2eed98)
-    (property "Reference" "U5" (at 113.665 78.105 0)
+    (property "Reference" "U7" (at 113.665 78.105 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MCP4725" (at 130.175 77.47 0)
@@ -1967,7 +2085,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "U5") (unit 1)
+          (reference "U7") (unit 1)
         )
       )
     )
@@ -2001,7 +2119,7 @@
   (symbol (lib_id "Device:C") (at 230.505 128.905 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 12487de4-0c60-4503-8896-f186f80d5d8a)
-    (property "Reference" "C25" (at 231.775 126.365 0)
+    (property "Reference" "C46" (at 231.775 126.365 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 233.426 130.6072 0)
@@ -2024,7 +2142,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C25") (unit 1)
+          (reference "C46") (unit 1)
         )
       )
     )
@@ -2033,7 +2151,7 @@
   (symbol (lib_id "Regulator_Linear:TLV70233_SOT23-5") (at 208.915 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 130bfb9e-2369-464c-907f-d5410c6ab94e)
-    (property "Reference" "U7" (at 203.2 118.745 0)
+    (property "Reference" "U11" (at 203.2 118.745 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TLV70233" (at 212.725 118.745 0)
@@ -2059,7 +2177,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "U7") (unit 1)
+          (reference "U11") (unit 1)
         )
       )
     )
@@ -2093,7 +2211,7 @@
   (symbol (lib_id "Pi_PA:LMR51420") (at 92.075 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1453901c-9f89-4353-b132-0a5d10dbd905)
-    (property "Reference" "U4" (at 92.075 105.0757 0)
+    (property "Reference" "U6" (at 92.075 105.0757 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LMR51420" (at 92.075 107.4999 0)
@@ -2117,7 +2235,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "U4") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -2151,10 +2269,10 @@
   (symbol (lib_id "Device:R") (at 208.28 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1a172a38-41f4-4ddf-8aed-e47ec0c31674)
-    (property "Reference" "R52" (at 203.2 38.735 0)
+    (property "Reference" "R8" (at 203.2 38.735 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10k" (at 203.2 42.545 0)
+    (property "Value" "10R" (at 203.2 42.545 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 206.502 40.64 90)
@@ -2166,7 +2284,7 @@
     (property "Comment" "" (at 208.28 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC Part" "C25804" (at 208.28 40.64 0)
+    (property "LCSC Part" "C22859" (at 208.28 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid faa23285-47bc-4eeb-93e5-ba63fb3cb0b8))
@@ -2174,7 +2292,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R52") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -2183,7 +2301,7 @@
   (symbol (lib_id "Device:C") (at 186.055 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1c09f006-6f63-436d-8294-e0fa1b21eccd)
-    (property "Reference" "C20" (at 186.69 66.04 0)
+    (property "Reference" "C22" (at 186.69 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2u" (at 186.69 71.12 0)
@@ -2206,25 +2324,25 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C20") (unit 1)
+          (reference "C22") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "power:+12V") (at 132.08 29.845 0) (unit 1)
+  (symbol (lib_id "power:+12V") (at 94.615 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1c6ca1c8-7d08-485a-9c88-041fb5a1beaf)
-    (property "Reference" "#PWR051" (at 132.08 33.655 0)
+    (property "Reference" "#PWR051" (at 94.615 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+12V" (at 132.08 26.2692 0)
+    (property "Value" "+12V" (at 94.615 42.1442 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 132.08 29.845 0)
+    (property "Footprint" "" (at 94.615 45.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 132.08 29.845 0)
+    (property "Datasheet" "" (at 94.615 45.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e2d9e0a3-ca17-47b4-ae51-bf9fe11b9391))
@@ -2315,7 +2433,7 @@
   (symbol (lib_id "Device:C") (at 147.955 117.475 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 229f0e71-39c0-4b59-9965-4d822fa11386)
-    (property "Reference" "C18" (at 149.225 114.935 0)
+    (property "Reference" "C29" (at 149.225 114.935 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 149.225 120.65 0)
@@ -2338,7 +2456,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C18") (unit 1)
+          (reference "C29") (unit 1)
         )
       )
     )
@@ -2347,7 +2465,7 @@
   (symbol (lib_id "Device:R") (at 170.815 70.485 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 23f26b39-e6d1-48c7-bd10-d4706c2bbb72)
-    (property "Reference" "R33" (at 165.735 69.215 0)
+    (property "Reference" "R13" (at 165.735 69.215 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470R" (at 165.735 71.755 0)
@@ -2370,7 +2488,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R33") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -2379,7 +2497,7 @@
   (symbol (lib_id "Device:C") (at 222.25 128.905 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2c9f1380-2dfd-4785-905f-f36ee6695ce9)
-    (property "Reference" "C24" (at 222.885 126.365 0)
+    (property "Reference" "C49" (at 222.885 126.365 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10u" (at 225.171 130.6072 0)
@@ -2402,7 +2520,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C24") (unit 1)
+          (reference "C49") (unit 1)
         )
       )
     )
@@ -2461,7 +2579,7 @@
   (symbol (lib_id "Device:R") (at 130.175 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 38a6b209-64e2-42db-989b-2017f08ed742)
-    (property "Reference" "R30" (at 131.445 113.665 0)
+    (property "Reference" "R20" (at 131.445 113.665 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "162k" (at 131.445 120.015 0)
@@ -2484,7 +2602,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R30") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
     )
@@ -2526,7 +2644,7 @@
   (symbol (lib_id "Device:C") (at 219.71 55.245 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3f594faf-8096-4369-928a-58c06c97063a)
-    (property "Reference" "C56" (at 220.345 52.705 0)
+    (property "Reference" "C17" (at 220.345 52.705 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 220.98 57.785 0)
@@ -2549,7 +2667,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C56") (unit 1)
+          (reference "C17") (unit 1)
         )
       )
     )
@@ -2583,7 +2701,7 @@
   (symbol (lib_id "Device:R") (at 177.165 62.23 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 42d5c776-b2db-49a3-867d-1d2b0624c470)
-    (property "Reference" "R35" (at 178.435 64.77 90)
+    (property "Reference" "R12" (at 178.435 64.77 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k2" (at 182.245 63.5 90)
@@ -2606,7 +2724,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R35") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -2640,7 +2758,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 185.42 117.475 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 51a9228d-4428-44ae-81e5-ff9021e154c9)
-    (property "Reference" "D10" (at 189.23 115.57 0)
+    (property "Reference" "D9" (at 189.23 115.57 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MBR0540" (at 179.07 116.205 0)
@@ -2663,7 +2781,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "D10") (unit 1)
+          (reference "D9") (unit 1)
         )
       )
     )
@@ -2672,7 +2790,7 @@
   (symbol (lib_id "Device:R") (at 144.78 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5b699bd9-290e-4aa3-8863-063fe0f59033)
-    (property "Reference" "R32" (at 139.7 67.945 0)
+    (property "Reference" "R15" (at 139.7 67.945 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 139.7 71.755 0)
@@ -2695,7 +2813,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R32") (unit 1)
+          (reference "R15") (unit 1)
         )
       )
     )
@@ -2704,7 +2822,7 @@
   (symbol (lib_id "Device:C") (at 138.43 117.475 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 602a833b-d792-49b8-b140-97e2274b24f8)
-    (property "Reference" "C17" (at 139.7 114.935 0)
+    (property "Reference" "C31" (at 139.7 114.935 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22u" (at 139.7 120.65 0)
@@ -2727,7 +2845,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C17") (unit 1)
+          (reference "C31") (unit 1)
         )
       )
     )
@@ -2786,7 +2904,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 185.42 124.46 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6c01f8f4-2750-476a-9731-cb455e7cdc24)
-    (property "Reference" "D11" (at 189.23 123.19 0)
+    (property "Reference" "D4" (at 189.23 123.19 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MBR0540" (at 179.07 123.19 0)
@@ -2809,7 +2927,32 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "D11") (unit 1)
+          (reference "D4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 106.045 91.44 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 747bce83-1755-40a4-b5e4-a0b82d85126c)
+    (property "Reference" "#PWR0118" (at 106.045 97.79 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 106.045 95.8834 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 106.045 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 106.045 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 53f24cd4-3bac-46d3-9421-bff25ef5deaf))
+    (instances
+      (project "Pi_TX_35W_PA_V2"
+        (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
+          (reference "#PWR0118") (unit 1)
         )
       )
     )
@@ -2843,7 +2986,7 @@
   (symbol (lib_id "Device:C") (at 71.12 123.19 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7cbbea36-ad33-4d7a-b394-e2155a8983c6)
-    (property "Reference" "C13" (at 66.675 120.65 0)
+    (property "Reference" "C23" (at 66.675 120.65 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2u 50V" (at 71.755 125.73 0)
@@ -2866,7 +3009,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C13") (unit 1)
+          (reference "C23") (unit 1)
         )
       )
     )
@@ -2875,7 +3018,7 @@
   (symbol (lib_id "Device:C") (at 150.495 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 82666ef7-b9be-4baa-8d38-b7263df23831)
-    (property "Reference" "C19" (at 151.13 66.04 0)
+    (property "Reference" "C26" (at 151.13 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u 50V" (at 151.13 71.12 0)
@@ -2898,7 +3041,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C19") (unit 1)
+          (reference "C26") (unit 1)
         )
       )
     )
@@ -2982,7 +3125,7 @@
   (symbol (lib_id "Device:L_Ferrite") (at 122.555 111.76 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9226f3eb-0dc5-405c-9e41-39c581036e29)
-    (property "Reference" "L2" (at 125.73 110.49 90)
+    (property "Reference" "L5" (at 125.73 110.49 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uH" (at 120.015 110.49 90)
@@ -3005,7 +3148,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "L2") (unit 1)
+          (reference "L5") (unit 1)
         )
       )
     )
@@ -3036,10 +3179,35 @@
     )
   )
 
+  (symbol (lib_id "power:PWR_FLAG") (at 110.49 45.085 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 95552f85-0e75-4ea1-90dc-41dceb0bc906)
+    (property "Reference" "#FLG06" (at 110.49 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "PWR_FLAG" (at 110.49 41.5092 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 110.49 45.085 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 110.49 45.085 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 5cad3c46-c345-472f-90cc-facfaa872fd5))
+    (instances
+      (project "Pi_TX_35W_PA_V2"
+        (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
+          (reference "#FLG06") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:D_Schottky") (at 185.42 111.76 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 96685df3-32f3-4068-b9b9-875c2511264a)
-    (property "Reference" "D9" (at 189.865 110.49 0)
+    (property "Reference" "D7" (at 189.865 110.49 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MBR0540" (at 179.07 110.49 0)
@@ -3062,7 +3230,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "D9") (unit 1)
+          (reference "D7") (unit 1)
         )
       )
     )
@@ -3071,7 +3239,7 @@
   (symbol (lib_id "Device:C") (at 198.12 131.445 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 98d171be-abd4-4508-83af-5bc3bc721c8b)
-    (property "Reference" "C23" (at 198.755 128.905 0)
+    (property "Reference" "C38" (at 198.755 128.905 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 199.39 133.985 0)
@@ -3094,7 +3262,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C23") (unit 1)
+          (reference "C38") (unit 1)
         )
       )
     )
@@ -3128,7 +3296,7 @@
   (symbol (lib_id "Device:C") (at 59.055 123.19 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a54b52a2-599d-4c94-b6a6-1f2d7077cf40)
-    (property "Reference" "C15" (at 53.34 120.65 0)
+    (property "Reference" "C27" (at 53.34 120.65 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 53.34 125.73 0)
@@ -3151,7 +3319,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C15") (unit 1)
+          (reference "C27") (unit 1)
         )
       )
     )
@@ -3185,7 +3353,7 @@
   (symbol (lib_id "Device:R") (at 217.805 32.385 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ab9857ff-be9c-4f4e-ac17-1db36b35c7f3)
-    (property "Reference" "R36" (at 217.805 29.845 90)
+    (property "Reference" "R9" (at 217.805 29.845 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10m" (at 217.805 34.925 90)
@@ -3208,7 +3376,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R36") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -3217,7 +3385,7 @@
   (symbol (lib_id "Device:C") (at 110.49 111.76 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b22d0efb-898f-4557-acf5-66853c590a2d)
-    (property "Reference" "C14" (at 107.95 111.125 0)
+    (property "Reference" "C42" (at 107.95 111.125 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 113.03 110.49 0)
@@ -3240,7 +3408,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C14") (unit 1)
+          (reference "C42") (unit 1)
         )
       )
     )
@@ -3249,7 +3417,7 @@
   (symbol (lib_id "Device:R") (at 130.175 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b2dd0868-6c27-494d-a34f-86a198bf036c)
-    (property "Reference" "R31" (at 125.095 124.46 0)
+    (property "Reference" "R17" (at 125.095 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22.1k" (at 123.19 128.905 0)
@@ -3272,7 +3440,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R31") (unit 1)
+          (reference "R17") (unit 1)
         )
       )
     )
@@ -3306,7 +3474,7 @@
   (symbol (lib_id "Device:C") (at 191.135 131.445 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b8c86405-bc7a-4b8c-843a-d54bddee4e0f)
-    (property "Reference" "C21" (at 191.77 128.905 0)
+    (property "Reference" "C41" (at 191.77 128.905 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10u" (at 191.77 133.985 0)
@@ -3329,7 +3497,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C21") (unit 1)
+          (reference "C41") (unit 1)
         )
       )
     )
@@ -3363,10 +3531,10 @@
   (symbol (lib_id "Device:R") (at 224.79 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bfbcdabc-e0ca-48a5-96e2-6c42bf4173f3)
-    (property "Reference" "R53" (at 219.71 38.735 0)
+    (property "Reference" "R7" (at 219.71 38.735 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10k" (at 219.71 42.545 0)
+    (property "Value" "10R" (at 219.71 42.545 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 223.012 40.64 90)
@@ -3378,7 +3546,7 @@
     (property "Comment" "" (at 224.79 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC Part" "C25804" (at 224.79 40.64 0)
+    (property "LCSC Part" "C22859" (at 224.79 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid db1e0cbe-6139-4141-88cb-e3a97786adc5))
@@ -3386,7 +3554,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R53") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -3395,7 +3563,7 @@
   (symbol (lib_id "Device:C") (at 123.825 65.405 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c02f8e5d-c5a3-4220-bc7b-3364e088e38c)
-    (property "Reference" "C16" (at 124.46 62.865 0)
+    (property "Reference" "C25" (at 124.46 62.865 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 125.095 67.945 0)
@@ -3418,7 +3586,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C16") (unit 1)
+          (reference "C25") (unit 1)
         )
       )
     )
@@ -3477,7 +3645,7 @@
   (symbol (lib_id "Device:R") (at 176.53 70.485 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d03aacb4-931f-4c31-9832-5393bcb7ff58)
-    (property "Reference" "R34" (at 178.308 69.6503 0)
+    (property "Reference" "R14" (at 178.308 69.6503 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1k" (at 178.308 72.1872 0)
@@ -3500,7 +3668,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "R34") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -3609,7 +3777,7 @@
   (symbol (lib_id "Sensor_Energy:INA219AxD") (at 241.3 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid db60c549-6f69-4271-a63e-c30cb325d71a)
-    (property "Reference" "U8" (at 233.68 66.04 0)
+    (property "Reference" "U10" (at 233.68 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "INA219AxD" (at 222.25 81.28 0)
@@ -3638,7 +3806,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "U8") (unit 1)
+          (reference "U10") (unit 1)
         )
       )
     )
@@ -3647,7 +3815,7 @@
   (symbol (lib_id "Regulator_Linear:AP2204K-ADJ") (at 161.29 62.23 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid deee11ff-095b-45cf-8045-3597e26b0ff1)
-    (property "Reference" "U6" (at 161.29 54.0852 0)
+    (property "Reference" "U9" (at 161.29 54.0852 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AP2204K-ADJ" (at 161.29 56.6221 0)
@@ -3673,7 +3841,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "U6") (unit 1)
+          (reference "U9") (unit 1)
         )
       )
     )
@@ -3707,7 +3875,7 @@
   (symbol (lib_id "Device:C") (at 244.475 57.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid eef5e073-b6fd-46d9-b1ca-d8579fcf83ac)
-    (property "Reference" "C26" (at 245.11 54.61 0)
+    (property "Reference" "C30" (at 245.11 54.61 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 245.745 59.69 0)
@@ -3730,7 +3898,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C26") (unit 1)
+          (reference "C30") (unit 1)
         )
       )
     )
@@ -3762,9 +3930,9 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 37.465 32.385 0) (mirror y) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f2a0f352-f48c-4e5c-ac81-5d8ca81be24f)
-    (property "Reference" "J5" (at 37.465 27.4152 0)
+    (property "Reference" "J4" (at 37.465 27.4152 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x02" (at 37.465 29.9521 0)
@@ -3776,7 +3944,7 @@
     (property "Datasheet" "~" (at 37.465 32.385 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Comment" "" (at 37.465 32.385 0)
+    (property "Comment" "not fitted" (at 37.465 32.385 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "LCSC Part" "C3697" (at 37.465 32.385 0)
@@ -3787,7 +3955,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "J5") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -3821,7 +3989,7 @@
   (symbol (lib_id "Device:C") (at 194.31 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f6108c1a-9f36-4fc7-862a-59a7a50c28ae)
-    (property "Reference" "C22" (at 194.945 66.04 0)
+    (property "Reference" "C28" (at 194.945 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 195.58 71.12 0)
@@ -3844,7 +4012,7 @@
     (instances
       (project "Pi_TX_35W_PA_V2"
         (path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/e44bf172-fb48-4f04-ade0-21fe71f08b88"
-          (reference "C22") (unit 1)
+          (reference "C28") (unit 1)
         )
       )
     )
