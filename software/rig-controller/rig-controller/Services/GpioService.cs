@@ -4,7 +4,43 @@ namespace rig_controller.Services
 {
     public class GpioService
     {
+<<<<<<< Updated upstream
         private readonly ILogger<GpioService> _logger;
+=======
+        Task SetGpio(int pin, bool state);
+    }
+
+    public class NativeGpioService : IGpioService
+    {
+        private readonly List<int> openedPins = new();
+        private readonly GpioController controller = new();
+
+        public void Dispose() => controller.Dispose();
+
+        public Task SetGpio(int pin, bool state)
+        {
+            try
+            {
+            if (!openedPins.Contains(pin))
+            {
+                controller.OpenPin(pin, PinMode.Output);
+                openedPins.Add(pin);
+            }
+
+            controller.Write(pin, state ? PinValue.High : PinValue.Low);
+
+            }
+            catch
+            {}
+
+            return Task.CompletedTask;
+        }
+    }
+
+    public class PigsGpioService : IGpioService
+    {
+        private readonly ILogger<PigsGpioService> _logger;
+>>>>>>> Stashed changes
         private static bool pigsWontFly;
 
         public GpioService (ILogger<GpioService> logger)
