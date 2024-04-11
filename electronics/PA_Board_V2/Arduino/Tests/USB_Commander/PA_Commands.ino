@@ -42,7 +42,7 @@ bool myFunc(Commander &Cmdr){
 }
 */
 void initialiseCommander(){
-  cmd.begin(&Serial, masterCommands, sizeof(masterCommands));
+  cmd.begin(&my_Serial, masterCommands, sizeof(masterCommands));
   cmd.commandPrompt(ON); //enable the command prompt
   cmd.echo(true);     //Echo incoming characters to theoutput port
   cmd.errorMessages(ON); //error messages are enabled - it will tell us if we issue any unrecognised commands
@@ -160,65 +160,128 @@ bool setTXHandler(Commander &Cmdr){
 }
 
 bool getRXHandler(Commander &Cmdr){
-  if(RX_state) Cmdr.println("RX is ON");
-  else Cmdr.println("RX is OFF"); 
+  if(!RX_present) Cmdr.println("No Rx Board");
+  else {
+    if(RX_state) Cmdr.println("RX is ON");
+    else Cmdr.println("RX is OFF"); 
+  }
   return 0;
 }
 
 bool setRXHandler(Commander &Cmdr){
-  if(Cmdr.containsOn()){
-    RX_state = true;
-    //digitalWrite(PIN_TX_RELAY, HIGH);
-    Cmdr.println("RX is ON"); 
+  if(!RX_present) Cmdr.println("No Rx Board");
+  else {
+    if(Cmdr.containsOn()){
+      if(SINGLE_state){
+        RX_BOARD.write(2, HIGH);// Single Receive
+        RX_BOARD.write(3, LOW);
+        RX_BOARD.write(4, HIGH);
+        RX_BOARD.write(5, LOW);
+      }
+      else{
+        RX_BOARD.write(2, HIGH); // Dual Receive
+        RX_BOARD.write(3, LOW);
+        RX_BOARD.write(4, LOW);
+        RX_BOARD.write(5, HIGH);
+ 
+      }
+
+      RX_state = true; 
+      Cmdr.println("RX is ON"); 
+    }
+    
+    if(Cmdr.containsOff()){
+      
+      RX_BOARD.write(2, LOW); //Single or Dual Transmit
+      RX_BOARD.write(3, HIGH);
+      RX_BOARD.write(4, HIGH);
+      RX_BOARD.write(5, LOW);
+      
+      RX_state = false;
+      Cmdr.println("RX is OFF");
+    }
+    else Cmdr.println("Argument error");
   }
-  else if(Cmdr.containsOff()){
-    RX_state = false;
-    //digitalWrite(PIN_TX_RELAY, LOW);
-    Cmdr.println("RX is OFF");
-  }
-  else Cmdr.println("Argument error");
   return 0;
 }
 
 bool getLNAHandler(Commander &Cmdr){
-  if(LNA_state) Cmdr.println("LNA is ON");
-  else Cmdr.println("LNA is OFF"); 
+  if(!RX_present) Cmdr.println("No Rx Board");
+  else {
+    if(LNA_state) Cmdr.println("LNA is ON");
+    else Cmdr.println("LNA is OFF"); 
+  }
   return 0;
 }
 
 bool setLNAHandler(Commander &Cmdr){
-  if(Cmdr.containsOn()){
-    LNA_state = true;
-    //digitalWrite(PIN_TX_RELAY, HIGH);
-    Cmdr.println("LNA is ON"); 
+  if(!RX_present) Cmdr.println("No Rx Board");
+  else {
+    if(Cmdr.containsOn()){
+      LNA_state = true;
+      RX_BOARD.write(0, HIGH);
+      RX_BOARD.write(1, LOW);
+      Cmdr.println("LNA is ON"); 
+    }
+    else if(Cmdr.containsOff()){
+      LNA_state = false;
+      RX_BOARD.write(0, LOW);
+      RX_BOARD.write(1, HIGH);
+      Cmdr.println("LNA is OFF");
+    }
+    else Cmdr.println("Argument error");
   }
-  else if(Cmdr.containsOff()){
-    LNA_state = false;
-    //digitalWrite(PIN_TX_RELAY, LOW);
-    Cmdr.println("LNA is OFF");
-  }
-  else Cmdr.println("Argument error");
   return 0;
 }
 
 bool getSINGLEHandler(Commander &Cmdr){
-  if(SINGLE_state) Cmdr.println("Single SDR Port");
-  else Cmdr.println("Dual SDR Port"); 
+  if(!RX_present) Cmdr.println("No Rx Board");
+  else {
+    if(SINGLE_state) Cmdr.println("Single SDR Port");
+    else Cmdr.println("Dual SDR Port"); 
+  }
   return 0;
 }
 
 bool setSINGLEHandler(Commander &Cmdr){
-  if(Cmdr.containsOn()){
-    SINGLE_state = true;
-    //digitalWrite(PIN_TX_RELAY, HIGH);
-    Cmdr.println("Single SDR Port"); 
+  if(!RX_present) Cmdr.println("No Rx Board");
+  else {
+    if(Cmdr.containsOn()){
+      if(RX_state){
+        RX_BOARD.write(2, HIGH);// Single Receive
+        RX_BOARD.write(3, LOW);
+        RX_BOARD.write(4, HIGH);
+        RX_BOARD.write(5, LOW);
+      }
+      else{
+        RX_BOARD.write(2, LOW); // Single Transmit
+        RX_BOARD.write(3, HIGH);
+        RX_BOARD.write(4, HIGH);
+        RX_BOARD.write(5, LOW);
+ 
+      }
+      SINGLE_state = true;
+      Cmdr.println("Single SDR Port"); 
+    }
+    else if(Cmdr.containsOff()){
+      if(RX_state){
+        RX_BOARD.write(2, HIGH);// Dual Receive
+        RX_BOARD.write(3, LOW);
+        RX_BOARD.write(4, LOW);
+        RX_BOARD.write(5, HIGH);
+      }
+      else{
+        RX_BOARD.write(2, HIGH); // Dual Transmit
+        RX_BOARD.write(3, LOW);
+        RX_BOARD.write(4, LOW);
+        RX_BOARD.write(5, HIGH);
+ 
+      }
+      SINGLE_state = false;
+      Cmdr.println("Dual SDR Port");
+    }
+    else Cmdr.println("Argument error");
   }
-  else if(Cmdr.containsOff()){
-    SINGLE_state = false;
-    //digitalWrite(PIN_TX_RELAY, LOW);
-    Cmdr.println("Dual SDR Port");
-  }
-  else Cmdr.println("Argument error");
   return 0;
 }
 
@@ -308,7 +371,7 @@ bool getVGGHandler(Commander &Cmdr){
   if(VGG_state) Cmdr.println("VGG is ON");
   else Cmdr.println("VGG is OFF"); 
   float gatevoltage =  analogRead(2) * ( (5.7 * 3.3) / 4095.0);
-  Cmdr.print("Gate Voltage:   "); Serial.print(gatevoltage); Serial.println(" V");
+  Cmdr.print("Gate Voltage:   "); my_Serial.print(gatevoltage); my_Serial.println(" V");
   return 0;
 }
 
@@ -332,9 +395,9 @@ bool getDACHandler(Commander &Cmdr){
   Cmdr.print("DAC value = ");
   Cmdr.println(DAC_value);
   gatevoltage = VGG_MIN_VOLTS + (((4095.0 - DAC_value) / 4095.0) * VGG_SPAN_VOLTS);
-  Cmdr.print("Calculated Gate Voltage:   "); Serial.print(gatevoltage); Serial.println(" V");
+  Cmdr.print("Calculated Gate Voltage:   "); my_Serial.print(gatevoltage); my_Serial.println(" V");
   gatevoltage =  analogRead(2) * ( (5.7 * 3.3) / 4095.0);
-  Cmdr.print("Measured Gate Voltage:   "); Serial.print(gatevoltage); Serial.println(" V");
+  Cmdr.print("Measured Gate Voltage:   "); my_Serial.print(gatevoltage); my_Serial.println(" V");
   return 0;
 }
 
@@ -358,9 +421,9 @@ bool getVOLTSHandler(Commander &Cmdr){
   Cmdr.print("DAC Value = ");
   Cmdr.println(DAC_value);
   gatevoltage = VGG_MIN_VOLTS + (((4095.0 - DAC_value) / 4095.0) * VGG_SPAN_VOLTS);
-  Cmdr.print("Calculated Gate Voltage:   "); Serial.print(gatevoltage); Serial.println(" V");
+  Cmdr.print("Calculated Gate Voltage:   "); my_Serial.print(gatevoltage); my_Serial.println(" V");
   gatevoltage =  analogRead(2) * ( (5.7 * 3.3) / 4095.0);
-  Cmdr.print("Measured Gate Voltage:   "); Serial.print(gatevoltage); Serial.println(" V");
+  Cmdr.print("Measured Gate Voltage:   "); my_Serial.print(gatevoltage); my_Serial.println(" V");
   return 0;
 }
 
@@ -390,25 +453,25 @@ bool getTEMPHandler(Commander &Cmdr){
 
 bool getVDDHandler(Commander &Cmdr){
   float busvoltage = ina219.getBusVoltage_V();
-  Cmdr.print("Vdd Voltage =  "); Serial.print(busvoltage); Serial.println(" V");
+  Cmdr.print("Vdd Voltage =  "); my_Serial.print(busvoltage); my_Serial.println(" V");
   return 0;
 }
 
 bool getIDDHandler(Commander &Cmdr){
   float shuntvoltage = ina219.getShuntVoltage_mV();
-  Cmdr.print("Idd Shunt Voltage =  "); Serial.print(shuntvoltage); Serial.println(" mV");
-  Cmdr.print("Idd Current =  "); Serial.print(shuntvoltage /10.0); Serial.println(" A");
+  Cmdr.print("Idd Shunt Voltage =  "); my_Serial.print(shuntvoltage); my_Serial.println(" mV");
+  Cmdr.print("Idd Current =  "); my_Serial.print(shuntvoltage /10.0); my_Serial.println(" A");
   return 0;
 }
 
 bool getFWDHandler(Commander &Cmdr){
   float fwdvoltage = analogRead(0) * ( 3.3 / 4095.0);
-  Cmdr.print("FWD Voltage =  "); Serial.print(fwdvoltage); Serial.println(" V");
+  Cmdr.print("FWD Voltage =  "); my_Serial.print(fwdvoltage); my_Serial.println(" V");
   return 0;
 }
 
 bool getREVHandler(Commander &Cmdr){
   float revvoltage = analogRead(1) * ( 3.3 / 4095.0);
-  Cmdr.print("REV Voltage =  "); Serial.print(revvoltage); Serial.println(" V");
+  Cmdr.print("REV Voltage =  "); my_Serial.print(revvoltage); my_Serial.println(" V");
   return 0;
 }

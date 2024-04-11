@@ -11,8 +11,11 @@
 #include <Temperature_LM75_Derived.h>
 #include <Adafruit_SSD1306.h>
 #include <FlashStorage_SAMD.h>
+#include "PCF8574.h"
 
-
+// Define which serial port to use UART or USB
+#define my_Serial Serial // USB
+//#define my_Serial Serial1 // UART
 
 #define VGG_MINIMUM 4095 // DAC value corresponding to Minimum Vgg (2.0V)
 #define VGG_MAXIMUM 0    // DAC value corresponding to Maximum Vgg (5,85V)
@@ -65,7 +68,7 @@ Adafruit_INA219 ina219;
 Generic_LM75_12Bit temperature(&Wire);
 Adafruit_NeoPixel RGB(SK6812_NUM, PIN_SK6812_DATA, NEO_RGB + NEO_KHZ800);
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire1, OLED_RESET);
-
+PCF8574 RX_BOARD(0x38, &Wire1);
 
 //temporary variables used in PA_commands we can set or get
 int myInt = 0;
@@ -83,6 +86,7 @@ bool SINGLE_state = false;
 ///////////////////////////////////////////////////////////////////////////
 bool VGG_state = false;
 bool DRIVER_state = false;
+bool RX_present = false;
 uint16_t DAC_value;
 float FAN_speed;
 uint16_t FAN_rpm;
@@ -111,8 +115,7 @@ typedef struct {
 typedef struct {
   boolean valid;
   int signature;
-  boolean TX_USBControl;
-  boolean TX_SerialControl;
+
   boolean TX_PinControl;
   float Vgg; // default Vgg on level
   uint16_t relayDelayTx; // from TX command delay to turn on TX relay in ms
@@ -271,7 +274,7 @@ void setup() {
   if(flashSignature == WRITTEN_SIGNATURE) flashWritten = true;
   
 
-  Serial.begin(115200);
+  my_Serial.begin(115200);
 /*
  * Watchdog LED is set up and off
  */
@@ -340,7 +343,7 @@ void setup() {
  * Initialise OLED and display OLED startup screen
  */
 if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-    Serial.println(F("SSD1306 allocation failed"));
+    my_Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
 
@@ -356,7 +359,31 @@ if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     (display.width()  - RADARC_LOGO_WIDTH ) / 2, 19,
     RADARC68x44, RADARC_LOGO_WIDTH, RADARC_LOGO_HEIGHT, 1);    
   display.display();
+
   delay(4000); // Pause for 4 seconds
+
+  Serial.println();
+
+   if (!RX_BOARD.begin())
+  {
+    Serial.println("No Rx Board");
+  }
+  if (RX_BOARD.isConnected())
+  {
+    Serial.println("RX Board present");
+    RX_present = true;
+    // initialise the Receive board if present
+    //  RX_state = true;
+    RX_BOARD.write(4, LOW);
+    RX_BOARD.write(5, HIGH);
+    //  LNA_state = false;
+    RX_BOARD.write(0, LOW);
+    RX_BOARD.write(1, HIGH);
+    //  SINGLE_state = false;
+    RX_BOARD.write(2, HIGH);
+    RX_BOARD.write(3, LOW);
+  }
+
 
 /*
  * Initialise the Command interpreter
@@ -366,13 +393,13 @@ if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
 /*
  *
  */
-  while (!Serial); // for the USB serial to start so we see the startup prompt 
+  while (!my_Serial); // for the USB Serial to start so we see the startup prompt 
 /*
  * Print startup message and off we go
  */
   cmd.printUserString();
   cmd.println();
-  Serial.println("Type 'help' to get help");
+  my_Serial.println("Type 'help' to get help");
   cmd.printCommandPrompt();
 
  /*

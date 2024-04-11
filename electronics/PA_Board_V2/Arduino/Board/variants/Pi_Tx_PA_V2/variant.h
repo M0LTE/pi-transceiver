@@ -186,7 +186,7 @@ extern SERCOM sercom0;
 extern SERCOM sercom1;
 extern SERCOM sercom3;
 
-
+extern Uart Serial1;
 
 
 #endif
@@ -198,6 +198,10 @@ extern SERCOM sercom3;
 
 #define SERIAL_PORT_USBVIRTUAL      Serial
 #define SERIAL_PORT_MONITOR         Serial
+
+// Serial has no physical pins broken out, so it's not listed as HARDWARE port
+#define SERIAL_PORT_HARDWARE        Serial1
+#define SERIAL_PORT_HARDWARE_OPEN   Serial1
 
 #endif /* _VARIANT_Pi_Tx_PA_ */
 
