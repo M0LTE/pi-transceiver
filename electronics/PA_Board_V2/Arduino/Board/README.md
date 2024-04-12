@@ -13,9 +13,9 @@ We use the board files for the Adafruit SAMD boards and modify to add Pi transce
 
 - Find where the board files have been installed. There will be a directory like this "C:\Users\'your_user_name'\AppData\Local\Arduino15\packages\adafruit\hardware\samd\1.7.10" which contains a file "boards.txt" and "variants" directory.
 
-- Replace the "boards.txt file in the directory found above with the one in the Board directory of this Github repository.
+- Replace the "boards.txt" file in the directory found above with the one in this Github directory.
 
-- Add the "Pi_Tx_PA" directory from the "Board/variants" of this Github repository. into the variants directory found above.
+- Add the "Pi_Tx_PA" and the "Pi_Tx_PA_V2" directories from the "Board/variants" of this Github repository. into the variants directory found above.
 
 - Restart PC and open Arduino IDE
 
@@ -25,7 +25,9 @@ We use the board files for the Adafruit SAMD boards and modify to add Pi transce
 
 - Select the Comport which shows the RADARC Pi_Tx_PA connected
 
-- Upload code or tests from this Github repository
+- Add the additional Arduino Libraries listed in the READ_ME if not already installed.
+
+-  Compile and Upload code or tests from this Github repository
 
 
 ## Issues

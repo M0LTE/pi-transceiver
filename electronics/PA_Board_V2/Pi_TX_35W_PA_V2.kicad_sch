@@ -144,7 +144,7 @@
 			(pin_names
 				(offset 1.016)
 			)
-			(exclude_from_sim no)
+			(exclude_from_sim yes)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "HS"
@@ -242,8 +242,8 @@
 			(pin_numbers hide)
 			(pin_names
 				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
+			(exclude_from_sim yes)
+			(in_bom no)
 			(on_board yes)
 			(property "Reference" "H"
 				(at 0 6.35 0)
@@ -342,9 +342,9 @@
 		)
 		(symbol "power:GND"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -418,8 +418,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
-					(name "GND"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -438,32 +438,32 @@
 		)
 	)
 	(junction
-		(at 62.865 170.815)
+		(at 63.5 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2ee9985b-9062-4713-a6cc-9fbda430cc65")
 	)
 	(junction
-		(at 148.59 127.635)
+		(at 148.59 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9e9ec6ee-9215-4d71-a1a3-b933bca334b4")
 	)
 	(junction
-		(at 62.865 182.245)
+		(at 63.5 182.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c665fb12-acd6-46b6-9130-8a297e368ee2")
 	)
 	(junction
-		(at 62.865 176.53)
+		(at 63.5 176.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "df431064-9cd8-403b-9dba-3a4ba5bff4b6")
 	)
 	(wire
 		(pts
-			(xy 254.635 65.405) (xy 243.205 65.405)
+			(xy 255.27 66.04) (xy 243.84 66.04)
 		)
 		(stroke
 			(width 0)
@@ -473,7 +473,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.865 170.815) (xy 69.85 170.815)
+			(xy 63.5 171.45) (xy 69.85 171.45)
 		)
 		(stroke
 			(width 0)
@@ -483,7 +483,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.865 176.53) (xy 62.865 182.245)
+			(xy 63.5 176.53) (xy 63.5 182.88)
 		)
 		(stroke
 			(width 0)
@@ -493,7 +493,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 73.025) (xy 248.92 120.015)
+			(xy 248.92 73.66) (xy 248.92 120.65)
 		)
 		(stroke
 			(width 0)
@@ -503,7 +503,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 165.1) (xy 62.865 165.1)
+			(xy 69.85 165.1) (xy 63.5 165.1)
 		)
 		(stroke
 			(width 0)
@@ -523,7 +523,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.205 59.69) (xy 257.81 59.69)
+			(xy 243.84 59.69) (xy 257.81 59.69)
 		)
 		(stroke
 			(width 0)
@@ -533,7 +533,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 182.245) (xy 62.865 182.245)
+			(xy 69.85 182.88) (xy 63.5 182.88)
 		)
 		(stroke
 			(width 0)
@@ -543,7 +543,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.865 176.53) (xy 69.85 176.53)
+			(xy 63.5 176.53) (xy 69.85 176.53)
 		)
 		(stroke
 			(width 0)
@@ -553,7 +553,7 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 59.69) (xy 257.81 131.445)
+			(xy 257.81 59.69) (xy 257.81 132.08)
 		)
 		(stroke
 			(width 0)
@@ -563,7 +563,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.205 126.365) (xy 254.635 126.365)
+			(xy 243.84 127) (xy 255.27 127)
 		)
 		(stroke
 			(width 0)
@@ -573,7 +573,7 @@
 	)
 	(wire
 		(pts
-			(xy 136.525 127.635) (xy 148.59 127.635)
+			(xy 137.16 128.27) (xy 148.59 128.27)
 		)
 		(stroke
 			(width 0)
@@ -583,7 +583,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 120.015) (xy 243.205 120.015)
+			(xy 248.92 120.65) (xy 243.84 120.65)
 		)
 		(stroke
 			(width 0)
@@ -603,7 +603,7 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 131.445) (xy 243.205 131.445)
+			(xy 257.81 132.08) (xy 243.84 132.08)
 		)
 		(stroke
 			(width 0)
@@ -613,7 +613,7 @@
 	)
 	(wire
 		(pts
-			(xy 254.635 126.365) (xy 254.635 65.405)
+			(xy 255.27 127) (xy 255.27 66.04)
 		)
 		(stroke
 			(width 0)
@@ -653,7 +653,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.865 170.815) (xy 62.865 176.53)
+			(xy 63.5 171.45) (xy 63.5 176.53)
 		)
 		(stroke
 			(width 0)
@@ -673,7 +673,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.865 182.245) (xy 62.865 185.42)
+			(xy 63.5 182.88) (xy 63.5 185.42)
 		)
 		(stroke
 			(width 0)
@@ -683,7 +683,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 82.55) (xy 148.59 127.635)
+			(xy 148.59 82.55) (xy 148.59 128.27)
 		)
 		(stroke
 			(width 0)
@@ -693,7 +693,7 @@
 	)
 	(wire
 		(pts
-			(xy 136.525 123.19) (xy 158.115 123.19)
+			(xy 137.16 123.19) (xy 158.75 123.19)
 		)
 		(stroke
 			(width 0)
@@ -703,7 +703,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.865 165.1) (xy 62.865 170.815)
+			(xy 63.5 165.1) (xy 63.5 171.45)
 		)
 		(stroke
 			(width 0)
@@ -713,7 +713,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 127.635) (xy 158.115 127.635)
+			(xy 148.59 128.27) (xy 158.75 128.27)
 		)
 		(stroke
 			(width 0)
@@ -723,7 +723,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.205 73.025) (xy 248.92 73.025)
+			(xy 243.84 73.66) (xy 248.92 73.66)
 		)
 		(stroke
 			(width 0)
@@ -777,7 +777,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Mounting Hole with connection"
 			(at 72.39 176.53 0)
 			(effects
 				(font
@@ -796,6 +796,15 @@
 			)
 		)
 		(property "LCSC Part" ""
+			(at 72.39 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 72.39 176.53 0)
 			(effects
 				(font
@@ -862,7 +871,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Mounting Hole with connection"
 			(at 72.39 165.1 0)
 			(effects
 				(font
@@ -889,6 +898,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 72.39 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9a106ff8-4774-4824-8e57-33d62af1975e")
 		)
@@ -903,7 +921,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 62.865 185.42 0)
+		(at 63.5 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -912,7 +930,7 @@
 		(fields_autoplaced yes)
 		(uuid "3b035b34-2001-4ca9-a00e-66fd965851eb")
 		(property "Reference" "#PWR0100"
-			(at 62.865 191.77 0)
+			(at 63.5 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -921,7 +939,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 62.865 189.8634 0)
+			(at 63.5 189.8634 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -929,7 +947,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 62.865 185.42 0)
+			(at 63.5 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -938,7 +956,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.865 185.42 0)
+			(at 63.5 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -946,8 +964,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 62.865 185.42 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 63.5 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1012,7 +1030,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Open Hardware logo, small"
 			(at 153.035 179.07 0)
 			(effects
 				(font
@@ -1031,6 +1049,15 @@
 			)
 		)
 		(property "LCSC Part" ""
+			(at 153.035 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 153.035 179.07 0)
 			(effects
 				(font
@@ -1094,7 +1121,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Heatsink"
 			(at 117.475 179.705 0)
 			(effects
 				(font
@@ -1113,6 +1140,15 @@
 			)
 		)
 		(property "LCSC Part" ""
+			(at 117.475 179.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 117.475 179.705 0)
 			(effects
 				(font
@@ -1132,7 +1168,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 72.39 170.815 270)
+		(at 72.39 171.45 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1141,7 +1177,7 @@
 		(fields_autoplaced yes)
 		(uuid "664fe4b4-d5af-4130-96c6-6df820176bee")
 		(property "Reference" "H2"
-			(at 76.2 169.9803 90)
+			(at 76.2 170.6153 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1150,7 +1186,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 76.2 172.5172 90)
+			(at 76.2 173.1522 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1159,7 +1195,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
-			(at 72.39 170.815 0)
+			(at 72.39 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1168,7 +1204,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 170.815 0)
+			(at 72.39 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1176,8 +1212,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 72.39 170.815 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 72.39 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1186,7 +1222,7 @@
 			)
 		)
 		(property "Comment" "not fitted"
-			(at 72.39 170.815 0)
+			(at 72.39 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1195,7 +1231,16 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 72.39 170.815 0)
+			(at 72.39 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 72.39 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1217,7 +1262,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 72.39 182.245 270)
+		(at 72.39 182.88 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1226,7 +1271,7 @@
 		(fields_autoplaced yes)
 		(uuid "b99eef37-9b78-428b-85a6-6b026c94cf35")
 		(property "Reference" "H4"
-			(at 76.2 181.4103 90)
+			(at 76.2 182.0453 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1235,7 +1280,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 76.2 183.9472 90)
+			(at 76.2 184.5822 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1244,7 +1289,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
-			(at 72.39 182.245 0)
+			(at 72.39 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1253,7 +1298,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 182.245 0)
+			(at 72.39 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1261,8 +1306,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 72.39 182.245 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 72.39 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1271,7 +1316,7 @@
 			)
 		)
 		(property "Comment" "not fitted"
-			(at 72.39 182.245 0)
+			(at 72.39 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1280,7 +1325,16 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 72.39 182.245 0)
+			(at 72.39 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 72.39 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1301,8 +1355,8 @@
 		)
 	)
 	(sheet
-		(at 47.625 29.845)
-		(size 195.58 52.705)
+		(at 48.26 30.48)
+		(size 195.58 52.07)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1313,7 +1367,7 @@
 		)
 		(uuid "c029135b-4c03-4ca1-aedd-e82609a63298")
 		(property "Sheetname" "PA_Protection"
-			(at 47.625 29.1334 0)
+			(at 48.26 29.7684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1322,7 +1376,7 @@
 			)
 		)
 		(property "Sheetfile" "PA_Protection_V2.kicad_sch"
-			(at 47.625 83.1346 0)
+			(at 48.26 83.7696 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1341,7 +1395,7 @@
 			(uuid "e1335e3b-89d9-40fe-b33e-00a434eaf20a")
 		)
 		(pin "TX_Relay" output
-			(at 243.205 73.025 0)
+			(at 243.84 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1391,7 +1445,7 @@
 			(uuid "b1cb7ba4-94bf-4064-8063-20b9893501fe")
 		)
 		(pin "VRev" input
-			(at 243.205 59.69 0)
+			(at 243.84 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1401,7 +1455,7 @@
 			(uuid "37cb24e2-c224-4077-b207-107699ce8e4c")
 		)
 		(pin "VFwd" input
-			(at 243.205 65.405 0)
+			(at 243.84 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1439,7 +1493,7 @@
 		)
 	)
 	(sheet
-		(at 158.115 114.3)
+		(at 158.75 114.3)
 		(size 85.09 35.56)
 		(fields_autoplaced yes)
 		(stroke
@@ -1451,7 +1505,7 @@
 		)
 		(uuid "c1051f68-7754-464f-8e30-2d0ef5e2dfb6")
 		(property "Sheetname" "PA_RF"
-			(at 158.115 113.5884 0)
+			(at 158.75 113.5884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1460,7 +1514,7 @@
 			)
 		)
 		(property "Sheetfile" "PA_RF_V2.kicad_sch"
-			(at 158.115 150.4446 0)
+			(at 158.75 150.4446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1469,7 +1523,7 @@
 			)
 		)
 		(pin "VGG_PA" input
-			(at 158.115 127.635 180)
+			(at 158.75 128.27 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1479,7 +1533,7 @@
 			(uuid "0a5c5e73-2e58-46f4-8b95-b22f6bd68f01")
 		)
 		(pin "VFwd" output
-			(at 243.205 126.365 0)
+			(at 243.84 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1489,7 +1543,7 @@
 			(uuid "9342f3f9-aa74-4391-b82e-264cf40dcf78")
 		)
 		(pin "TX_Relay" input
-			(at 243.205 120.015 0)
+			(at 243.84 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1499,7 +1553,7 @@
 			(uuid "cb486c3e-a633-470f-afc8-8fb43374a67a")
 		)
 		(pin "VRev" output
-			(at 243.205 131.445 0)
+			(at 243.84 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1509,7 +1563,7 @@
 			(uuid "86900562-fe3a-4a50-a659-5b93544f98f3")
 		)
 		(pin "VDD_PA" input
-			(at 158.115 123.19 180)
+			(at 158.75 123.19 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1538,7 +1592,7 @@
 	)
 	(sheet
 		(at 46.99 114.3)
-		(size 89.535 35.56)
+		(size 90.17 35.56)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1567,7 +1621,7 @@
 			)
 		)
 		(pin "VDD_PA" output
-			(at 136.525 123.19 0)
+			(at 137.16 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1577,7 +1631,7 @@
 			(uuid "d3925b4b-5c32-4290-b4e4-1ab2d6444e08")
 		)
 		(pin "VGG_PA" output
-			(at 136.525 127.635 0)
+			(at 137.16 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
