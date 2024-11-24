@@ -11,7 +11,7 @@
 #include <Temperature_LM75_Derived.h>
 #include <Adafruit_SSD1306.h>
 #include <FlashStorage_SAMD.h>
-#include "PCF8574.h"
+#include <PCF8574.h>
 
 // Define which serial port to use UART or USB
 #define my_Serial Serial // USB
@@ -175,7 +175,7 @@ void Fan_Init(void)
 
   // Timer counts up to a maximum or TOP value set by the PER register,
   // this determines the frequency of the PWM operation: Freq = 48Mhz/(PER * 2)
-    REG_TCC0_PER = 960;                           // Set the FreqTcc of the PWM on TCC1 to 24Khz
+    REG_TCC0_PER = 960;                           // Set the FreqTcc of the PWM on TCC1 to 24Khz 960
   while (TCC0->SYNCBUSY.bit.PER);                 // Wait for synchronization
  
   // Set the PWM signal to output , PWM ds = 2*N(TOP-CCx)/Freqtcc => PWM=0 => CCx=PER, PWM=50% => CCx = PER/2

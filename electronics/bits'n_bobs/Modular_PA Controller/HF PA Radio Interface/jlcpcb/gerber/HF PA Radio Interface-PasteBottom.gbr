@@ -1,0 +1,29 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.5*%
+%TF.CreationDate,2024-11-15T14:38:43+00:00*%
+%TF.ProjectId,HF PA Radio Interface,48462050-4120-4526-9164-696f20496e74,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Paste,Bot*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.5) date 2024-11-15 14:38:43*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10R,4.200000X1.350000*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,J2*%
+X197400000Y-124825000D03*
+X197400000Y-119175000D03*
+%TD*%
+%TO.C,J4*%
+X197400000Y-112825000D03*
+X197400000Y-107175000D03*
+%TD*%
+%TO.C,J3*%
+X197400000Y-136825000D03*
+X197400000Y-131175000D03*
+%TD*%
+M02*

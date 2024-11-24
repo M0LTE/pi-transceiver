@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "PA_Control")(type "KiCad")(uri "${KIPRJMOD}/PA_Control.pretty")(options "")(descr ""))
+)

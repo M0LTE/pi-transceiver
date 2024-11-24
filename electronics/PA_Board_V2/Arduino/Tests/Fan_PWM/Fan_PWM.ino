@@ -61,7 +61,7 @@ void Fan_PWM(uint8_t percent)
 void setup() {
 
   Fan_Init(); //initialise PWM for Fan to 25kHz
-  //Fan_PWM(50);
+  Fan_PWM(100);
 }
 
 void loop() {

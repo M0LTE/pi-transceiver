@@ -804,15 +804,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 72.39 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c2775daa-ba1b-4a0f-8214-dbed8fc7a393")
 		)
@@ -890,15 +881,6 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 72.39 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 72.39 165.1 0)
 			(effects
 				(font
@@ -1057,15 +1039,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 153.035 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(instances
 			(project "Pi_TX_35W_PA_V2"
 				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63"
@@ -1140,15 +1113,6 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 117.475 179.705 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 117.475 179.705 0)
 			(effects
 				(font
@@ -1239,15 +1203,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 72.39 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "26f3d538-3805-4155-8c26-ab1389e2a40c")
 		)
@@ -1325,15 +1280,6 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 72.39 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 72.39 182.88 0)
 			(effects
 				(font

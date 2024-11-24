@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "rLab_Keyboard")(type "KiCad")(uri "${KIPRJMOD}/rLab_Keyboard.kicad_sym")(options "")(descr ""))
+)

@@ -5153,15 +5153,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 71.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4fd90015-dd8b-4e3c-ab6d-13aba1923cb0")
 		)
@@ -5239,15 +5230,6 @@
 			)
 		)
 		(property "LCSC Part" "C144198"
-			(at 119.38 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 119.38 85.09 0)
 			(effects
 				(font
@@ -5421,15 +5403,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 231.14 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "79acca60-cc6f-477d-bdeb-152defbd1c8a")
 		)
@@ -5508,15 +5481,6 @@
 			)
 		)
 		(property "LCSC Part" "C26833"
-			(at 209.55 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 209.55 124.46 0)
 			(effects
 				(font
@@ -5670,15 +5634,6 @@
 			)
 		)
 		(property "LCSC Part" "C5383002"
-			(at 92.71 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 92.71 116.84 0)
 			(effects
 				(font
@@ -5852,15 +5807,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 208.28 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "faa23285-47bc-4eeb-93e5-ba63fb3cb0b8")
 		)
@@ -5940,15 +5886,6 @@
 			)
 		)
 		(property "LCSC Part" "C57895"
-			(at 186.69 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 186.69 68.58 0)
 			(effects
 				(font
@@ -6308,15 +6245,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 148.59 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2a2e7560-c14d-4a21-8b89-9b9ecd697558")
 		)
@@ -6404,15 +6332,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 171.45 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "cedeada4-312b-4d3e-afd2-d4cee5450ec4")
 		)
@@ -6492,15 +6411,6 @@
 			)
 		)
 		(property "LCSC Part" "C96446"
-			(at 222.25 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 222.25 129.54 0)
 			(effects
 				(font
@@ -6728,15 +6638,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 130.81 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "29d518b5-a1ed-4f70-9066-a272123ff0d7")
 		)
@@ -6817,15 +6718,6 @@
 			)
 		)
 		(property "LCSC Part" "C5261064"
-			(at 58.42 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 58.42 35.56 0)
 			(effects
 				(font
@@ -6916,15 +6808,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 219.71 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 219.71 55.88 0)
 			(effects
 				(font
@@ -7076,15 +6959,6 @@
 			)
 		)
 		(property "LCSC Part" "C22765"
-			(at 177.8 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 177.8 62.23 0)
 			(effects
 				(font
@@ -7245,15 +7119,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 185.42 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a9bf0bdc-e85a-42a4-973f-9be560286843")
 		)
@@ -7341,15 +7206,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 144.78 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c1eccaac-8a3b-4715-8092-879fdb10e41c")
 		)
@@ -7429,15 +7285,6 @@
 			)
 		)
 		(property "LCSC Part" "C602037"
-			(at 138.43 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 138.43 118.11 0)
 			(effects
 				(font
@@ -7656,15 +7503,6 @@
 			)
 		)
 		(property "LCSC Part" "C3018524"
-			(at 185.42 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 185.42 124.46 0)
 			(effects
 				(font
@@ -7892,15 +7730,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 71.12 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "b9fe6383-daaa-4fa8-adf6-b4eae9468e67")
 		)
@@ -7980,15 +7809,6 @@
 			)
 		)
 		(property "LCSC Part" "C15849"
-			(at 151.13 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 151.13 68.58 0)
 			(effects
 				(font
@@ -8280,15 +8100,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 123.19 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "534c8858-2706-455c-b8da-7b40463775b3")
 		)
@@ -8507,15 +8318,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 185.42 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c4fe2845-e48c-4977-804b-d4844a8d9d6d")
 		)
@@ -8595,15 +8397,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 198.12 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 198.12 132.08 0)
 			(effects
 				(font
@@ -8765,15 +8558,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 59.69 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "7ec10487-e574-4fe1-b379-5811345aaa93")
 		)
@@ -8925,15 +8709,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 218.44 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "7e9df13f-47f6-4cad-ba73-f768ee546fa9")
 		)
@@ -9021,15 +8796,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 110.49 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8f80eb82-3a84-4ad8-a542-d387fb5fbf3c")
 		)
@@ -9109,15 +8875,6 @@
 			)
 		)
 		(property "LCSC Part" "C25961"
-			(at 130.81 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 130.81 127 0)
 			(effects
 				(font
@@ -9279,15 +9036,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 191.77 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "3edfa57d-5eb7-46fd-b3e2-5461bb2a76fa")
 		)
@@ -9441,15 +9189,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 224.79 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "db1e0cbe-6139-4141-88cb-e3a97786adc5")
 		)
@@ -9529,15 +9268,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 124.46 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 124.46 66.04 0)
 			(effects
 				(font
@@ -9758,15 +9488,6 @@
 			)
 		)
 		(property "LCSC Part" "C21190"
-			(at 176.53 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 176.53 71.12 0)
 			(effects
 				(font
@@ -10126,15 +9847,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 241.3 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4e8c4a61-3099-4cd4-839b-bc9860dcbb60")
 		)
@@ -10231,15 +9943,6 @@
 			)
 		)
 		(property "LCSC Part" "C264072"
-			(at 161.29 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 161.29 62.23 0)
 			(effects
 				(font
@@ -10410,15 +10113,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 245.11 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a70bc77c-2c1f-4b54-a258-2ed26793c68b")
 		)
@@ -10572,15 +10266,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 38.1 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "eadbc0a9-66dc-4d9c-bca8-1eaf292f90f7")
 		)
@@ -10726,15 +10411,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 194.31 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 194.31 68.58 0)
 			(effects
 				(font

@@ -4956,6 +4956,12 @@
 		(uuid "2cba545b-d7df-41e9-9392-081a10e6a4f1")
 	)
 	(junction
+		(at 154.94 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "365ec495-51ab-4384-81a3-cc6946f93092")
+	)
+	(junction
 		(at 114.3 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4990,12 +4996,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3f2c8691-1746-4942-b224-0156144d8b4e")
-	)
-	(junction
-		(at 137.16 105.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "409a9453-0770-4a93-b6f9-7cc9ef395b5d")
 	)
 	(junction
 		(at 62.23 163.83)
@@ -5436,6 +5436,16 @@
 			(type default)
 		)
 		(uuid "096ec920-662f-4322-9aa4-c6ea117ab043")
+	)
+	(wire
+		(pts
+			(xy 152.4 101.6) (xy 154.94 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a2a818e-bc27-445c-94e0-867ddd903d5e")
 	)
 	(wire
 		(pts
@@ -5999,16 +6009,6 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 105.41) (xy 137.16 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "487023cb-6828-467a-be01-38491f0f37a3")
-	)
-	(wire
-		(pts
 			(xy 200.66 121.92) (xy 200.66 124.46)
 		)
 		(stroke
@@ -6209,6 +6209,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 101.6) (xy 137.16 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57a009be-550b-4991-a328-2f0f909e41b1")
+	)
+	(wire
+		(pts
 			(xy 219.71 49.53) (xy 219.71 52.07)
 		)
 		(stroke
@@ -6309,7 +6319,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 105.41) (xy 137.16 111.76)
+			(xy 137.16 114.3) (xy 137.16 111.76)
 		)
 		(stroke
 			(width 0)
@@ -6346,6 +6356,16 @@
 			(type default)
 		)
 		(uuid "68be3b47-95c5-49ae-a458-e859798feca3")
+	)
+	(wire
+		(pts
+			(xy 137.16 101.6) (xy 137.16 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68edaa0b-1add-4dfc-a988-b1b9ebfa7ee0")
 	)
 	(wire
 		(pts
@@ -6539,16 +6559,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 102.87) (xy 137.16 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "794abfdb-1dd2-413b-88a3-a657ea0656a9")
-	)
-	(wire
-		(pts
 			(xy 204.47 138.43) (xy 209.55 138.43)
 		)
 		(stroke
@@ -6636,6 +6646,16 @@
 			(type default)
 		)
 		(uuid "80df435e-f10a-4ecc-be47-f5c06335c93c")
+	)
+	(wire
+		(pts
+			(xy 154.94 101.6) (xy 154.94 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80ff126b-90d3-4cf4-86fc-696c0f4811a4")
 	)
 	(wire
 		(pts
@@ -6776,6 +6796,16 @@
 			(type default)
 		)
 		(uuid "918fea70-729a-493f-9997-369c9d7027e8")
+	)
+	(wire
+		(pts
+			(xy 154.94 109.22) (xy 162.56 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92864100-f416-4e7a-93b9-e24963606b5d")
 	)
 	(wire
 		(pts
@@ -6989,16 +7019,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 109.22) (xy 153.67 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6769461-f89a-454b-9c84-00ace25ae00b")
-	)
-	(wire
-		(pts
 			(xy 53.34 36.83) (xy 57.15 36.83)
 		)
 		(stroke
@@ -7136,6 +7156,16 @@
 			(type default)
 		)
 		(uuid "b2a55c19-f0ba-476f-b98a-3c55906e1e6c")
+	)
+	(wire
+		(pts
+			(xy 152.4 96.52) (xy 154.94 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2ace168-6f89-467f-a7d5-ffee9e525d87")
 	)
 	(wire
 		(pts
@@ -7349,6 +7379,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 92.71) (xy 142.24 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c35bd5ca-f4f8-49f0-8428-19116b400129")
+	)
+	(wire
+		(pts
 			(xy 134.62 170.18) (xy 134.62 172.72)
 		)
 		(stroke
@@ -7536,16 +7576,6 @@
 			(type default)
 		)
 		(uuid "d603fef5-0bc2-4aed-b40f-b06086671b14")
-	)
-	(wire
-		(pts
-			(xy 153.67 109.22) (xy 153.67 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d826d39f-5af8-48fd-89a1-6f6ef59c1585")
 	)
 	(wire
 		(pts
@@ -7839,6 +7869,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 96.52) (xy 154.94 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f239a4aa-63a4-4138-9333-67e669cc8459")
+	)
+	(wire
+		(pts
 			(xy 99.06 31.75) (xy 109.22 31.75)
 		)
 		(stroke
@@ -7916,6 +7956,16 @@
 			(type default)
 		)
 		(uuid "fb2e3229-2e49-4639-ae1f-b003fd244364")
+	)
+	(wire
+		(pts
+			(xy 142.24 96.52) (xy 144.78 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fba40f28-479e-46c1-9800-45a0d848ceae")
 	)
 	(wire
 		(pts
@@ -8535,15 +8585,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 151.13 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "228f059f-0600-46bc-b8b1-be1d28cc406e")
 		)
@@ -8623,15 +8664,6 @@
 			)
 		)
 		(property "LCSC Part" "C2890037"
-			(at 147.32 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 147.32 31.75 0)
 			(effects
 				(font
@@ -8734,15 +8766,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 226.06 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "461abd93-c852-46a1-8be1-e2387b6f3427")
 		)
@@ -8822,15 +8845,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 245.11 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 245.11 21.59 0)
 			(effects
 				(font
@@ -8992,15 +9006,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 127 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "e49c9e83-a5af-4b16-824c-f87a72cd56a3")
 		)
@@ -9096,15 +9101,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 176.53 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2792832d-b0d5-4100-9c5f-7ccce0e1eb00")
 		)
@@ -9183,15 +9179,6 @@
 			)
 		)
 		(property "LCSC Part" "C21190"
-			(at 120.65 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 120.65 82.55 0)
 			(effects
 				(font
@@ -9485,15 +9472,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 219.71 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "6bd0d1b8-b348-4044-8f50-68bef5e85940")
 		)
@@ -9574,15 +9552,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 234.95 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 234.95 123.19 0)
 			(effects
 				(font
@@ -9679,15 +9648,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 228.6 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "f3324b20-0f59-4862-8a4c-eff37bd98149")
 		)
@@ -9766,15 +9726,6 @@
 			)
 		)
 		(property "LCSC Part" "C25804"
-			(at 214.63 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 214.63 73.66 0)
 			(effects
 				(font
@@ -9862,15 +9813,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 200.66 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 200.66 128.27 0)
 			(effects
 				(font
@@ -9967,15 +9909,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 88.9 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "50b38e0d-c0f9-4690-9f7d-e0b7d14ef579")
 		)
@@ -9993,7 +9926,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 137.16 102.87 0)
+		(at 137.16 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10002,7 +9935,7 @@
 		(fields_autoplaced yes)
 		(uuid "1de4d45c-bff2-4489-a8f5-2097a71c5d1b")
 		(property "Reference" "#PWR0106"
-			(at 137.16 106.68 0)
+			(at 137.16 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10011,7 +9944,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 137.16 98.7369 0)
+			(at 137.16 110.1669 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10019,7 +9952,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 102.87 0)
+			(at 137.16 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10028,7 +9961,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 102.87 0)
+			(at 137.16 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10037,7 +9970,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 137.16 102.87 0)
+			(at 137.16 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10252,15 +10185,6 @@
 			)
 		)
 		(property "LCSC Part" "C2941725"
-			(at 240.03 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 240.03 34.29 0)
 			(effects
 				(font
@@ -10572,15 +10496,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 270.51 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8177a01b-2ec8-4cd6-89fe-96481d4e6c55")
 		)
@@ -10800,15 +10715,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 245.11 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c92cdcf4-998e-4c9d-b2d5-ad26a05f6ecf")
 		)
@@ -10962,15 +10868,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 262.89 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "80823dac-2283-49a6-b5cd-84af8cbe90be")
 		)
@@ -11051,15 +10948,6 @@
 			)
 		)
 		(property "LCSC Part" "C618770"
-			(at 74.93 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 74.93 97.79 0)
 			(effects
 				(font
@@ -11246,15 +11134,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 40.64 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c9a09caa-c615-408f-a453-2a80ed5804e6")
 		)
@@ -11409,15 +11288,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 27.94 180.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "51e39f52-6502-4cb0-b3d7-4498867b43ae")
 		)
@@ -11563,15 +11433,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 138.43 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 138.43 147.32 0)
 			(effects
 				(font
@@ -11734,15 +11595,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 130.81 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "afa9e31b-8dbf-43fa-8680-70d3c51e2b7f")
 		)
@@ -11888,15 +11740,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 170.18 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 170.18 58.42 0)
 			(effects
 				(font
@@ -12051,15 +11894,6 @@
 			)
 		)
 		(property "LCSC Part" "C7429693"
-			(at 189.23 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 189.23 74.93 0)
 			(effects
 				(font
@@ -12234,15 +12068,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 67.31 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c9060b32-4a71-4459-8211-f582aa2f321e")
 		)
@@ -12323,15 +12148,6 @@
 			)
 		)
 		(property "LCSC Part" "C2682275"
-			(at 157.48 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 157.48 87.63 0)
 			(effects
 				(font
@@ -12433,15 +12249,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 124.46 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "e48ca892-32d1-469c-be8e-ca994df873f3")
 		)
@@ -12529,15 +12336,6 @@
 			)
 		)
 		(property "LCSC Part" "C136000"
-			(at 38.1 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 38.1 163.83 0)
 			(effects
 				(font
@@ -12776,15 +12574,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 196.85 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4cb9f63a-de55-4897-9de4-a0ec0eef08cf")
 		)
@@ -12873,15 +12662,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 53.34 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "b4f84ee6-d8cc-43e5-90e3-97ebe39bb095")
 		)
@@ -12961,15 +12741,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 148.59 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 148.59 147.32 0)
 			(effects
 				(font
@@ -13130,15 +12901,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 214.63 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "de0d09cd-226d-4817-a26c-2f138a02b705")
 		)
@@ -13219,15 +12981,6 @@
 			)
 		)
 		(property "LCSC Part" "C25804"
-			(at 259.08 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 259.08 148.59 0)
 			(effects
 				(font
@@ -13381,15 +13134,6 @@
 			)
 		)
 		(property "LCSC Part" "C2890037"
-			(at 168.91 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 168.91 31.75 0)
 			(effects
 				(font
@@ -13624,15 +13368,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 49.53 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "223500f0-260b-47e9-b5b4-e2132a8b9a4d")
 		)
@@ -13713,15 +13448,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 156.21 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 156.21 146.05 0)
 			(effects
 				(font
@@ -13884,15 +13610,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 182.88 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "5109851f-d123-483b-b5c2-5f1ed39323c5")
 		)
@@ -13972,15 +13689,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 165.1 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 165.1 58.42 0)
 			(effects
 				(font
@@ -14141,15 +13849,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 240.03 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "38d1b1ce-4b7d-4cba-834f-e3ddb349d2a6")
 		)
@@ -14253,15 +13952,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 124.46 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0c41fc2a-bbc7-4e47-9991-94d6f02f74e9")
 		)
@@ -14281,6 +13971,72 @@
 			(project "Pi_TX_35W_PA_V2"
 				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
 					(reference "U15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 137.16 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ac114c4-e28e-4bf0-a32f-1fdb1545572e")
+		(property "Reference" "#PWR0120"
+			(at 137.16 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 137.16 88.5769 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 137.16 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "80786068-4ef9-4da5-a666-75e92ba2c6ba")
+		)
+		(instances
+			(project "Pi_TX_35W_PA_V2"
+				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
+					(reference "#PWR0120")
 					(unit 1)
 				)
 			)
@@ -14417,15 +14173,6 @@
 			)
 		)
 		(property "LCSC Part" "C2840556"
-			(at 160.02 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 160.02 58.42 0)
 			(effects
 				(font
@@ -14654,15 +14401,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 219.71 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "f7af766b-479e-44d9-8928-71ebaa108272")
 		)
@@ -14742,15 +14480,6 @@
 			)
 		)
 		(property "LCSC Part" "C25804"
-			(at 262.89 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 262.89 39.37 0)
 			(effects
 				(font
@@ -14847,15 +14576,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 107.95 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "5fe3edc6-cc21-4407-a0f6-b2b0aa6b2221")
 		)
@@ -14935,15 +14655,6 @@
 			)
 		)
 		(property "LCSC Part" "C88136"
-			(at 251.46 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 251.46 115.57 0)
 			(effects
 				(font
@@ -15040,15 +14751,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 62.23 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "79c88fcd-6665-4c95-8e63-eadd75abe347")
 		)
@@ -15135,15 +14837,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 176.53 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "11000f02-6811-4469-a685-b9d84bc29c9d")
 		)
@@ -15220,6 +14913,72 @@
 			(project "Pi_TX_35W_PA_V2"
 				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
 					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 142.24 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a65f5323-bf1f-4840-a7c4-6fc636b5d574")
+		(property "Reference" "#PWR0119"
+			(at 142.24 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 142.24 88.5769 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 142.24 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc99ffce-abfa-42a8-9617-2900e9f37557")
+		)
+		(instances
+			(project "Pi_TX_35W_PA_V2"
+				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
+					(reference "#PWR0119")
 					(unit 1)
 				)
 			)
@@ -15380,15 +15139,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 233.68 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "df416a71-2335-4341-ad1e-c091dc36a421")
 		)
@@ -15467,15 +15217,6 @@
 			)
 		)
 		(property "LCSC Part" "C23138"
-			(at 255.27 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 255.27 73.66 0)
 			(effects
 				(font
@@ -15564,15 +15305,6 @@
 			)
 		)
 		(property "LCSC Part" "C21190"
-			(at 114.3 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 114.3 128.27 0)
 			(effects
 				(font
@@ -15681,7 +15413,7 @@
 			)
 		)
 		(property "Value" "MHS171UBCT"
-			(at 127.635 86.36 90)
+			(at 127 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15726,15 +15458,6 @@
 			)
 		)
 		(property "LCSC Part" "C693906"
-			(at 125.73 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 125.73 87.63 0)
 			(effects
 				(font
@@ -15820,6 +15543,92 @@
 			(project "Pi_TX_35W_PA_V2"
 				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
 					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 148.59 101.6 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b109a755-d7ec-4139-acee-8cd428278a78")
+		(property "Reference" "F5"
+			(at 144.145 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150mA"
+			(at 151.13 103.505 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_0805_2012Metric"
+			(at 153.67 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+			(at 148.59 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment" "100mA Polyfuse 0805 24V"
+			(at 148.59 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C2840556"
+			(at 148.59 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d343f76-de2c-4602-923b-1ad76e5f07c1")
+		)
+		(pin "2"
+			(uuid "44315b54-3e6e-4fbf-ae0a-7de548ad72ec")
+		)
+		(instances
+			(project "Pi_TX_35W_PA_V2"
+				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
+					(reference "F5")
 					(unit 1)
 				)
 			)
@@ -16020,15 +15829,6 @@
 			)
 		)
 		(property "LCSC Part" "C25819"
-			(at 251.46 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 251.46 143.51 0)
 			(effects
 				(font
@@ -16389,15 +16189,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 62.23 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "cc061836-7ff8-4cc7-a573-67fb6a4d9f7d")
 		)
@@ -16484,15 +16275,6 @@
 			)
 		)
 		(property "LCSC Part" "C725792"
-			(at 219.71 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 219.71 140.97 0)
 			(effects
 				(font
@@ -16671,15 +16453,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 255.27 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "ed0db54c-0231-491e-a62f-25e4361391d3")
 		)
@@ -16760,15 +16533,6 @@
 			)
 		)
 		(property "LCSC Part" "C2941725"
-			(at 261.62 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 261.62 120.65 0)
 			(effects
 				(font
@@ -16874,15 +16638,6 @@
 			)
 		)
 		(property "LCSC Part" "C23162"
-			(at 204.47 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 204.47 128.27 0)
 			(effects
 				(font
@@ -17036,15 +16791,6 @@
 			)
 		)
 		(property "LCSC Part" ""
-			(at 167.64 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 167.64 109.22 0)
 			(effects
 				(font
@@ -17210,15 +16956,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 142.24 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8359ec91-4251-4689-9528-3c95e465dde5")
 		)
@@ -17316,15 +17053,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 20.32 180.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "94caedd0-1203-4e6c-aad5-cfb386bc88c8")
 		)
@@ -17335,6 +17063,92 @@
 			(project "Pi_TX_35W_PA_V2"
 				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
 					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 148.59 96.52 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9b93e37-3753-4c39-b64e-9448d27ad179")
+		(property "Reference" "F6"
+			(at 144.145 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150mA"
+			(at 151.13 98.425 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_0805_2012Metric"
+			(at 153.67 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+			(at 148.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment" "100mA Polyfuse 0805 24V"
+			(at 148.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C2840556"
+			(at 148.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a8d2fb10-7e5b-4d6e-a510-0f60076158dc")
+		)
+		(pin "2"
+			(uuid "1c44f54e-9050-4202-bba4-c9eee18023c3")
+		)
+		(instances
+			(project "Pi_TX_35W_PA_V2"
+				(path "/296f23ba-4d28-4f71-91fa-c9ce5a8d0c63/c029135b-4c03-4ca1-aedd-e82609a63298"
+					(reference "F6")
 					(unit 1)
 				)
 			)
@@ -17472,15 +17286,6 @@
 			)
 		)
 		(property "LCSC Part" "C2682275"
-			(at 144.78 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 144.78 179.07 0)
 			(effects
 				(font
@@ -17731,15 +17536,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 234.95 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4f485860-bffd-4120-b579-2c77b6c2a135")
 		)
@@ -17952,15 +17748,6 @@
 			)
 		)
 		(property "LCSC Part" "C2839443"
-			(at 270.51 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 270.51 39.37 0)
 			(effects
 				(font
